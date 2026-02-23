@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
 
 export function Footer() {
@@ -27,19 +28,19 @@ export function Footer() {
             <h4 className="mb-4 text-sm font-bold">{t.footer.product}</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#features" className="text-sm text-gray-500 transition-colors hover:text-white">
+                <Link to="/#features" className="text-sm text-gray-500 transition-colors hover:text-white">
                   {t.footer.features}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#pricing" className="text-sm text-gray-500 transition-colors hover:text-white">
+                <Link to="/#pricing" className="text-sm text-gray-500 transition-colors hover:text-white">
                   {t.footer.pricing}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#security" className="text-sm text-gray-500 transition-colors hover:text-white">
+                <Link to="/#security" className="text-sm text-gray-500 transition-colors hover:text-white">
                   {t.footer.security}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -49,17 +50,17 @@ export function Footer() {
             <h4 className="mb-4 text-sm font-bold">{t.footer.companyTitle}</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-white">
+                <Link to="/about" className="text-sm text-gray-500 transition-colors hover:text-white">
                   {t.footer.aboutUs}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-white">
+                <Link to="/contact" className="text-sm text-gray-500 transition-colors hover:text-white">
                   {t.footer.contact}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-gray-500 transition-colors hover:text-white">
+                <a href="https://linkedin.com/company/botfy" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 transition-colors hover:text-white">
                   {t.footer.linkedin}
                 </a>
               </li>

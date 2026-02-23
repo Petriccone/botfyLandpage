@@ -92,6 +92,10 @@ export interface Translations {
     terms: string
     copyright: string
   }
+  pages: {
+    about: { title: string; lead: string; content: string }
+    contact: { title: string; lead: string; email: string; emailLabel: string }
+  }
 }
 
 const en: Translations = {
@@ -238,6 +242,19 @@ const en: Translations = {
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
     copyright: '© 2026 Botfy. All rights reserved.',
+  },
+  pages: {
+    about: {
+      title: 'About Us',
+      lead: 'We build secure AI infrastructure for European companies.',
+      content: 'Botfy provides a platform to create, train and deploy AI agents connected to WhatsApp, Telegram and your website — fully hosted in Europe, with enterprise-grade security and GDPR compliance.',
+    },
+    contact: {
+      title: 'Contact',
+      lead: 'Get in touch with our team.',
+      email: 'contact@botfy.ai',
+      emailLabel: 'Email',
+    },
   },
 }
 
@@ -386,6 +403,19 @@ const pt: Translations = {
     terms: 'Termos de Serviço',
     copyright: '© 2026 Botfy. Todos os direitos reservados.',
   },
+  pages: {
+    about: {
+      title: 'Sobre Nós',
+      lead: 'Construímos infraestrutura de IA segura para empresas europeias.',
+      content: 'A Botfy oferece uma plataforma para criar, treinar e implantar agentes de IA conectados ao WhatsApp, Telegram e ao seu site — totalmente hospedada na Europa, com segurança de nível empresarial e conformidade com a GDPR.',
+    },
+    contact: {
+      title: 'Contato',
+      lead: 'Fale com nossa equipe.',
+      email: 'contact@botfy.ai',
+      emailLabel: 'E-mail',
+    },
+  },
 }
 
 const es: Translations = {
@@ -532,6 +562,19 @@ const es: Translations = {
     privacy: 'Política de Privacidad',
     terms: 'Términos de Servicio',
     copyright: '© 2026 Botfy. Todos los derechos reservados.',
+  },
+  pages: {
+    about: {
+      title: 'Sobre Nosotros',
+      lead: 'Construimos infraestructura de IA segura para empresas europeas.',
+      content: 'Botfy ofrece una plataforma para crear, entrenar y desplegar agentes de IA conectados a WhatsApp, Telegram y tu sitio web — alojado en Europa, con seguridad empresarial y cumplimiento GDPR.',
+    },
+    contact: {
+      title: 'Contacto',
+      lead: 'Contacta con nuestro equipo.',
+      email: 'contact@botfy.ai',
+      emailLabel: 'Correo',
+    },
   },
 }
 
