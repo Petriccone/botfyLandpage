@@ -28,7 +28,7 @@ export function Footer() {
             <h4 className="mb-4 text-sm font-bold">{t.footer.product}</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/#features" className="text-sm text-gray-500 transition-colors hover:text-white">
+                <Link to="/#solution" className="text-sm text-gray-500 transition-colors hover:text-white">
                   {t.footer.features}
                 </Link>
               </li>

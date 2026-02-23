@@ -1,29 +1,26 @@
-import { Shield, Cpu, DollarSign, FileWarning, Puzzle } from 'lucide-react'
+import { Shield, Cpu, DollarSign, FileWarning, Puzzle, TrendingDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Card } from './ui/Card'
 import { SectionWrapper } from './ui/SectionWrapper'
 import { useLanguage } from '../hooks/useLanguage'
 
-const icons = [Shield, Cpu, DollarSign, FileWarning, Puzzle]
+const icons = [Shield, Cpu, DollarSign, FileWarning, Puzzle, TrendingDown]
 
 export function PainPoints() {
   const { t } = useLanguage()
 
   return (
-    <SectionWrapper className="py-24">
+    <SectionWrapper id="problem" className="py-24">
       <div className="text-center">
         <h2 className="mb-4 text-3xl font-black italic tracking-tight sm:text-4xl lg:text-5xl">
-          {t.painPoints.titleStart}
-          <br />
-          {t.painPoints.titleBut} <span className="gradient-text">{t.painPoints.titleHighlight}</span>{' '}
-          {t.painPoints.titleEnd}
+          {t.painPoints.title}
         </h2>
-        <p className="mx-auto mb-16 max-w-2xl text-gray-400 text-lg">
+        <p className="mx-auto mb-12 max-w-2xl text-gray-400 text-lg">
           {t.painPoints.subtitle}
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-3 mb-12">
         {t.painPoints.items.map((item, i) => {
           const Icon = icons[i]
           return (
@@ -44,6 +41,9 @@ export function PainPoints() {
           )
         })}
       </div>
+      <p className="text-center text-lg font-semibold text-white">
+        {t.painPoints.closing}
+      </p>
     </SectionWrapper>
   )
 }

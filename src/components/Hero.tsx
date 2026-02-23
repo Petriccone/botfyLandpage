@@ -51,16 +51,35 @@ export function Hero() {
             <span className="gradient-text">{t.hero.titleHighlight}</span>
           </h1>
 
-          <p className="mb-8 max-w-lg text-lg text-gray-400 leading-relaxed">
+          <p className="mb-6 max-w-lg text-lg text-gray-400 leading-relaxed">
             {t.hero.subtitle}
           </p>
+          <p className="mb-8 max-w-lg text-gray-400">
+            {t.hero.subtitle2}
+          </p>
 
-          <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
-            <Button variant="primary" size="lg">
-              {t.hero.cta}
-              <ArrowRight size={18} />
-            </Button>
-          </a>
+          <div className="mb-10 flex flex-wrap gap-3">
+            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
+              <Button variant="primary" size="lg">
+                {t.hero.cta}
+                <ArrowRight size={18} />
+              </Button>
+            </a>
+            <a href="#how-it-works" className="no-underline">
+              <Button variant="secondary" size="lg">
+                {t.hero.ctaSecondary}
+              </Button>
+            </a>
+          </div>
+
+          <ul className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-gray-500">
+            {t.hero.trustBullets.map((bullet, i) => (
+              <li key={i} className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
+                {bullet}
+              </li>
+            ))}
+          </ul>
         </motion.div>
       </div>
     </section>

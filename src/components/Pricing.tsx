@@ -6,9 +6,10 @@ import { SectionWrapper } from './ui/SectionWrapper'
 import { useLanguage } from '../hooks/useLanguage'
 
 const STRIPE_LINKS: (string | null)[] = [
+  'https://botfyai.vercel.app/register', // Free
   'https://buy.stripe.com/fZu4gB3WGaEF8exdYSfQI00', // Starter
   'https://buy.stripe.com/aFabJ32SCdQR7atg70fQI01', // Growth
-  'https://buy.stripe.com/eVqfZj78S3cd1Q9aMGfQI02', // Business
+  'https://buy.stripe.com/eVqfZj78S3cd1Q9aMGfQI02', // Scale
   null, // Enterprise - Contact Sales
 ]
 
@@ -25,9 +26,9 @@ export function Pricing() {
         <p className="text-gray-400 text-lg">{t.pricing.subtitle}</p>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
         {t.pricing.plans.map((plan, i) => {
-          const isPopular = i === 1
+          const isPopular = i === 2
           return (
             <motion.div
               key={i}

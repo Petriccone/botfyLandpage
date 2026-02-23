@@ -2,8 +2,8 @@ export type Language = 'en' | 'pt' | 'es'
 
 export interface Translations {
   nav: {
-    platform: string
-    features: string
+    howItWorks: string
+    solution: string
     pricing: string
     aboutUs: string
     login: string
@@ -15,15 +15,24 @@ export interface Translations {
     titleLine2: string
     titleHighlight: string
     subtitle: string
+    subtitle2: string
     cta: string
+    ctaSecondary: string
+    trustBullets: string[]
   }
   painPoints: {
-    titleStart: string
-    titleBut: string
-    titleHighlight: string
-    titleEnd: string
+    title: string
     subtitle: string
     items: string[]
+    closing: string
+  }
+  solution: {
+    title: string
+    intro: string
+    items: string[]
+    closing1: string
+    closing2: string
+    closing3: string
   }
   platform: {
     titleStart: string
@@ -41,6 +50,20 @@ export interface Translations {
     titleHighlight: string
     titleEnd: string
     items: { title: string; desc: string }[]
+    noDevLine: string
+    tagline: string
+  }
+  afterActivate: {
+    title: string
+    items: string[]
+    closing1: string
+    closing2: string
+  }
+  whyBotfy: {
+    title: string
+    items: string[]
+    tagline: string
+    tagline2: string
   }
   security: {
     titleLine1: string
@@ -72,6 +95,13 @@ export interface Translations {
       features: string[]
       cta: string
     }[]
+  }
+  vision: {
+    title: string
+    line1: string
+    line2: string
+    line3: string
+    line4: string
   }
   cta: {
     title: string
@@ -128,8 +158,8 @@ export interface Translations {
 
 const en: Translations = {
   nav: {
-    platform: 'Platform',
-    features: 'Features',
+    howItWorks: 'How it works',
+    solution: 'Solution',
     pricing: 'Pricing',
     aboutUs: 'About Us',
     login: 'Log in',
@@ -137,19 +167,42 @@ const en: Translations = {
   },
   hero: {
     badge: 'Secure AI Agents Infrastructure',
-    titleLine1: 'Turn Your Company Knowledge Into',
+    titleLine1: 'Build Your AI Workforce.',
     titleLine2: '',
-    titleHighlight: 'Secure AI Agents.',
-    subtitle: 'Create, train and deploy AI agents connected to WhatsApp, Telegram and your website — fully hosted in Europe.',
+    titleHighlight: 'Sell on Autopilot.',
+    subtitle: 'Automate conversations, qualify leads and close sales 24/7 — without hiring, without complexity.',
+    subtitle2: 'Deploy intelligent AI agents in minutes and turn every message into revenue.',
     cta: 'Start Free Trial',
+    ctaSecondary: 'See How It Works',
+    trustBullets: ['No setup fees.', 'Self-service platform.', 'Go live in minutes.'],
   },
   painPoints: {
-    titleStart: 'AI is everywhere.',
-    titleBut: 'But',
-    titleHighlight: 'Enterprise-Ready AI',
-    titleEnd: 'is not.',
-    subtitle: 'Most companies struggle to implement AI securely. We built Botfy to solve the hardest infrastructure challenges.',
-    items: ['Data Security Concerns', 'Complex AI Infrastructure', 'Expensive Development', 'Compliance Risks', 'Integration Complexity'],
+    title: 'Your Business Is Losing Revenue Every Day.',
+    subtitle: 'Every missed message is a missed opportunity.',
+    items: [
+      'Leads wait too long.',
+      "Customers don't get follow-ups.",
+      'Sales conversations stop halfway.',
+      'Hiring more people increases cost.',
+      'Managing teams increases complexity.',
+      "Manual replies don't scale.",
+    ],
+    closing: 'Growth requires automation.',
+  },
+  solution: {
+    title: 'Meet Your 24/7 AI Workforce.',
+    intro: 'Botfy allows you to deploy intelligent AI agents that:',
+    items: [
+      'Respond instantly to every message',
+      'Qualify leads automatically',
+      'Book appointments',
+      'Follow up with prospects',
+      'Guide customers through your sales process',
+      'Integrate with your existing tools',
+    ],
+    closing1: 'And it works 24 hours a day. Every day.',
+    closing2: 'This is not just a chatbot.',
+    closing3: 'This is operational automation powered by AI.',
   },
   platform: {
     titleStart: 'One Platform.',
@@ -167,6 +220,19 @@ const en: Translations = {
       'Namespace isolation per agent',
     ],
   },
+  steps: {
+    titleStart: 'From Zero to Live',
+    titleHighlight: 'in Minutes.',
+    titleEnd: '',
+    items: [
+      { title: 'Create your account', desc: 'Get started in seconds' },
+      { title: 'Connect your communication channel', desc: 'WhatsApp, Web, or both' },
+      { title: 'Train your AI with your business information', desc: 'Knowledge base and flows' },
+      { title: 'Activate and go live', desc: 'Start selling on autopilot' },
+    ],
+    noDevLine: 'No developers. No technical setup. No agency dependency.',
+    tagline: 'Just automation that sells.',
+  },
   features: {
     titleStart: 'Everything you need to',
     titleHighlight: 'scale AI',
@@ -179,16 +245,30 @@ const en: Translations = {
       { title: 'Hosted in Europe', desc: '100% EU-based servers ensuring strict compliance with local data protection laws.' },
     ],
   },
-  steps: {
-    titleStart: 'From data to',
-    titleHighlight: 'live agent',
-    titleEnd: 'in minutes',
+  afterActivate: {
+    title: 'Conversations Turn Into Revenue.',
     items: [
-      { title: 'Create your workspace', desc: 'Set up isolated environments for different departments or clients.' },
-      { title: 'Train your AI agent', desc: 'Upload your proprietary data securely. Our vector engine handles the rest.' },
-      { title: 'Connect communication channels', desc: 'Link your WhatsApp Business API or copy our website widget code.' },
-      { title: 'Go live and monitor', desc: 'Watch your agents handle queries while you track performance in real-time.' },
+      'Faster response time',
+      'Higher conversion rates',
+      'Lower operational costs',
+      'Automated lead qualification',
+      'Consistent follow-up',
+      'More closed deals',
     ],
+    closing1: 'Your business stops depending on availability.',
+    closing2: 'It starts operating intelligently.',
+  },
+  whyBotfy: {
+    title: 'Built for Scale. Designed for Simplicity.',
+    items: [
+      '100% self-service',
+      'Transparent pricing',
+      'No setup fees',
+      'Built for modern businesses',
+      'Designed in Europe, starting in Ireland',
+    ],
+    tagline: 'We are building the AI infrastructure layer for ambitious companies.',
+    tagline2: 'Start local. Scale global.',
   },
   security: {
     titleLine1: 'Built for',
@@ -213,14 +293,22 @@ const en: Translations = {
     },
   },
   pricing: {
-    titleStart: 'Simple, scalable',
-    titleHighlight: 'pricing',
-    subtitle: 'Start building for free, upgrade when you need more power and volume.',
+    titleStart: 'Simple Pricing.',
+    titleHighlight: 'No Surprises.',
+    subtitle: 'Start free. Upgrade when you grow.',
     mostPopular: 'Most Popular',
     plans: [
       {
+        name: 'Free',
+        desc: 'Experience the power',
+        price: '€0',
+        period: '',
+        features: ['Try AI agents', 'Limited messages', 'Web widget', 'Community support'],
+        cta: 'Get Started',
+      },
+      {
         name: 'Starter',
-        desc: 'Perfect for testing and small projects.',
+        desc: 'For growing teams',
         price: '€49',
         period: '/mo',
         features: ['1 AI Agent', '500 Messages/mo', 'Web Widget', 'Community Support'],
@@ -228,15 +316,15 @@ const en: Translations = {
       },
       {
         name: 'Growth',
-        desc: 'For growing teams scaling AI operations.',
+        desc: 'For scaling businesses',
         price: '€149',
         period: '/mo',
         features: ['5 AI Agents', '5,000 Messages/mo', 'WhatsApp Integration', 'Priority Support'],
         cta: 'Get Started',
       },
       {
-        name: 'Business',
-        desc: 'Advanced controls for larger organizations.',
+        name: 'Scale',
+        desc: 'For high-volume operations',
         price: '€499',
         period: '/mo',
         features: ['Unlimited Agents', '50,000 Messages/mo', 'Custom Integrations', 'Dedicated Account Manager'],
@@ -244,7 +332,7 @@ const en: Translations = {
       },
       {
         name: 'Enterprise',
-        desc: 'For companies needing maximum security.',
+        desc: 'Custom AI infrastructure',
         price: 'Custom',
         period: '',
         features: ['Custom Volume', 'On-Premise Options', 'Custom SLA', 'Security Audits'],
@@ -252,10 +340,17 @@ const en: Translations = {
       },
     ],
   },
+  vision: {
+    title: 'The Future of Business Is Autonomous.',
+    line1: 'Companies that win tomorrow are building AI-powered operations today.',
+    line2: 'Botfy was created by operators who understand growth, automation and execution.',
+    line3: "We're not building another tool.",
+    line4: "We're building the workforce of the future.",
+  },
   cta: {
-    title: 'Ready to Deploy Secure AI in Your Company?',
-    subtitle: 'Secure AI Agents Infrastructure for European Companies. Build, train and deploy with confidence.',
-    button: 'Start Your Free Trial',
+    title: 'Ready to Sell on Autopilot?',
+    subtitle: 'Deploy your AI workforce today.',
+    button: 'Start Free Trial',
   },
   footer: {
     desc: 'Secure AI Agents Infrastructure for European Companies. Build, train and deploy with confidence.',
@@ -338,8 +433,8 @@ const en: Translations = {
 
 const pt: Translations = {
   nav: {
-    platform: 'Plataforma',
-    features: 'Recursos',
+    howItWorks: 'Como funciona',
+    solution: 'Solução',
     pricing: 'Preços',
     aboutUs: 'Sobre Nós',
     login: 'Entrar',
@@ -347,19 +442,42 @@ const pt: Translations = {
   },
   hero: {
     badge: 'Infraestrutura Segura de Agentes IA',
-    titleLine1: 'Transforme o Conhecimento da Sua Empresa em',
+    titleLine1: 'Monte Sua Força de Trabalho em IA.',
     titleLine2: '',
-    titleHighlight: 'Agentes IA Seguros.',
-    subtitle: 'Crie, treine e implante agentes IA conectados ao WhatsApp, Telegram e seu website — totalmente hospedado na Europa.',
+    titleHighlight: 'Venda no Piloto Automático.',
+    subtitle: 'Automatize conversas, qualifique leads e feche vendas 24/7 — sem contratar, sem complexidade.',
+    subtitle2: 'Implante agentes de IA em minutos e transforme cada mensagem em receita.',
     cta: 'Teste Grátis',
+    ctaSecondary: 'Ver Como Funciona',
+    trustBullets: ['Sem taxas de configuração.', 'Plataforma self-service.', 'No ar em minutos.'],
   },
   painPoints: {
-    titleStart: 'IA está em toda parte.',
-    titleBut: 'Mas',
-    titleHighlight: 'IA Enterprise-Ready',
-    titleEnd: 'não está.',
-    subtitle: 'A maioria das empresas luta para implementar IA com segurança. Construímos a Botfy para resolver os desafios mais difíceis de infraestrutura.',
-    items: ['Preocupações com Segurança', 'Infraestrutura Complexa', 'Desenvolvimento Caro', 'Riscos de Conformidade', 'Complexidade de Integração'],
+    title: 'Seu Negócio Está Perdendo Receita Todo Dia.',
+    subtitle: 'Cada mensagem não respondida é uma oportunidade perdida.',
+    items: [
+      'Leads esperam demais.',
+      'Clientes não recebem follow-up.',
+      'Conversas de vendas param no meio.',
+      'Contratar mais pessoas aumenta custo.',
+      'Gerir equipes aumenta complexidade.',
+      'Respostas manuais não escalam.',
+    ],
+    closing: 'Crescimento exige automação.',
+  },
+  solution: {
+    title: 'Conheça Sua Força de Trabalho em IA 24/7.',
+    intro: 'A Botfy permite que você implante agentes de IA que:',
+    items: [
+      'Respondem instantaneamente a cada mensagem',
+      'Qualificam leads automaticamente',
+      'Agendam reuniões',
+      'Dão follow-up em prospects',
+      'Guiam clientes pelo seu processo de vendas',
+      'Integram com suas ferramentas atuais',
+    ],
+    closing1: 'E funciona 24 horas por dia. Todos os dias.',
+    closing2: 'Não é só um chatbot.',
+    closing3: 'É automação operacional powered por IA.',
   },
   platform: {
     titleStart: 'Uma Plataforma.',
@@ -390,15 +508,42 @@ const pt: Translations = {
     ],
   },
   steps: {
-    titleStart: 'De dados a',
-    titleHighlight: 'agente ao vivo',
-    titleEnd: 'em minutos',
+    titleStart: 'Do zero ao vivo',
+    titleHighlight: 'em minutos.',
+    titleEnd: '',
     items: [
-      { title: 'Crie seu workspace', desc: 'Configure ambientes isolados para diferentes departamentos ou clientes.' },
-      { title: 'Treine seu agente IA', desc: 'Envie seus dados proprietários com segurança. Nosso motor vetorial cuida do resto.' },
-      { title: 'Conecte canais de comunicação', desc: 'Vincule sua API WhatsApp Business ou copie o código do widget.' },
-      { title: 'Vá ao vivo e monitore', desc: 'Veja seus agentes responderem consultas enquanto acompanha o desempenho em tempo real.' },
+      { title: 'Crie sua conta', desc: 'Comece em segundos' },
+      { title: 'Conecte seu canal de comunicação', desc: 'WhatsApp, Web ou ambos' },
+      { title: 'Treine sua IA com as informações do seu negócio', desc: 'Base de conhecimento e fluxos' },
+      { title: 'Ative e vá ao vivo', desc: 'Comece a vender no piloto automático' },
     ],
+    noDevLine: 'Sem desenvolvedores. Sem configuração técnica. Sem depender de agência.',
+    tagline: 'Só automação que vende.',
+  },
+  afterActivate: {
+    title: 'Conversas Viram Receita.',
+    items: [
+      'Resposta mais rápida',
+      'Maior taxa de conversão',
+      'Menor custo operacional',
+      'Qualificação de leads automatizada',
+      'Follow-up consistente',
+      'Mais negócios fechados',
+    ],
+    closing1: 'Seu negócio deixa de depender de disponibilidade.',
+    closing2: 'Passa a operar com inteligência.',
+  },
+  whyBotfy: {
+    title: 'Feito para Escalar. Pensado para Simplicidade.',
+    items: [
+      '100% self-service',
+      'Preços transparentes',
+      'Sem taxas de configuração',
+      'Feito para negócios modernos',
+      'Desenhado na Europa, começando na Irlanda',
+    ],
+    tagline: 'Estamos construindo a camada de infraestrutura em IA para empresas ambiciosas.',
+    tagline2: 'Comece local. Escale global.',
   },
   security: {
     titleLine1: 'Construído para',
@@ -423,49 +568,29 @@ const pt: Translations = {
     },
   },
   pricing: {
-    titleStart: 'Preços simples e',
-    titleHighlight: 'escaláveis',
-    subtitle: 'Comece a construir gratuitamente, atualize quando precisar de mais poder e volume.',
+    titleStart: 'Preços Simples.',
+    titleHighlight: 'Sem Surpresas.',
+    subtitle: 'Comece grátis. Atualize quando crescer.',
     mostPopular: 'Mais Popular',
     plans: [
-      {
-        name: 'Starter',
-        desc: 'Perfeito para testes e projetos pequenos.',
-        price: '€49',
-        period: '/mês',
-        features: ['1 Agente IA', '500 Mensagens/mês', 'Widget Web', 'Suporte Comunidade'],
-        cta: 'Começar',
-      },
-      {
-        name: 'Growth',
-        desc: 'Para equipes em crescimento escalando operações IA.',
-        price: '€149',
-        period: '/mês',
-        features: ['5 Agentes IA', '5.000 Mensagens/mês', 'Integração WhatsApp', 'Suporte Prioritário'],
-        cta: 'Começar',
-      },
-      {
-        name: 'Business',
-        desc: 'Controles avançados para organizações maiores.',
-        price: '€499',
-        period: '/mês',
-        features: ['Agentes Ilimitados', '50.000 Mensagens/mês', 'Integrações Customizadas', 'Gerente de Conta Dedicado'],
-        cta: 'Começar',
-      },
-      {
-        name: 'Enterprise',
-        desc: 'Para empresas que precisam de segurança máxima.',
-        price: 'Personalizado',
-        period: '',
-        features: ['Volume Customizado', 'Opções On-Premise', 'SLA Customizado', 'Auditorias de Segurança'],
-        cta: 'Falar com Vendas',
-      },
+      { name: 'Free', desc: 'Experimente o poder', price: '€0', period: '', features: ['Experimente agentes IA', 'Mensagens limitadas', 'Widget Web', 'Suporte comunidade'], cta: 'Começar' },
+      { name: 'Starter', desc: 'Para equipes em crescimento', price: '€49', period: '/mês', features: ['1 Agente IA', '500 Mensagens/mês', 'Widget Web', 'Suporte Comunidade'], cta: 'Começar' },
+      { name: 'Growth', desc: 'Para negócios em escala', price: '€149', period: '/mês', features: ['5 Agentes IA', '5.000 Mensagens/mês', 'Integração WhatsApp', 'Suporte Prioritário'], cta: 'Começar' },
+      { name: 'Scale', desc: 'Para operações de alto volume', price: '€499', period: '/mês', features: ['Agentes Ilimitados', '50.000 Mensagens/mês', 'Integrações Customizadas', 'Gerente de Conta Dedicado'], cta: 'Começar' },
+      { name: 'Enterprise', desc: 'Infraestrutura IA customizada', price: 'Personalizado', period: '', features: ['Volume Customizado', 'Opções On-Premise', 'SLA Customizado', 'Auditorias de Segurança'], cta: 'Falar com Vendas' },
     ],
   },
+  vision: {
+    title: 'O Futuro dos Negócios É Autônomo.',
+    line1: 'Empresas que vencerão amanhã estão construindo operações com IA hoje.',
+    line2: 'A Botfy foi criada por operadores que entendem crescimento, automação e execução.',
+    line3: 'Não estamos construindo mais uma ferramenta.',
+    line4: 'Estamos construindo a força de trabalho do futuro.',
+  },
   cta: {
-    title: 'Pronto para Implantar IA Segura na Sua Empresa?',
-    subtitle: 'Infraestrutura de Agentes IA Seguros para Empresas Europeias. Construa, treine e implante com confiança.',
-    button: 'Comece Seu Teste Grátis',
+    title: 'Pronto para Vender no Piloto Automático?',
+    subtitle: 'Implante sua força de trabalho em IA hoje.',
+    button: 'Teste Grátis',
   },
   footer: {
     desc: 'Infraestrutura de Agentes IA Seguros para Empresas Europeias. Construa, treine e implante com confiança.',
@@ -548,8 +673,8 @@ const pt: Translations = {
 
 const es: Translations = {
   nav: {
-    platform: 'Plataforma',
-    features: 'Características',
+    howItWorks: 'Cómo funciona',
+    solution: 'Solución',
     pricing: 'Precios',
     aboutUs: 'Sobre Nosotros',
     login: 'Iniciar sesión',
@@ -557,19 +682,42 @@ const es: Translations = {
   },
   hero: {
     badge: 'Infraestructura Segura de Agentes IA',
-    titleLine1: 'Convierte el Conocimiento de Tu Empresa en',
+    titleLine1: 'Construye Tu Fuerza de Trabajo en IA.',
     titleLine2: '',
-    titleHighlight: 'Agentes IA Seguros.',
-    subtitle: 'Crea, entrena y despliega agentes IA conectados a WhatsApp, Telegram y tu sitio web — completamente alojado en Europa.',
+    titleHighlight: 'Vende en Piloto Automático.',
+    subtitle: 'Automatiza conversaciones, califica leads y cierra ventas 24/7 — sin contratar, sin complejidad.',
+    subtitle2: 'Despliega agentes de IA en minutos y convierte cada mensaje en ingresos.',
     cta: 'Prueba Gratis',
+    ctaSecondary: 'Ver Cómo Funciona',
+    trustBullets: ['Sin costes de configuración.', 'Plataforma self-service.', 'En vivo en minutos.'],
   },
   painPoints: {
-    titleStart: 'La IA está en todas partes.',
-    titleBut: 'Pero',
-    titleHighlight: 'IA Enterprise-Ready',
-    titleEnd: 'no lo está.',
-    subtitle: 'La mayoría de las empresas luchan por implementar IA de forma segura. Construimos Botfy para resolver los desafíos de infraestructura más difíciles.',
-    items: ['Preocupaciones de Seguridad', 'Infraestructura Compleja', 'Desarrollo Costoso', 'Riesgos de Cumplimiento', 'Complejidad de Integración'],
+    title: 'Tu Negocio Pierde Ingresos Cada Día.',
+    subtitle: 'Cada mensaje sin respuesta es una oportunidad perdida.',
+    items: [
+      'Los leads esperan demasiado.',
+      'Los clientes no reciben seguimiento.',
+      'Las conversaciones de ventas se cortan.',
+      'Contratar más personas aumenta costes.',
+      'Gestionar equipos aumenta la complejidad.',
+      'Las respuestas manuales no escalan.',
+    ],
+    closing: 'El crecimiento requiere automatización.',
+  },
+  solution: {
+    title: 'Conoce Tu Fuerza de Trabajo en IA 24/7.',
+    intro: 'Botfy te permite desplegar agentes de IA que:',
+    items: [
+      'Responden al instante a cada mensaje',
+      'Califican leads automáticamente',
+      'Reservan citas',
+      'Dan seguimiento a prospectos',
+      'Guían a los clientes por tu proceso de ventas',
+      'Se integran con tus herramientas actuales',
+    ],
+    closing1: 'Y funciona 24 horas al día. Todos los días.',
+    closing2: 'No es solo un chatbot.',
+    closing3: 'Es automatización operativa impulsada por IA.',
   },
   platform: {
     titleStart: 'Una Plataforma.',
@@ -600,15 +748,42 @@ const es: Translations = {
     ],
   },
   steps: {
-    titleStart: 'De datos a',
-    titleHighlight: 'agente en vivo',
-    titleEnd: 'en minutos',
+    titleStart: 'De cero a en vivo',
+    titleHighlight: 'en minutos.',
+    titleEnd: '',
     items: [
-      { title: 'Crea tu workspace', desc: 'Configura entornos aislados para diferentes departamentos o clientes.' },
-      { title: 'Entrena tu agente IA', desc: 'Sube tus datos propietarios de forma segura. Nuestro motor vectorial se encarga del resto.' },
-      { title: 'Conecta canales de comunicación', desc: 'Vincula tu API de WhatsApp Business o copia el código del widget.' },
-      { title: 'Lanza y monitorea', desc: 'Observa cómo tus agentes manejan consultas mientras rastreas el rendimiento en tiempo real.' },
+      { title: 'Crea tu cuenta', desc: 'Empieza en segundos' },
+      { title: 'Conecta tu canal de comunicación', desc: 'WhatsApp, Web o ambos' },
+      { title: 'Entrena tu IA con la información de tu negocio', desc: 'Base de conocimiento y flujos' },
+      { title: 'Activa y pon en marcha', desc: 'Empieza a vender en piloto automático' },
     ],
+    noDevLine: 'Sin desarrolladores. Sin configuración técnica. Sin depender de agencias.',
+    tagline: 'Solo automatización que vende.',
+  },
+  afterActivate: {
+    title: 'Las Conversaciones Se Convierten en Ingresos.',
+    items: [
+      'Tiempo de respuesta más rápido',
+      'Mayor tasa de conversión',
+      'Menor coste operativo',
+      'Calificación de leads automatizada',
+      'Seguimiento consistente',
+      'Más tratos cerrados',
+    ],
+    closing1: 'Tu negocio deja de depender de la disponibilidad.',
+    closing2: 'Pasa a operar con inteligencia.',
+  },
+  whyBotfy: {
+    title: 'Hecho para Escalar. Diseñado para la Simplicidad.',
+    items: [
+      '100% self-service',
+      'Precios transparentes',
+      'Sin costes de configuración',
+      'Hecho para negocios modernos',
+      'Diseñado en Europa, empezando en Irlanda',
+    ],
+    tagline: 'Estamos construyendo la capa de infraestructura en IA para empresas ambiciosas.',
+    tagline2: 'Empieza local. Escala global.',
   },
   security: {
     titleLine1: 'Construido para',
@@ -633,49 +808,29 @@ const es: Translations = {
     },
   },
   pricing: {
-    titleStart: 'Precios simples y',
-    titleHighlight: 'escalables',
-    subtitle: 'Comienza a construir gratis, actualiza cuando necesites más potencia y volumen.',
+    titleStart: 'Precios Simples.',
+    titleHighlight: 'Sin Sorpresas.',
+    subtitle: 'Empieza gratis. Actualiza cuando crezcas.',
     mostPopular: 'Más Popular',
     plans: [
-      {
-        name: 'Starter',
-        desc: 'Perfecto para pruebas y proyectos pequeños.',
-        price: '€49',
-        period: '/mes',
-        features: ['1 Agente IA', '500 Mensajes/mes', 'Widget Web', 'Soporte Comunidad'],
-        cta: 'Comenzar',
-      },
-      {
-        name: 'Growth',
-        desc: 'Para equipos en crecimiento escalando operaciones IA.',
-        price: '€149',
-        period: '/mes',
-        features: ['5 Agentes IA', '5.000 Mensajes/mes', 'Integración WhatsApp', 'Soporte Prioritario'],
-        cta: 'Comenzar',
-      },
-      {
-        name: 'Business',
-        desc: 'Controles avanzados para organizaciones más grandes.',
-        price: '€499',
-        period: '/mes',
-        features: ['Agentes Ilimitados', '50.000 Mensajes/mes', 'Integraciones Personalizadas', 'Gerente de Cuenta Dedicado'],
-        cta: 'Comenzar',
-      },
-      {
-        name: 'Enterprise',
-        desc: 'Para empresas que necesitan máxima seguridad.',
-        price: 'Personalizado',
-        period: '',
-        features: ['Volumen Personalizado', 'Opciones On-Premise', 'SLA Personalizado', 'Auditorías de Seguridad'],
-        cta: 'Contactar Ventas',
-      },
+      { name: 'Free', desc: 'Experimenta el poder', price: '€0', period: '', features: ['Prueba agentes IA', 'Mensajes limitados', 'Widget Web', 'Soporte comunidad'], cta: 'Comenzar' },
+      { name: 'Starter', desc: 'Para equipos en crecimiento', price: '€49', period: '/mes', features: ['1 Agente IA', '500 Mensajes/mes', 'Widget Web', 'Soporte Comunidad'], cta: 'Comenzar' },
+      { name: 'Growth', desc: 'Para negocios en escala', price: '€149', period: '/mes', features: ['5 Agentes IA', '5.000 Mensajes/mes', 'Integración WhatsApp', 'Soporte Prioritario'], cta: 'Comenzar' },
+      { name: 'Scale', desc: 'Para operaciones de alto volumen', price: '€499', period: '/mes', features: ['Agentes Ilimitados', '50.000 Mensajes/mes', 'Integraciones Personalizadas', 'Gerente de Cuenta Dedicado'], cta: 'Comenzar' },
+      { name: 'Enterprise', desc: 'Infraestructura IA a medida', price: 'Personalizado', period: '', features: ['Volumen Personalizado', 'Opciones On-Premise', 'SLA Personalizado', 'Auditorías de Seguridad'], cta: 'Contactar Ventas' },
     ],
   },
+  vision: {
+    title: 'El Futuro del Negocio Es Autónomo.',
+    line1: 'Las empresas que ganarán mañana están construyendo operaciones con IA hoy.',
+    line2: 'Botfy fue creada por operadores que entienden crecimiento, automatización y ejecución.',
+    line3: 'No estamos construyendo otra herramienta.',
+    line4: 'Estamos construyendo la fuerza de trabajo del futuro.',
+  },
   cta: {
-    title: '¿Listo para Desplegar IA Segura en Tu Empresa?',
-    subtitle: 'Infraestructura de Agentes IA Seguros para Empresas Europeas. Construye, entrena y despliega con confianza.',
-    button: 'Comienza Tu Prueba Gratis',
+    title: '¿Listo para Vender en Piloto Automático?',
+    subtitle: 'Despliega tu fuerza de trabajo en IA hoy.',
+    button: 'Prueba Gratis',
   },
   footer: {
     desc: 'Infraestructura de Agentes IA Seguros para Empresas Europeas. Construye, entrena y despliega con confianza.',

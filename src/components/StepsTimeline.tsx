@@ -7,11 +7,11 @@ export function StepsTimeline() {
   const { t } = useLanguage()
 
   return (
-    <SectionWrapper className="py-24">
+    <SectionWrapper id="how-it-works" className="py-24">
       <div className="mb-16 text-center">
         <h2 className="text-3xl font-black italic tracking-tight sm:text-4xl lg:text-5xl">
           {t.steps.titleStart}{' '}
-          <span className="gradient-text">{t.steps.titleHighlight}</span>{' '}
+          <span className="gradient-text">{t.steps.titleHighlight}</span>
           {t.steps.titleEnd}
         </h2>
       </div>
@@ -54,6 +54,12 @@ export function StepsTimeline() {
           )
         })}
       </div>
+      <p className="mt-12 text-center text-gray-500">
+        {t.steps.noDevLine}
+      </p>
+      <p className="mt-2 text-center font-semibold text-purple-300">
+        {t.steps.tagline}
+      </p>
     </SectionWrapper>
   )
 }

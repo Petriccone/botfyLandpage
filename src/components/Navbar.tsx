@@ -12,8 +12,8 @@ const languages: { code: Language; label: string }[] = [
 ]
 
 const hashLinks = [
-  { labelKey: 'platform' as const, to: '/#platform', id: 'platform' },
-  { labelKey: 'features' as const, to: '/#features', id: 'features' },
+  { labelKey: 'howItWorks' as const, to: '/#how-it-works', id: 'how-it-works' },
+  { labelKey: 'solution' as const, to: '/#solution', id: 'solution' },
   { labelKey: 'pricing' as const, to: '/#pricing', id: 'pricing' },
 ]
 
@@ -34,7 +34,7 @@ export function Navbar() {
     }
   }
 
-  const navLabel = (key: 'platform' | 'features' | 'pricing') => t.nav[key]
+  const navLabel = (key: 'howItWorks' | 'solution' | 'pricing') => t.nav[key]
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] bg-[#0a0a1a]/80 backdrop-blur-xl">

@@ -1,10 +1,12 @@
 import { Hero } from '../components/Hero'
 import { PainPoints } from '../components/PainPoints'
-import { Platform } from '../components/Platform'
-import { FeaturesGrid } from '../components/FeaturesGrid'
+import { SolutionSection } from '../components/SolutionSection'
 import { StepsTimeline } from '../components/StepsTimeline'
+import { AfterActivate } from '../components/AfterActivate'
+import { WhyBotfy } from '../components/WhyBotfy'
 import { SecurityScale } from '../components/SecurityScale'
 import { Pricing } from '../components/Pricing'
+import { VisionSection } from '../components/VisionSection'
 import { CTASection } from '../components/CTASection'
 
 export function Home() {
@@ -12,11 +14,13 @@ export function Home() {
     <>
       <Hero />
       <PainPoints />
-      <Platform />
-      <FeaturesGrid />
+      <SolutionSection />
       <StepsTimeline />
+      <AfterActivate />
+      <WhyBotfy />
       <SecurityScale />
       <Pricing />
+      <VisionSection />
       <CTASection />
     </>
   )
