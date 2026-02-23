@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Button } from './ui/Button'
 import { useLanguage } from '../hooks/useLanguage'
@@ -11,16 +11,30 @@ const languages: { code: Language; label: string }[] = [
   { code: 'es', label: 'ES' },
 ]
 
+const hashLinks = [
+  { labelKey: 'platform' as const, to: '/#platform', id: 'platform' },
+  { labelKey: 'features' as const, to: '/#features', id: 'features' },
+  { labelKey: 'pricing' as const, to: '/#pricing', id: 'pricing' },
+]
+
 export function Navbar() {
   const { language, setLanguage, t } = useLanguage()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
-  const navLinks = [
-    { label: t.nav.platform, to: '/#platform' },
-    { label: t.nav.features, to: '/#features' },
-    { label: t.nav.pricing, to: '/#pricing' },
-    { label: t.nav.company, to: '/#security' },
-  ]
+  const handleHashClick = (e: React.MouseEvent, to: string, id: string) => {
+    setMobileOpen(false)
+    if (location.pathname === '/') {
+      e.preventDefault()
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      e.preventDefault()
+      navigate(to)
+    }
+  }
+
+  const navLabel = (key: 'platform' | 'features' | 'pricing') => t.nav[key]
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] bg-[#0a0a1a]/80 backdrop-blur-xl">
@@ -38,15 +52,23 @@ export function Navbar() {
 
         {/* Desktop nav links */}
         <div className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => (
+          {hashLinks.map((link) => (
             <Link
-              key={link.to}
+              key={link.id}
               to={link.to}
+              onClick={(e) => handleHashClick(e, link.to, link.id)}
               className="rounded-md px-4 py-2 text-sm text-gray-400 transition-colors hover:text-white no-underline"
             >
-              {link.label}
+              {navLabel(link.labelKey)}
             </Link>
           ))}
+          <Link
+            to="/about"
+            className="rounded-md px-4 py-2 text-sm text-gray-400 transition-colors hover:text-white no-underline"
+            onClick={() => setMobileOpen(false)}
+          >
+            {t.nav.aboutUs}
+          </Link>
         </div>
 
         {/* Right side */}
@@ -94,16 +116,23 @@ export function Navbar() {
       {mobileOpen && (
         <div className="border-t border-white/[0.06] bg-[#0a0a1a]/95 backdrop-blur-xl md:hidden">
           <div className="space-y-1 px-4 py-4">
-            {navLinks.map((link) => (
+            {hashLinks.map((link) => (
               <Link
-                key={link.to}
+                key={link.id}
                 to={link.to}
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => handleHashClick(e, link.to, link.id)}
                 className="block rounded-md px-3 py-2 text-sm text-gray-400 transition-colors hover:text-white no-underline"
               >
-                {link.label}
+                {navLabel(link.labelKey)}
               </Link>
             ))}
+            <Link
+              to="/about"
+              onClick={() => setMobileOpen(false)}
+              className="block rounded-md px-3 py-2 text-sm text-gray-400 transition-colors hover:text-white no-underline"
+            >
+              {t.nav.aboutUs}
+            </Link>
             <div className="flex gap-2 pt-3">
               {languages.map((lang) => (
                 <button

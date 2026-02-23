@@ -5,7 +5,7 @@ export interface Translations {
     platform: string
     features: string
     pricing: string
-    company: string
+    aboutUs: string
     login: string
     startFreeTrial: string
   }
@@ -131,7 +131,7 @@ const en: Translations = {
     platform: 'Platform',
     features: 'Features',
     pricing: 'Pricing',
-    company: 'Company',
+    aboutUs: 'About Us',
     login: 'Log in',
     startFreeTrial: 'Start Free Trial',
   },
@@ -341,7 +341,7 @@ const pt: Translations = {
     platform: 'Plataforma',
     features: 'Recursos',
     pricing: 'Preços',
-    company: 'Empresa',
+    aboutUs: 'Sobre Nós',
     login: 'Entrar',
     startFreeTrial: 'Teste Grátis',
   },
@@ -551,7 +551,7 @@ const es: Translations = {
     platform: 'Plataforma',
     features: 'Características',
     pricing: 'Precios',
-    company: 'Empresa',
+    aboutUs: 'Sobre Nosotros',
     login: 'Iniciar sesión',
     startFreeTrial: 'Prueba Gratis',
   },
