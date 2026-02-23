@@ -93,7 +93,35 @@ export interface Translations {
     copyright: string
   }
   pages: {
-    about: { title: string; lead: string; content: string }
+    about: {
+      title: string
+      intro: string[]
+      missionTitle: string
+      missionContent: string
+      problemTitle: string
+      problemIntro: string
+      problemList: string[]
+      problemClosing: string
+      positioningTitle: string
+      positioningIntro: string
+      positioningList: string[]
+      positioningClosing: string
+      strategyTitle: string
+      strategyIntro: string
+      strategyPlanRef: string
+      strategyPrincipleIntro: string
+      strategyList: string[]
+      strategyClosing: string
+      differentTitle: string
+      differentList: string[]
+      differentClosing: string
+      visionTitle: string
+      visionList: string[]
+      visionClosing: string
+      founderTitle: string
+      founderContent: string[]
+      founderClosing: string
+    }
     contact: { title: string; lead: string; email: string; emailLabel: string }
   }
 }
@@ -246,8 +274,58 @@ const en: Translations = {
   pages: {
     about: {
       title: 'About Us',
-      lead: 'We build secure AI infrastructure for European companies.',
-      content: 'Botfy provides a platform to create, train and deploy AI agents connected to WhatsApp, Telegram and your website — fully hosted in Europe, with enterprise-grade security and GDPR compliance.',
+      intro: [
+        'Botfy was created with a simple but ambitious mission: to transform how businesses communicate with their customers.',
+        'We live in a world where messages never stop. WhatsApp, social media, website chats, forms — everything happens in real time. Small and medium-sized businesses are overwhelmed, losing sales, time, and opportunities.',
+        'Botfy exists to fix that.',
+      ],
+      missionTitle: 'Our Mission',
+      missionContent: 'To democratize access to intelligent AI agents through a 100% self-service platform that is simple to set up, powerful in execution, and scalable for any business. We are starting in Ireland, with a clear vision to expand across Europe and eventually worldwide.',
+      problemTitle: 'The Problem We Solve',
+      problemIntro: 'Every day, businesses deal with:',
+      problemList: [
+        'Repetitive questions',
+        'After-hours messages',
+        'Leads that go unanswered',
+        'Conversations that fall through the cracks',
+      ],
+      problemClosing: 'Every delayed response can mean a lost sale. Botfy automates these interactions with intelligence, keeping businesses responsive 24/7 — without technical complexity and without requiring developers.',
+      positioningTitle: 'Our Positioning',
+      positioningIntro: 'We are a scalable SaaS company built on Product-Led Growth principles. Our focus is on:',
+      positioningList: ['Simplicity', 'Fast activation', 'Clear value', 'Sustainable growth'],
+      positioningClosing: 'Our freemium model allows businesses to experience real value before upgrading. We believe the best marketing strategy is a product that works.',
+      strategyTitle: 'Our Strategy',
+      strategyIntro: 'According to our strategic action plan',
+      strategyPlanRef: 'Plano-de-Acao-Para-ser-Seguido',
+      strategyPrincipleIntro: 'Botfy is built on three core principles:',
+      strategyList: [
+        'Horizontal product (serves any business)',
+        'Vertical communication (focus on one niche at a time)',
+        'Structured, measurable growth',
+      ],
+      strategyClosing: 'We are initially focusing on Irish businesses that handle high volumes of customer messages, validating and refining the product before expanding into new industries.',
+      differentTitle: 'What Makes Us Different',
+      differentList: [
+        '100% self-service platform',
+        'No setup fees',
+        'Fast onboarding',
+        'Results-focused approach',
+        'Scalable from small businesses to growing operations',
+      ],
+      differentClosing: "We don't just automate conversations — we create predictability.",
+      visionTitle: 'Our Vision',
+      visionList: [
+        'Year 1: Establish strong presence in Ireland',
+        'Year 2: Expand across Europe',
+        'Year 3: Become a global reference in AI-powered customer agents',
+      ],
+      visionClosing: "We believe the future of customer support is not about replacing people — it's about empowering them.",
+      founderTitle: "Founder's Vision",
+      founderContent: [
+        'Botfy is driven by a clear belief: powerful technology should be accessible, practical, and built for real businesses.',
+        'More than a tool, Botfy represents a shift toward smarter, faster, and more efficient customer communication.',
+      ],
+      founderClosing: 'If you believe fast response means real growth, you already understand Botfy.',
     },
     contact: {
       title: 'Contact',
@@ -406,8 +484,58 @@ const pt: Translations = {
   pages: {
     about: {
       title: 'Sobre Nós',
-      lead: 'Construímos infraestrutura de IA segura para empresas europeias.',
-      content: 'A Botfy oferece uma plataforma para criar, treinar e implantar agentes de IA conectados ao WhatsApp, Telegram e ao seu site — totalmente hospedada na Europa, com segurança de nível empresarial e conformidade com a GDPR.',
+      intro: [
+        'A Botfy foi criada com uma missão simples mas ambiciosa: transformar a forma como as empresas se comunicam com os clientes.',
+        'Vivemos num mundo em que as mensagens nunca param. WhatsApp, redes sociais, chats no site, formulários — tudo em tempo real. Pequenas e médias empresas ficam sobrecarregadas, perdendo vendas, tempo e oportunidades.',
+        'A Botfy existe para resolver isso.',
+      ],
+      missionTitle: 'Nossa Missão',
+      missionContent: 'Democratizar o acesso a agentes de IA inteligentes através de uma plataforma 100% self-service, simples de configurar, poderosa na execução e escalável para qualquer negócio. Começamos na Irlanda, com visão clara de expansão pela Europa e depois pelo mundo.',
+      problemTitle: 'O Problema que Resolvemos',
+      problemIntro: 'Todos os dias as empresas enfrentam:',
+      problemList: [
+        'Perguntas repetitivas',
+        'Mensagens fora do horário',
+        'Leads sem resposta',
+        'Conversas que se perdem',
+      ],
+      problemClosing: 'Cada resposta atrasada pode ser uma venda perdida. A Botfy automatiza essas interações com inteligência, mantendo as empresas responsivas 24/7 — sem complexidade técnica e sem precisar de desenvolvedores.',
+      positioningTitle: 'Nosso Posicionamento',
+      positioningIntro: 'Somos uma empresa SaaS escalável baseada em Product-Led Growth. Nosso foco está em:',
+      positioningList: ['Simplicidade', 'Ativação rápida', 'Valor claro', 'Crescimento sustentável'],
+      positioningClosing: 'Nosso modelo freemium permite que as empresas experimentem valor real antes de fazer upgrade. Acreditamos que a melhor estratégia de marketing é um produto que funciona.',
+      strategyTitle: 'Nossa Estratégia',
+      strategyIntro: 'De acordo com nosso plano de ação estratégico',
+      strategyPlanRef: 'Plano-de-Acao-Para-ser-Seguido',
+      strategyPrincipleIntro: 'A Botfy é construída sobre três princípios:',
+      strategyList: [
+        'Produto horizontal (atende qualquer negócio)',
+        'Comunicação vertical (foco em um nicho por vez)',
+        'Crescimento estruturado e mensurável',
+      ],
+      strategyClosing: 'Estamos focando inicialmente em negócios irlandeses que lidam com alto volume de mensagens de clientes, validando e refinando o produto antes de expandir para novos setores.',
+      differentTitle: 'O que Nos Diferencia',
+      differentList: [
+        'Plataforma 100% self-service',
+        'Sem taxas de configuração',
+        'Onboarding rápido',
+        'Abordagem focada em resultados',
+        'Escalável de pequenos negócios a operações em crescimento',
+      ],
+      differentClosing: 'Não apenas automatizamos conversas — criamos previsibilidade.',
+      visionTitle: 'Nossa Visão',
+      visionList: [
+        'Ano 1: Estabelecer presença forte na Irlanda',
+        'Ano 2: Expandir pela Europa',
+        'Ano 3: Tornar-nos referência global em agentes de atendimento com IA',
+      ],
+      visionClosing: 'Acreditamos que o futuro do atendimento ao cliente não é substituir pessoas — é capacitá-las.',
+      founderTitle: 'Visão do Fundador',
+      founderContent: [
+        'A Botfy é guiada por uma crença clara: tecnologia poderosa deve ser acessível, prática e feita para negócios reais.',
+        'Mais do que uma ferramenta, a Botfy representa uma mudança em direção a uma comunicação com o cliente mais inteligente, rápida e eficiente.',
+      ],
+      founderClosing: 'Se você acredita que resposta rápida significa crescimento real, você já entende a Botfy.',
     },
     contact: {
       title: 'Contato',
@@ -566,8 +694,58 @@ const es: Translations = {
   pages: {
     about: {
       title: 'Sobre Nosotros',
-      lead: 'Construimos infraestructura de IA segura para empresas europeas.',
-      content: 'Botfy ofrece una plataforma para crear, entrenar y desplegar agentes de IA conectados a WhatsApp, Telegram y tu sitio web — alojado en Europa, con seguridad empresarial y cumplimiento GDPR.',
+      intro: [
+        'Botfy nació con una misión simple pero ambiciosa: transformar cómo las empresas se comunican con sus clientes.',
+        'Vivimos en un mundo donde los mensajes nunca paran. WhatsApp, redes sociales, chats web, formularios — todo en tiempo real. Las pymes se ven desbordadas, perdiendo ventas, tiempo y oportunidades.',
+        'Botfy existe para solucionarlo.',
+      ],
+      missionTitle: 'Nuestra Misión',
+      missionContent: 'Democratizar el acceso a agentes de IA inteligentes mediante una plataforma 100% self-service, sencilla de configurar, potente en ejecución y escalable para cualquier negocio. Empezamos en Irlanda, con la visión clara de expandirnos por Europa y luego a nivel mundial.',
+      problemTitle: 'El Problema que Resolvemos',
+      problemIntro: 'Cada día las empresas lidian con:',
+      problemList: [
+        'Preguntas repetitivas',
+        'Mensajes fuera de horario',
+        'Leads sin respuesta',
+        'Conversaciones que se pierden',
+      ],
+      problemClosing: 'Cada respuesta retrasada puede ser una venta perdida. Botfy automatiza estas interacciones con inteligencia, manteniendo a las empresas respondiendo 24/7 — sin complejidad técnica y sin necesidad de desarrolladores.',
+      positioningTitle: 'Nuestro Posicionamiento',
+      positioningIntro: 'Somos una empresa SaaS escalable basada en Product-Led Growth. Nuestro foco está en:',
+      positioningList: ['Simplicidad', 'Activación rápida', 'Valor claro', 'Crecimiento sostenible'],
+      positioningClosing: 'Nuestro modelo freemium permite que las empresas experimenten valor real antes de actualizar. Creemos que la mejor estrategia de marketing es un producto que funciona.',
+      strategyTitle: 'Nuestra Estrategia',
+      strategyIntro: 'Según nuestro plan de acción estratégico',
+      strategyPlanRef: 'Plano-de-Acao-Para-ser-Seguido',
+      strategyPrincipleIntro: 'Botfy se basa en tres principios:',
+      strategyList: [
+        'Producto horizontal (sirve a cualquier negocio)',
+        'Comunicación vertical (enfoque en un nicho a la vez)',
+        'Crecimiento estructurado y medible',
+      ],
+      strategyClosing: 'Nos enfocamos inicialmente en negocios irlandeses con alto volumen de mensajes de clientes, validando y refinando el producto antes de expandir a nuevas industrias.',
+      differentTitle: 'Qué Nos Diferencia',
+      differentList: [
+        'Plataforma 100% self-service',
+        'Sin costes de configuración',
+        'Onboarding rápido',
+        'Enfoque en resultados',
+        'Escalable desde pequeñas empresas hasta operaciones en crecimiento',
+      ],
+      differentClosing: 'No solo automatizamos conversaciones — creamos predictibilidad.',
+      visionTitle: 'Nuestra Visión',
+      visionList: [
+        'Año 1: Establecer presencia sólida en Irlanda',
+        'Año 2: Expandir por Europa',
+        'Año 3: Ser referencia global en agentes de atención al cliente con IA',
+      ],
+      visionClosing: 'Creemos que el futuro del soporte al cliente no es reemplazar a las personas — es empoderarlas.',
+      founderTitle: 'Visión del Fundador',
+      founderContent: [
+        'Botfy está impulsada por una creencia clara: la tecnología potente debe ser accesible, práctica y hecha para negocios reales.',
+        'Más que una herramienta, Botfy representa un cambio hacia una comunicación con el cliente más inteligente, rápida y eficiente.',
+      ],
+      founderClosing: 'Si crees que respuesta rápida significa crecimiento real, ya entiendes Botfy.',
     },
     contact: {
       title: 'Contacto',
