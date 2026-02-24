@@ -14,7 +14,7 @@ export function SecurityScale() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8 backdrop-blur-sm sm:p-10 lg:p-12"
+        className="border border-accent-cyan/10 bg-background p-8 sm:p-10 lg:p-12"
       >
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left: título, texto e lista */}
@@ -30,7 +30,7 @@ export function SecurityScale() {
             <ul className="space-y-4">
               {t.security.listItems.map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-white">
-                  <CheckCircle size={18} className="shrink-0 text-purple-400" />
+                  <CheckCircle size={18} className="shrink-0 text-accent-cyan" />
                   <span className="font-medium">{item}</span>
                 </li>
               ))}
@@ -38,7 +38,7 @@ export function SecurityScale() {
           </div>
 
           {/* Right: card Frankfurt Region */}
-          <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6">
+          <div className="border border-white/5 bg-background p-6">
             <div className="mb-6 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5">

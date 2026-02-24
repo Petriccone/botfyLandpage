@@ -13,12 +13,15 @@ export function CTASection() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="relative overflow-hidden rounded-3xl border border-white/[0.06] bg-gradient-to-br from-white/[0.03] to-white/[0.01] px-8 py-20 text-center"
+        className="relative overflow-hidden border border-accent-cyan/20 bg-background px-8 py-20 text-center"
       >
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-10 -right-10 w-20 h-20 bg-accent-cyan/5 blur-2xl" />
+        </div>
         {/* Background glows */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-purple-600/20 blur-[100px]" />
-          <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-blue-600/15 blur-[100px]" />
+          <div className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-accent-cyan/10 blur-[100px]" />
+          <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-accent-blue/10 blur-[100px]" />
         </div>
 
         <div className="relative">

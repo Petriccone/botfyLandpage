@@ -31,9 +31,8 @@ export function StepsTimeline() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className={`relative mb-12 flex items-center gap-8 ${
-                isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
-              }`}
+              className={`relative mb-12 flex items-center gap-8 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+                }`}
             >
               {/* Card */}
               <div className="flex-1">
@@ -44,7 +43,7 @@ export function StepsTimeline() {
               </div>
 
               {/* Number circle */}
-              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-purple-500/50 bg-[#0a0a1a] text-sm font-bold text-purple-400">
+              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-accent-cyan/50 bg-background text-sm font-bold text-accent-cyan">
                 {num}
               </div>
 

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Button } from './ui/Button'
@@ -20,8 +20,15 @@ const hashLinks = [
 export function Navbar() {
   const { language, setLanguage, t } = useLanguage()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const handleHashClick = (e: React.MouseEvent, to: string, id: string) => {
     setMobileOpen(false)
@@ -37,115 +44,100 @@ export function Navbar() {
   const navLabel = (key: 'howItWorks' | 'solution' | 'pricing') => t.nav[key]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] bg-[#0a0a1a]/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        {/* Logo: robô + Botfy juntos */}
-        <Link to="/" className="flex items-center gap-1.5 shrink-0 [&_img]:shrink-0 no-underline">
-          <img
-            src="/botfy-logo-robot.png"
-            alt=""
-            className="h-12 w-auto object-contain"
-            aria-hidden
-          />
-          <span className="whitespace-nowrap leading-none"><span className="logo-botfy-bot">Bot</span><span className="logo-botfy-fy">fy</span></span>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5 py-3' : 'bg-transparent py-5'}`}>
+      <div className="mx-auto max-w-7xl flex items-center justify-between px-6">
+        <Link to="/" className="flex items-center gap-3 no-underline">
+          <div className="w-8 h-8 rounded-lg bg-accent-purple flex items-center justify-center font-bold text-white text-lg shadow-[0_0_15px_rgba(139,92,246,0.5)]">B</div>
+          <span className="text-xl font-display font-bold tracking-tight uppercase text-white">Botfy</span>
         </Link>
 
-        {/* Desktop nav links */}
-        <div className="hidden items-center gap-1 md:flex">
+        {/* Desktop Links */}
+        <div className="hidden items-center gap-8 md:flex">
           {hashLinks.map((link) => (
             <Link
               key={link.id}
               to={link.to}
               onClick={(e) => handleHashClick(e, link.to, link.id)}
-              className="rounded-md px-4 py-2 text-sm text-gray-400 transition-colors hover:text-white no-underline"
+              className="text-[13px] font-medium text-text-secondary transition-colors hover:text-white no-underline"
             >
               {navLabel(link.labelKey)}
             </Link>
           ))}
           <Link
             to="/about"
-            className="rounded-md px-4 py-2 text-sm text-gray-400 transition-colors hover:text-white no-underline"
-            onClick={() => setMobileOpen(false)}
+            className="text-[13px] font-medium text-text-secondary transition-colors hover:text-white no-underline"
           >
             {t.nav.aboutUs}
           </Link>
         </div>
 
-        {/* Right side */}
-        <div className="flex items-center gap-3">
-          {/* Language switcher */}
-          <div className="hidden items-center rounded-lg border border-white/10 sm:flex">
+        {/* Action Belt */}
+        <div className="flex items-center gap-4">
+          <div className="hidden items-center md:flex gap-4 mr-4">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => setLanguage(lang.code)}
-                className={`cursor-pointer px-3 py-1.5 text-xs font-medium transition-colors ${
-                  language === lang.code
-                    ? 'bg-white/10 text-white'
-                    : 'text-gray-500 hover:text-gray-300'
-                } ${lang.code === 'en' ? 'rounded-l-lg' : ''} ${lang.code === 'es' ? 'rounded-r-lg' : ''}`}
+                className={`cursor-pointer text-[11px] font-bold tracking-widest transition-colors ${language === lang.code ? 'text-white' : 'text-text-muted hover:text-text-secondary'}`}
               >
                 {lang.label}
               </button>
             ))}
           </div>
 
-          <a href="https://botfyai.vercel.app/login" target="_blank" rel="noopener noreferrer" className="no-underline hidden md:inline-flex">
-            <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
+          <a href="https://botfyai.vercel.app/login" target="_blank" rel="noopener noreferrer" className="no-underline hidden sm:inline-flex">
+            <span className="text-[13px] font-medium text-text-secondary hover:text-white transition-colors cursor-pointer px-4">
               {t.nav.login}
-            </Button>
+            </span>
           </a>
 
           <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
-            <Button variant="primary" size="sm">
+            <Button className="h-10 px-6 rounded-full bg-white text-black hover:bg-white/90 text-xs font-bold transition-all">
               {t.nav.startFreeTrial}
             </Button>
           </a>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-white md:hidden cursor-pointer"
+            className="inline-flex items-center justify-center p-2 text-text-secondary hover:text-white md:hidden"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="border-t border-white/[0.06] bg-[#0a0a1a]/95 backdrop-blur-xl md:hidden">
-          <div className="space-y-1 px-4 py-4">
+        <div className="absolute top-full left-0 right-0 bg-black border-b border-white/5 p-8 flex flex-col gap-6 md:hidden animate-in fade-in slide-in-from-top-4 duration-300">
+          <div className="flex flex-col gap-4">
             {hashLinks.map((link) => (
               <Link
                 key={link.id}
                 to={link.to}
                 onClick={(e) => handleHashClick(e, link.to, link.id)}
-                className="block rounded-md px-3 py-2 text-sm text-gray-400 transition-colors hover:text-white no-underline"
+                className="text-lg font-medium text-text-secondary no-underline"
               >
                 {navLabel(link.labelKey)}
               </Link>
             ))}
             <Link
               to="/about"
+              className="text-lg font-medium text-text-secondary no-underline"
               onClick={() => setMobileOpen(false)}
-              className="block rounded-md px-3 py-2 text-sm text-gray-400 transition-colors hover:text-white no-underline"
             >
               {t.nav.aboutUs}
             </Link>
-            <div className="flex gap-2 pt-3">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => setLanguage(lang.code)}
-                  className={`cursor-pointer rounded-md px-3 py-1.5 text-xs font-medium ${
-                    language === lang.code ? 'bg-white/10 text-white' : 'text-gray-500'
-                  }`}
-                >
-                  {lang.label}
-                </button>
-              ))}
-            </div>
+          </div>
+          <div className="flex gap-4 pt-4 border-t border-white/5">
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => setLanguage(lang.code)}
+                className={`text-sm font-bold tracking-widest ${language === lang.code ? 'text-white' : 'text-text-muted'}`}
+              >
+                {lang.label}
+              </button>
+            ))}
           </div>
         </div>
       )}

@@ -1,8 +1,6 @@
 import { CheckCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Button } from './ui/Button'
-import { Badge } from './ui/Badge'
-import { SectionWrapper } from './ui/SectionWrapper'
 import { useLanguage } from '../hooks/useLanguage'
 
 const STRIPE_LINKS: (string | null)[] = [
@@ -17,85 +15,84 @@ export function Pricing() {
   const { t } = useLanguage()
 
   return (
-    <SectionWrapper id="pricing" className="py-24">
-      <div className="mb-16 text-center">
-        <h2 className="mb-4 text-3xl font-black italic tracking-tight sm:text-4xl lg:text-5xl">
-          {t.pricing.titleStart}{' '}
-          <span className="gradient-text">{t.pricing.titleHighlight}</span>
-        </h2>
-        <p className="text-gray-400 text-lg">{t.pricing.subtitle}</p>
-      </div>
+    <section id="pricing" className="py-32 bg-black overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="mb-20 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight text-white"
+          >
+            {t.pricing.titleStart}{' '}
+            <span className="text-accent-purple">{t.pricing.titleHighlight}</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-text-secondary text-lg max-w-2xl mx-auto font-light"
+          >
+            {t.pricing.subtitle}
+          </motion.p>
+        </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-        {t.pricing.plans.map((plan, i) => {
-          const isPopular = i === 2
-          return (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative"
-            >
-              {isPopular && (
-                <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2">
-                  <Badge variant="popular">{t.pricing.mostPopular}</Badge>
-                </div>
-              )}
-              <div
-                className={`flex h-full flex-col rounded-xl border p-6 ${
-                  isPopular
-                    ? 'border-purple-500/40 bg-white/[0.06]'
-                    : 'border-white/[0.08] bg-white/[0.03]'
-                }`}
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-5">
+          {t.pricing.plans.map((plan, i) => {
+            const isPopular = i === 2
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className={`relative flex flex-col p-8 rounded-3xl border transition-all duration-300 ${isPopular
+                    ? 'bg-[#0a0a0a] border-accent-purple/50 shadow-[0_0_30px_rgba(139,92,246,0.1)]'
+                    : 'bg-[#050505] border-white/5 hover:border-white/10'
+                  }`}
               >
-                <h3 className="mb-1 text-xl font-bold">{plan.name}</h3>
-                <p className="mb-6 text-sm text-gray-500">{plan.desc}</p>
+                {isPopular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent-purple text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
+                    {t.pricing.mostPopular}
+                  </div>
+                )}
 
-                <div className="mb-6">
-                  <span className="text-4xl font-black">{plan.price}</span>
-                  <span className="text-sm text-gray-500">{plan.period}</span>
+                <h3 className="text-lg font-bold text-white mb-2">{plan.name}</h3>
+                <div className="flex items-baseline gap-1 mb-8">
+                  <span className="text-4xl font-display font-bold text-white">{plan.price}</span>
+                  <span className="text-xs text-text-muted">{plan.period}</span>
                 </div>
 
-                <ul className="mb-8 flex-1 space-y-3">
+                <ul className="space-y-4 mb-8 flex-1">
                   {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm text-gray-300">
-                      <CheckCircle size={16} className="shrink-0 text-purple-400" />
-                      {feature}
+                    <li key={j} className="flex gap-3 text-sm text-text-secondary leading-tight">
+                      <CheckCircle size={14} className="shrink-0 text-accent-purple mt-0.5" />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                {STRIPE_LINKS[i] ? (
-                  <a
-                    href={STRIPE_LINKS[i]!}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="no-underline"
-                  >
-                    <Button
-                      variant={isPopular ? 'primary' : 'secondary'}
-                      size="md"
-                      className="w-full"
-                    >
-                      {plan.cta}
-                    </Button>
-                  </a>
-                ) : (
+                <a
+                  href={STRIPE_LINKS[i] || '#contact'}
+                  className="mt-auto block"
+                >
                   <Button
                     variant={isPopular ? 'primary' : 'secondary'}
-                    size="md"
-                    className="w-full"
+                    className={`w-full rounded-full h-11 text-xs font-bold tracking-widest ${isPopular
+                        ? 'bg-accent-purple text-white hover:bg-accent-purple/90 border-none'
+                        : 'border-white/10 bg-white/5 text-white hover:bg-white/10'
+                      }`}
                   >
                     {plan.cta}
                   </Button>
-                )}
-              </div>
-            </motion.div>
-          )
-        })}
+                </a>
+              </motion.div>
+            )
+          })}
+        </div>
       </div>
-    </SectionWrapper>
+    </section>
   )
 }

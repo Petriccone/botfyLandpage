@@ -32,7 +32,7 @@ export default function App() {
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t: translations[language] }}>
       <BrowserRouter>
-        <div className="min-h-screen bg-[#0a0a1a] text-white">
+        <div className="min-h-screen bg-background text-white">
           <ScrollToHash />
           <Navbar />
           <Routes>
