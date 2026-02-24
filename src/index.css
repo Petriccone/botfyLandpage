@@ -12,9 +12,6 @@
   --color-accent-purple: #8b5cf6;
   --color-accent-blue: #3b82f6;
   --color-accent-white: #ffffff;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #9ea3ae;
-  --color-text-muted: #667085;
   --font-sans: "Inter", "Suisse Intl", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "Space Mono", monospace;
   --font-display: "Clash Display", "Inter", sans-serif;
@@ -34,7 +31,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #ffffff, #00f5ff);
+  background: linear-gradient(90deg, #ffffff, var(--color-accent-purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -52,11 +49,11 @@ body {
 .hard-panel {
   background: #050508;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 10px 10px 0px rgba(0, 245, 255, 0.02);
+  box-shadow: 10px 10px 0px rgba(139, 92, 246, 0.02);
 }
 
-.cyan-glow {
-  filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.3));
+.purple-glow {
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
 }
 
 .kinetic-border {
@@ -71,7 +68,7 @@ body {
   left: -100%;
   width: 50%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #00f5ff, transparent);
+  background: linear-gradient(90deg, transparent, var(--color-accent-purple), transparent);
   animation: border-slide 4s linear infinite;
 }
 
@@ -176,7 +173,7 @@ body {
 }
 
 .gradient-text-blue-purple {
-  background: linear-gradient(90deg, #0072ff, #00f5ff);
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -187,7 +184,7 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-accent-cyan);
+  color: var(--color-accent-purple);
 }
 
 .huge-title {
@@ -204,8 +201,8 @@ body {
 }
 
 .kinetic-card:hover {
-  border-color: var(--color-accent-cyan);
-  box-shadow: 20px 20px 0px rgba(0, 245, 255, 0.05);
+  border-color: var(--color-accent-purple);
+  box-shadow: 20px 20px 0px rgba(139, 92, 246, 0.05);
   transform: translate(-5px, -5px);
 }
 
@@ -241,5 +238,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-cyan);
+  background: var(--color-accent-purple);
 }

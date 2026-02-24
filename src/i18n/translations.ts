@@ -49,6 +49,7 @@ export interface Translations {
     titleStart: string
     titleHighlight: string
     titleEnd: string
+    subtitle: string
     items: { title: string; desc: string }[]
     noDevLine: string
     tagline: string
@@ -222,8 +223,9 @@ const en: Translations = {
   },
   steps: {
     titleStart: 'From Zero to Live',
-    titleHighlight: 'in Minutes.',
-    titleEnd: '',
+    titleHighlight: 'Agile Infrastructure',
+    titleEnd: ' for AI Teams',
+    subtitle: 'From zero to production in a matter of minutes.',
     items: [
       { title: 'Create your account', desc: 'Get started in seconds' },
       { title: 'Connect your communication channel', desc: 'WhatsApp, Web, or both' },
@@ -511,6 +513,7 @@ const pt: Translations = {
     titleStart: 'Do zero ao vivo',
     titleHighlight: 'em minutos.',
     titleEnd: '',
+    subtitle: 'De zero a produção em questão de minutos.',
     items: [
       { title: 'Crie sua conta', desc: 'Comece em segundos' },
       { title: 'Conecte seu canal de comunicação', desc: 'WhatsApp, Web ou ambos' },
@@ -751,6 +754,7 @@ const es: Translations = {
     titleStart: 'De cero a en vivo',
     titleHighlight: 'en minutos.',
     titleEnd: '',
+    subtitle: 'De cero a producción en cuestión de minutos.',
     items: [
       { title: 'Crea tu cuenta', desc: 'Empieza en segundos' },
       { title: 'Conecta tu canal de comunicación', desc: 'WhatsApp, Web o ambos' },
