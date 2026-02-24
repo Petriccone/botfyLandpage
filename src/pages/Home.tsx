@@ -1,4 +1,5 @@
 import { Hero } from '../components/Hero'
+// Vercel deployment trigger
 import { PainPoints } from '../components/PainPoints'
 import { SolutionSection } from '../components/SolutionSection'
 import { StepsTimeline } from '../components/StepsTimeline'
