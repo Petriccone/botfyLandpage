@@ -1,24 +1,22 @@
-import { Hero } from '../components/Hero'
-import { TrustCloud } from '../components/TrustCloud'
-import { BentoFeatures } from '../components/BentoFeatures'
-import { WhyUsSection } from '../components/WhyUsSection'
-import { SocialProofSection } from '../components/SocialProofSection'
+import { HeroKommo } from '../components/HeroKommo'
+import { LovedBySection } from '../components/LovedBySection'
+import { KommoAlternatingSections } from '../components/KommoAlternatingSections'
+import { UniqueWaySection } from '../components/UniqueWaySection'
 import { StepsTimeline } from '../components/StepsTimeline'
-import { SecurityScale } from '../components/SecurityScale'
 import { Pricing } from '../components/Pricing'
+import { TestimonialsKommo } from '../components/TestimonialsKommo'
 import { CTASection } from '../components/CTASection'
 
 export function Home() {
   return (
     <>
-      <Hero />
-      <TrustCloud />
-      <BentoFeatures />
-      <WhyUsSection />
-      <SocialProofSection />
+      <HeroKommo />
+      <LovedBySection />
+      <KommoAlternatingSections />
+      <UniqueWaySection />
       <StepsTimeline />
-      <SecurityScale />
       <Pricing />
+      <TestimonialsKommo />
       <CTASection />
     </>
   )

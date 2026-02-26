@@ -119,6 +119,23 @@ export interface Translations {
     subtitle: string
     button: string
   }
+  kommo: {
+    heroHeadline: string
+    heroSubline: string
+    tryFreeCta: string
+    lovedBy: string
+    moreConversations: { title: string; desc: string; cta: string }
+    completeView: { title: string; desc: string; cta: string }
+    aiToolkit: { title: string; desc: string; cta: string }
+    uniqueWayTitle: string
+    uniqueCards: { title: string; desc: string; cta: string }[]
+    testimonialsTitle: string
+    testimonials: { quote: string; name: string; role: string }[]
+    ctaHeadline: string
+    ctaSub: string
+    tryFree: string
+    bookDemo: string
+  }
   footer: {
     desc: string
     product: string
@@ -389,6 +406,43 @@ const en: Translations = {
     subtitle: 'Deploy your AI workforce today.',
     button: 'Start Free Trial',
   },
+  kommo: {
+    heroHeadline: 'All the ways you sell — combined in one AI platform',
+    heroSubline: 'Messenger-based sales, automated. Qualify leads, book meetings, and close deals 24/7.',
+    tryFreeCta: 'Try it free for 14 days',
+    lovedBy: 'Loved by small businesses and teams in 50+ countries',
+    moreConversations: {
+      title: 'More conversations mean more revenue',
+      desc: 'Get clients talking on the channels they love. Your AI agents cover WhatsApp, web chat, and more—so every message turns into a qualified lead or a closed deal.',
+      cta: 'Learn more',
+    },
+    completeView: {
+      title: 'A complete history of every conversation',
+      desc: 'Botfy merges every touchpoint into one place: all channels, notes, and follow-ups. One profile per client, one pipeline for your team.',
+      cta: 'Learn more',
+    },
+    aiToolkit: {
+      title: 'A built-in AI toolkit',
+      desc: 'Create AI agents that answer FAQs, recommend products, and book appointments—while you sleep. No coding. Deploy in minutes.',
+      cta: 'Learn more',
+    },
+    uniqueWayTitle: 'A unique way of doing business',
+    uniqueCards: [
+      { title: 'No-code setup', desc: 'View where every lead is in the journey. Set up flows and bots without a single line of code.', cta: 'Learn more' },
+      { title: 'Omnichannel inbox', desc: 'WhatsApp, web, and more in one inbox. Your team and AI work from the same place.', cta: 'Learn more' },
+      { title: 'EU-first & secure', desc: 'Data in the EU, GDPR by design. Built for European businesses that care about compliance.', cta: 'Learn more' },
+    ],
+    testimonialsTitle: 'Read what others say about Botfy',
+    testimonials: [
+      { quote: 'We went from missing leads to closing them in the same day. Botfy changed how we handle inbound.', name: 'Sarah M.', role: 'Sales Lead, Tech Startup' },
+      { quote: 'Simple, direct, measurable. Finally an AI platform that just works.', name: 'James K.', role: 'Founder, E-commerce' },
+      { quote: 'Our response time dropped from hours to under a minute. Revenue went up.', name: 'Elena R.', role: 'Operations, Agency' },
+    ],
+    ctaHeadline: 'Get Botfy free for 14 days',
+    ctaSub: 'Start building your AI sales pipeline today.',
+    tryFree: 'Try it free',
+    bookDemo: 'Book a demo',
+  },
   footer: {
     desc: 'Secure AI Agents Infrastructure for European Companies. Build, train and deploy with confidence.',
     product: 'Product',
@@ -655,6 +709,31 @@ const pt: Translations = {
     subtitle: 'Implante sua força de trabalho em IA hoje.',
     button: 'Teste Grátis',
   },
+  kommo: {
+    heroHeadline: 'Tudo o que você precisa para vender — em uma plataforma de IA',
+    heroSubline: 'Vendas por mensageiros, automatizadas. Qualifique leads, agende reuniões e feche negócios 24/7.',
+    tryFreeCta: 'Experimente grátis por 14 dias',
+    lovedBy: 'Usado por pequenas empresas e equipes em mais de 50 países',
+    moreConversations: { title: 'Mais conversas, mais receita', desc: 'Conecte-se aos clientes nos canais que eles preferem. Seus agentes de IA cobrem WhatsApp, chat web e mais—cada mensagem vira lead qualificado ou venda.', cta: 'Saiba mais' },
+    completeView: { title: 'Histórico completo de cada conversa', desc: 'A Botfy une todos os touchpoints em um só lugar: todos os canais, notas e follow-ups. Um perfil por cliente, um pipeline para sua equipe.', cta: 'Saiba mais' },
+    aiToolkit: { title: 'Kit de ferramentas de IA integrado', desc: 'Crie agentes de IA que respondem FAQs, recomendam produtos e agendam reuniões—enquanto você dorme. Sem código. Implante em minutos.', cta: 'Saiba mais' },
+    uniqueWayTitle: 'Uma forma única de fazer negócios',
+    uniqueCards: [
+      { title: 'Configuração sem código', desc: 'Veja onde cada lead está na jornada. Monte fluxos e bots sem uma linha de código.', cta: 'Saiba mais' },
+      { title: 'Inbox omnichannel', desc: 'WhatsApp, web e mais em uma caixa de entrada. Sua equipe e a IA no mesmo lugar.', cta: 'Saiba mais' },
+      { title: 'Primeiro na UE e seguro', desc: 'Dados na UE, GDPR por design. Feito para empresas europeias que valorizam conformidade.', cta: 'Saiba mais' },
+    ],
+    testimonialsTitle: 'O que dizem sobre a Botfy',
+    testimonials: [
+      { quote: 'Passamos a fechar no mesmo dia leads que antes perdíamos. A Botfy mudou como tratamos o inbound.', name: 'Sarah M.', role: 'Líder de Vendas, Startup' },
+      { quote: 'Simples, direto, mensurável. Finalmente uma plataforma de IA que funciona.', name: 'James K.', role: 'Fundador, E-commerce' },
+      { quote: 'O tempo de resposta caiu de horas para menos de um minuto. A receita subiu.', name: 'Elena R.', role: 'Operações, Agência' },
+    ],
+    ctaHeadline: 'Use a Botfy grátis por 14 dias',
+    ctaSub: 'Comece a construir seu pipeline de vendas com IA hoje.',
+    tryFree: 'Experimente grátis',
+    bookDemo: 'Agendar demo',
+  },
   footer: {
     desc: 'Infraestrutura de Agentes IA Seguros para Empresas Europeias. Construa, treine e implante com confiança.',
     product: 'Produto',
@@ -920,6 +999,31 @@ const es: Translations = {
     title: '¿Listo para Vender en Piloto Automático?',
     subtitle: 'Despliega tu fuerza de trabajo en IA hoy.',
     button: 'Prueba Gratis',
+  },
+  kommo: {
+    heroHeadline: 'Todo lo que necesitas para vender — en una plataforma de IA',
+    heroSubline: 'Ventas por mensajería, automatizadas. Califica leads, agenda reuniones y cierra tratos 24/7.',
+    tryFreeCta: 'Pruébalo gratis 14 días',
+    lovedBy: 'Usado por pequeñas empresas y equipos en más de 50 países',
+    moreConversations: { title: 'Más conversaciones, más ingresos', desc: 'Conecta con clientes en los canales que prefieren. Tus agentes de IA cubren WhatsApp, chat web y más—cada mensaje se convierte en lead cualificado o venta.', cta: 'Saber más' },
+    completeView: { title: 'Historial completo de cada conversación', desc: 'Botfy une cada touchpoint en un solo lugar: todos los canales, notas y seguimientos. Un perfil por cliente, un pipeline para tu equipo.', cta: 'Saber más' },
+    aiToolkit: { title: 'Kit de herramientas de IA integrado', desc: 'Crea agentes de IA que responden FAQs, recomiendan productos y agendan citas—mientras duermes. Sin código. Despliega en minutos.', cta: 'Saber más' },
+    uniqueWayTitle: 'Una forma única de hacer negocios',
+    uniqueCards: [
+      { title: 'Configuración sin código', desc: 'Ve dónde está cada lead en el recorrido. Configura flujos y bots sin una línea de código.', cta: 'Saber más' },
+      { title: 'Inbox omnichannel', desc: 'WhatsApp, web y más en una bandeja. Tu equipo y la IA en el mismo lugar.', cta: 'Saber más' },
+      { title: 'Primero en la UE y seguro', desc: 'Datos en la UE, GDPR por diseño. Hecho para empresas europeas que valoran el cumplimiento.', cta: 'Saber más' },
+    ],
+    testimonialsTitle: 'Lo que dicen sobre Botfy',
+    testimonials: [
+      { quote: 'Pasamos de perder leads a cerrarlos el mismo día. Botfy cambió cómo gestionamos el inbound.', name: 'Sarah M.', role: 'Líder de Ventas, Startup' },
+      { quote: 'Simple, directo, medible. Por fin una plataforma de IA que funciona.', name: 'James K.', role: 'Fundador, E-commerce' },
+      { quote: 'El tiempo de respuesta pasó de horas a menos de un minuto. Los ingresos subieron.', name: 'Elena R.', role: 'Operaciones, Agencia' },
+    ],
+    ctaHeadline: 'Prueba Botfy gratis 14 días',
+    ctaSub: 'Empieza a construir tu pipeline de ventas con IA hoy.',
+    tryFree: 'Pruébalo gratis',
+    bookDemo: 'Reservar demo',
   },
   footer: {
     desc: 'Infraestructura de Agentes IA Seguros para Empresas Europeas. Construye, entrena y despliega con confianza.',
