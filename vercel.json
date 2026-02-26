@@ -1,5 +1,11 @@
 {
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "redirects": [
-    { "source": "/favicon.ico", "destination": "/botfy-icon.svg", "permanent": false }
+    {
+      "source": "/favicon.ico",
+      "destination": "/botfy-icon.svg",
+      "permanent": false
+    }
   ]
 }
