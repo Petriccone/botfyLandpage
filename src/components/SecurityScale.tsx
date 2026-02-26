@@ -6,7 +6,7 @@ export function SecurityScale() {
   const { t } = useLanguage()
 
   return (
-    <section id="security" className="py-32 bg-black relative">
+    <section id="security" className="py-32 bg-[#0d0d0d] relative border-y border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

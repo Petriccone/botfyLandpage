@@ -5,7 +5,7 @@ export function StepsTimeline() {
   const { t } = useLanguage()
 
   return (
-    <section id="how-it-works" className="py-32 bg-black relative overflow-hidden">
+    <section id="how-it-works" className="py-32 bg-[#0a0a0a] relative overflow-hidden border-y border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-24 text-center">
           <motion.h2

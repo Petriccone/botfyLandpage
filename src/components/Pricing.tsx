@@ -15,7 +15,7 @@ export function Pricing() {
   const { t } = useLanguage()
 
   return (
-    <section id="pricing" className="py-32 bg-black overflow-hidden">
+    <section id="pricing" className="py-32 bg-[#0a0a0a] overflow-hidden border-y border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-20 text-center">
           <motion.h2

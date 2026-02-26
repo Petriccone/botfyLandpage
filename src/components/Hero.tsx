@@ -22,7 +22,7 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <span className="px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-[11px] font-medium tracking-[0.2em] uppercase text-text-secondary">
+          <span className="px-5 py-2 rounded-full border border-accent-purple/40 bg-accent-purple/10 text-[11px] font-mono font-medium tracking-[0.2em] uppercase text-accent-purple">
             {t.hero.badge}
           </span>
         </motion.div>
@@ -57,13 +57,14 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center gap-4"
         >
-          <a href="https://botfyai.vercel.app/register">
-            <Button size="lg" className="rounded-full px-8 h-12 bg-white text-black hover:bg-white/90 transition-all font-medium">
+          <a href="https://botfyai.vercel.app/register" className="relative group/btn">
+            <span className="absolute -inset-1 rounded-full bg-accent-purple/40 blur-lg opacity-60 group-hover/btn:opacity-80 transition-opacity" />
+            <Button size="lg" className="relative rounded-full px-8 h-12 bg-accent-purple text-white hover:bg-accent-purple/90 border-0 shadow-[0_0_30px_rgba(139,92,246,0.4)] transition-all font-medium">
               {t.hero.cta}
             </Button>
           </a>
           <a href="#how-it-works">
-            <Button variant="secondary" size="lg" className="rounded-full px-8 h-12 border-white/10 bg-white/5 text-white hover:bg-white/10 transition-all font-medium">
+            <Button variant="secondary" size="lg" className="rounded-full px-8 h-12 border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/30 transition-all font-medium">
               {t.hero.ctaSecondary}
             </Button>
           </a>

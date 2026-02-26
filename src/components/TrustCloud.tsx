@@ -6,7 +6,7 @@ const companies = [
 
 export function TrustCloud() {
     return (
-        <section className="py-20 bg-black border-y border-white/5 overflow-hidden">
+        <section className="py-20 bg-[#0a0a0a] border-y border-white/5 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-text-muted mb-12">
                     Trusted by cutting-edge companies worldwide
@@ -26,8 +26,8 @@ export function TrustCloud() {
                     </motion.div>
 
                     {/* Gradient Overlays for Fade Effect */}
-                    <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-black to-transparent z-10" />
-                    <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-black to-transparent z-10" />
+                    <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10" />
+                    <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10" />
                 </div>
             </div>
         </section>
