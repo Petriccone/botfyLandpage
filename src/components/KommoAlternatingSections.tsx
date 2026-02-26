@@ -3,6 +3,8 @@ import { useLanguage } from '../hooks/useLanguage'
 import { MessageCircle, LayoutGrid, Bot } from 'lucide-react'
 
 const icons = [MessageCircle, LayoutGrid, Bot]
+const screenImages = ['/screens/dashboard.png', '/screens/crm.png', '/screens/ai-agents.png']
+const screenKeys = ['dashboard', 'crm', 'aiAgents'] as const
 
 export function KommoAlternatingSections() {
   const { t } = useLanguage()
@@ -18,6 +20,8 @@ export function KommoAlternatingSections() {
       {sections.map((section, i) => {
         const Icon = icons[i]
         const isEven = i % 2 === 0
+        const imgSrc = screenImages[i]
+        const label = k.screenLabels[screenKeys[i]]
         return (
           <section
             key={i}
@@ -47,8 +51,15 @@ export function KommoAlternatingSections() {
                     {section.cta} →
                   </a>
                 </div>
-                <div className={`rounded-2xl bg-gray-50 border border-gray-100 aspect-video flex items-center justify-center ${!isEven ? 'md:col-start-1 md:row-start-1' : ''}`}>
-                  <span className="text-text-muted text-sm font-medium">Visual</span>
+                <div className={`rounded-2xl border border-gray-100 overflow-hidden bg-gray-50 ${!isEven ? 'md:col-start-1 md:row-start-1' : ''}`}>
+                  <img
+                    src={imgSrc}
+                    alt=""
+                    className="w-full h-auto object-cover object-top"
+                  />
+                  <p className="p-4 text-sm text-text-muted font-light border-t border-gray-100">
+                    {label}
+                  </p>
                 </div>
               </motion.div>
             </div>

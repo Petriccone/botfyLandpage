@@ -129,6 +129,13 @@ export interface Translations {
     aiToolkit: { title: string; desc: string; cta: string }
     uniqueWayTitle: string
     uniqueCards: { title: string; desc: string; cta: string }[]
+    screenLabels: {
+      dashboard: string
+      crm: string
+      aiAgents: string
+      training: string
+      team: string
+    }
     testimonialsTitle: string
     testimonials: { quote: string; name: string; role: string }[]
     ctaHeadline: string
@@ -432,6 +439,13 @@ const en: Translations = {
       { title: 'Omnichannel inbox', desc: 'WhatsApp, web, and more in one inbox. Your team and AI work from the same place.', cta: 'Learn more' },
       { title: 'EU-first & secure', desc: 'Data in the EU, GDPR by design. Built for European businesses that care about compliance.', cta: 'Learn more' },
     ],
+    screenLabels: {
+      dashboard: 'Dashboard — message metrics, activity and quick actions at a glance.',
+      crm: 'CRM — full lead history and unified inbox from every channel.',
+      aiAgents: 'AI Agents — create and manage specialized agents by niche.',
+      training: 'Training — upload documents and knowledge bases to train your AI.',
+      team: 'Team — group agents into departments (e.g. Sales, Support).',
+    },
     testimonialsTitle: 'Read what others say about Botfy',
     testimonials: [
       { quote: 'We went from missing leads to closing them in the same day. Botfy changed how we handle inbound.', name: 'Sarah M.', role: 'Sales Lead, Tech Startup' },
@@ -723,6 +737,13 @@ const pt: Translations = {
       { title: 'Inbox omnichannel', desc: 'WhatsApp, web e mais em uma caixa de entrada. Sua equipe e a IA no mesmo lugar.', cta: 'Saiba mais' },
       { title: 'Primeiro na UE e seguro', desc: 'Dados na UE, GDPR por design. Feito para empresas europeias que valorizam conformidade.', cta: 'Saiba mais' },
     ],
+    screenLabels: {
+      dashboard: 'Dashboard — métricas de mensagens, atividade e ações rápidas num relance.',
+      crm: 'CRM — histórico completo de leads e inbox unificado de todos os canais.',
+      aiAgents: 'AI Agents — crie e gerir agentes especializados por nicho.',
+      training: 'Treinamento — envie documentos e bases de conhecimento para treinar a IA.',
+      team: 'Equipe — agrupe agentes em departamentos (ex.: Vendas, Suporte).',
+    },
     testimonialsTitle: 'O que dizem sobre a Botfy',
     testimonials: [
       { quote: 'Passamos a fechar no mesmo dia leads que antes perdíamos. A Botfy mudou como tratamos o inbound.', name: 'Sarah M.', role: 'Líder de Vendas, Startup' },
@@ -1014,6 +1035,13 @@ const es: Translations = {
       { title: 'Inbox omnichannel', desc: 'WhatsApp, web y más en una bandeja. Tu equipo y la IA en el mismo lugar.', cta: 'Saber más' },
       { title: 'Primero en la UE y seguro', desc: 'Datos en la UE, GDPR por diseño. Hecho para empresas europeas que valoran el cumplimiento.', cta: 'Saber más' },
     ],
+    screenLabels: {
+      dashboard: 'Dashboard — métricas de mensajes, actividad y acciones rápidas de un vistazo.',
+      crm: 'CRM — historial completo de leads e inbox unificado de todos los canales.',
+      aiAgents: 'AI Agents — crea y gestiona agentes especializados por nicho.',
+      training: 'Entrenamiento — sube documentos y bases de conocimiento para entrenar la IA.',
+      team: 'Equipo — agrupa agentes en departamentos (ej. Ventas, Soporte).',
+    },
     testimonialsTitle: 'Lo que dicen sobre Botfy',
     testimonials: [
       { quote: 'Pasamos de perder leads a cerrarlos el mismo día. Botfy cambió cómo gestionamos el inbound.', name: 'Sarah M.', role: 'Líder de Ventas, Startup' },
