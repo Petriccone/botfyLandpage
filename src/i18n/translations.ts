@@ -72,6 +72,10 @@ export interface Translations {
     metrics: { value: string; label: string }[]
     bullets: string[]
   }
+  socialProof: {
+    title: string
+    metrics: { value: string; label: string }[]
+  }
   security: {
     titleLine1: string
     titleHighlight: string
@@ -293,6 +297,14 @@ const en: Translations = {
       'Privacy & trust — data in the EU, GDPR by design',
       'No coding needed — set up in minutes with intuitive tools',
       'Built for revenue — every flow is designed to convert and qualify',
+    ],
+  },
+  socialProof: {
+    title: 'Results that speak for themselves',
+    metrics: [
+      { value: '24/7', label: 'Availability' },
+      { value: '< 1 min', label: 'Avg. response time' },
+      { value: 'EU', label: 'Data residency' },
     ],
   },
   security: {
@@ -588,6 +600,14 @@ const pt: Translations = {
       'Feito para receita — cada fluxo pensado para converter e qualificar',
     ],
   },
+  socialProof: {
+    title: 'Resultados que falam por si',
+    metrics: [
+      { value: '24/7', label: 'Disponibilidade' },
+      { value: '< 1 min', label: 'Tempo médio de resposta' },
+      { value: 'UE', label: 'Residência de dados' },
+    ],
+  },
   security: {
     titleLine1: 'Construído para',
     titleHighlight: 'Escala Global.',
@@ -844,6 +864,14 @@ const es: Translations = {
       'Privacidad y confianza — datos en la UE, GDPR por diseño',
       'Sin código — configura en minutos con herramientas intuitivas',
       'Hecho para ingresos — cada flujo pensado para convertir y calificar',
+    ],
+  },
+  socialProof: {
+    title: 'Resultados que hablan por sí solos',
+    metrics: [
+      { value: '24/7', label: 'Disponibilidad' },
+      { value: '< 1 min', label: 'Tiempo medio de respuesta' },
+      { value: 'UE', label: 'Residencia de datos' },
     ],
   },
   security: {

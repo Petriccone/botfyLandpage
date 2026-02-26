@@ -1,5 +1,4 @@
 import { Hero } from '../components/Hero'
-import { SocialProofSection } from '../components/SocialProofSection'
 import { TrustCloud } from '../components/TrustCloud'
 import { BentoFeatures } from '../components/BentoFeatures'
 import { WhyUsSection } from '../components/WhyUsSection'
@@ -13,7 +12,6 @@ export function Home() {
   return (
     <>
       <Hero />
-      <SocialProofSection />
       <TrustCloud />
       <BentoFeatures />
       <WhyUsSection />
