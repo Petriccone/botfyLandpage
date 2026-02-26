@@ -6,9 +6,9 @@ export function About() {
   const a = t.pages.about
 
   return (
-    <main className="min-h-screen pt-24 pb-20">
+    <main className="min-h-screen pt-24 pb-20 bg-white">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <h1 className="mb-6 text-4xl font-black tracking-tight text-white sm:text-5xl">
+        <h1 className="mb-6 text-4xl font-black tracking-tight text-text-primary sm:text-5xl">
           {a.title}
         </h1>
 
@@ -19,14 +19,14 @@ export function About() {
         </div>
 
         <section className="mt-12">
-          <h2 className="mb-3 text-2xl font-bold text-white">
+          <h2 className="mb-3 text-2xl font-bold text-text-primary">
             {a.missionTitle}
           </h2>
           <p className="text-text-secondary leading-relaxed">{a.missionContent}</p>
         </section>
 
         <section className="mt-12">
-          <h2 className="mb-3 text-2xl font-bold text-white">
+          <h2 className="mb-3 text-2xl font-bold text-text-primary">
             {a.problemTitle}
           </h2>
           <p className="mb-3 text-text-secondary">{a.problemIntro}</p>
@@ -39,7 +39,7 @@ export function About() {
         </section>
 
         <section className="mt-12">
-          <h2 className="mb-3 text-2xl font-bold text-white">
+          <h2 className="mb-3 text-2xl font-bold text-text-primary">
             {a.positioningTitle}
           </h2>
           <p className="mb-3 text-text-secondary">{a.positioningIntro}</p>
@@ -52,7 +52,7 @@ export function About() {
         </section>
 
         <section className="mt-12">
-          <h2 className="mb-3 text-2xl font-bold text-white">
+          <h2 className="mb-3 text-2xl font-bold text-text-primary">
             {a.strategyTitle}
           </h2>
           <p className="mb-2 text-text-secondary">
@@ -69,7 +69,7 @@ export function About() {
         </section>
 
         <section className="mt-12">
-          <h2 className="mb-3 text-2xl font-bold text-white">
+          <h2 className="mb-3 text-2xl font-bold text-text-primary">
             {a.differentTitle}
           </h2>
           <ul className="mb-4 space-y-2 text-text-secondary">
@@ -84,7 +84,7 @@ export function About() {
         </section>
 
         <section className="mt-12">
-          <h2 className="mb-3 text-2xl font-bold text-white">
+          <h2 className="mb-3 text-2xl font-bold text-text-primary">
             {a.visionTitle}
           </h2>
           <ul className="mb-4 list-inside list-disc space-y-1 text-text-secondary">
@@ -96,7 +96,7 @@ export function About() {
         </section>
 
         <section className="mt-12">
-          <h2 className="mb-3 text-2xl font-bold text-white">
+          <h2 className="mb-3 text-2xl font-bold text-text-primary">
             {a.founderTitle}
           </h2>
           <div className="space-y-4 text-text-secondary leading-relaxed">

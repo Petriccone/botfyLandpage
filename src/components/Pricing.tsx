@@ -4,25 +4,25 @@ import { Button } from './ui/Button'
 import { useLanguage } from '../hooks/useLanguage'
 
 const STRIPE_LINKS: (string | null)[] = [
-  'https://botfyai.vercel.app/register', // Free
-  'https://buy.stripe.com/fZu4gB3WGaEF8exdYSfQI00', // Starter
-  'https://buy.stripe.com/aFabJ32SCdQR7atg70fQI01', // Growth
-  'https://buy.stripe.com/eVqfZj78S3cd1Q9aMGfQI02', // Scale
-  null, // Enterprise - Contact Sales
+  'https://botfyai.vercel.app/register',
+  'https://buy.stripe.com/fZu4gB3WGaEF8exdYSfQI00',
+  'https://buy.stripe.com/aFabJ32SCdQR7atg70fQI01',
+  'https://buy.stripe.com/eVqfZj78S3cd1Q9aMGfQI02',
+  null,
 ]
 
 export function Pricing() {
   const { t } = useLanguage()
 
   return (
-    <section id="pricing" className="py-32 bg-[#0a0a0a] overflow-hidden border-y border-white/5">
+    <section id="pricing" className="py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-20 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight text-white"
+            className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight text-text-primary"
           >
             {t.pricing.titleStart}{' '}
             <span className="text-accent-purple">{t.pricing.titleHighlight}</span>
@@ -48,10 +48,10 @@ export function Pricing() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className={`relative flex flex-col p-8 rounded-3xl border transition-all duration-300 ${isPopular
-                    ? 'bg-[#0a0a0a] border-accent-purple/50 shadow-[0_0_30px_rgba(139,92,246,0.1)]'
-                    : 'bg-[#050505] border-white/5 hover:border-white/10'
-                  }`}
+                className={`relative flex flex-col p-8 rounded-2xl border transition-all duration-300 ${isPopular
+                  ? 'bg-white border-accent-purple/40 shadow-[0_0_30px_rgba(124,58,237,0.08)]'
+                  : 'bg-surface border-gray-100 hover:border-gray-200 hover:shadow-md'
+                }`}
               >
                 {isPopular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-accent-purple text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
@@ -59,9 +59,9 @@ export function Pricing() {
                   </div>
                 )}
 
-                <h3 className="text-lg font-bold text-white mb-2">{plan.name}</h3>
+                <h3 className="text-lg font-bold text-text-primary mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-1 mb-8">
-                  <span className="text-4xl font-display font-bold text-white">{plan.price}</span>
+                  <span className="text-4xl font-display font-bold text-text-primary">{plan.price}</span>
                   <span className="text-xs text-text-muted">{plan.period}</span>
                 </div>
 
@@ -81,9 +81,9 @@ export function Pricing() {
                   <Button
                     variant={isPopular ? 'primary' : 'secondary'}
                     className={`w-full rounded-full h-11 text-xs font-bold tracking-widest ${isPopular
-                        ? 'bg-accent-purple text-white hover:bg-accent-purple/90 border-none'
-                        : 'border-white/10 bg-white/5 text-white hover:bg-white/10'
-                      }`}
+                      ? 'bg-accent-purple text-white hover:bg-accent-purple/90 border-none'
+                      : 'border-gray-200 bg-white text-text-primary hover:bg-gray-50'
+                    }`}
                   >
                     {plan.cta}
                   </Button>

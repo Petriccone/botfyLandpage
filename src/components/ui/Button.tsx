@@ -8,13 +8,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants = {
   primary:
-    'bg-accent-purple text-black hover:bg-white shadow-[4px_4px_0px_rgba(255,255,255,0.2)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none',
+    'bg-accent-purple text-white hover:bg-accent-purple/90 shadow-md active:translate-y-[1px] active:shadow-sm',
   secondary:
-    'bg-transparent text-white border border-white/20 hover:border-accent-purple hover:bg-accent-purple/5',
+    'bg-white text-text-primary border border-gray-200 hover:border-accent-purple/30 hover:bg-gray-50',
   ghost:
-    'bg-transparent hover:bg-white/5 text-slate-400 hover:text-white',
+    'bg-transparent hover:bg-gray-100 text-text-secondary hover:text-text-primary',
   outline:
-    'bg-transparent text-white border border-white/10 hover:border-accent-purple/50 hover:bg-accent-purple/5',
+    'bg-transparent text-text-primary border border-gray-200 hover:border-accent-purple/40 hover:bg-accent-purple/5',
 }
 
 const sizes = {
@@ -27,7 +27,7 @@ const sizes = {
 export function Button({ variant = 'primary', size = 'md', className = '', children, ...props }: ButtonProps) {
   return (
     <button
-      className={`inline-flex items-center justify-center gap-2 whitespace-nowrap font-mono font-bold uppercase tracking-widest transition-all duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent-purple disabled:pointer-events-none disabled:opacity-50 cursor-pointer ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 whitespace-nowrap font-mono font-bold uppercase tracking-widest transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-purple/50 disabled:pointer-events-none disabled:opacity-50 cursor-pointer ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
       {children}

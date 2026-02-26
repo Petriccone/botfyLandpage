@@ -6,23 +6,19 @@ export function Hero() {
   const { t } = useLanguage()
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-black text-center">
-      {/* Aurora Background Glow */}
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-white text-center">
+      {/* Subtle aurora */}
       <div className="aurora-glow" />
 
-      {/* Decorative Glows */}
-      <div className="glow-aura glow-aura-purple w-[500px] h-[500px] -top-40 -left-20 opacity-10" />
-      <div className="glow-aura glow-aura-blue w-[400px] h-[400px] top-60 -right-20 opacity-10" />
-
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center">
-        {/* Floating Badge */}
+        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <span className="px-5 py-2 rounded-full border border-accent-purple/40 bg-accent-purple/10 text-[11px] font-mono font-medium tracking-[0.2em] uppercase text-accent-purple">
+          <span className="px-5 py-2 rounded-full border border-accent-purple/30 bg-accent-purple/5 text-[11px] font-mono font-medium tracking-[0.2em] uppercase text-accent-purple">
             {t.hero.badge}
           </span>
         </motion.div>
@@ -32,7 +28,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-8xl font-display font-bold tracking-tight mb-8 leading-[1.1]"
+          className="text-5xl md:text-8xl font-display font-bold tracking-tight mb-8 leading-[1.1] text-text-primary"
         >
           {t.hero.titleLine1} <br />
           <span className="text-accent-purple">
@@ -58,13 +54,13 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center gap-4"
         >
           <a href="https://botfyai.vercel.app/register" className="relative group/btn">
-            <span className="absolute -inset-1 rounded-full bg-accent-purple/40 blur-lg opacity-60 group-hover/btn:opacity-80 transition-opacity" />
-            <Button size="lg" className="relative rounded-full px-8 h-12 bg-accent-purple text-white hover:bg-accent-purple/90 border-0 shadow-[0_0_30px_rgba(139,92,246,0.4)] transition-all font-medium">
+            <span className="absolute -inset-1 rounded-full bg-accent-purple/20 blur-lg opacity-60 group-hover/btn:opacity-80 transition-opacity" />
+            <Button size="lg" className="relative rounded-full px-8 h-12 bg-accent-purple text-white hover:bg-accent-purple/90 border-0 shadow-lg transition-all font-medium">
               {t.hero.cta}
             </Button>
           </a>
           <a href="#how-it-works">
-            <Button variant="secondary" size="lg" className="rounded-full px-8 h-12 border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/30 transition-all font-medium">
+            <Button variant="secondary" size="lg" className="rounded-full px-8 h-12 border-gray-200 bg-white text-text-primary hover:bg-gray-50 hover:border-gray-300 transition-all font-medium shadow-sm">
               {t.hero.ctaSecondary}
             </Button>
           </a>
@@ -75,7 +71,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="mt-24 flex flex-wrap justify-center gap-x-12 gap-y-6 pt-12 border-t border-white/5"
+          className="mt-24 flex flex-wrap justify-center gap-x-12 gap-y-6 pt-12 border-t border-gray-100"
         >
           {t.hero.trustBullets.map((bullet, i) => (
             <div key={i} className="flex flex-col items-center sm:items-start">
@@ -86,8 +82,8 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Background Grid Accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      {/* Bottom border */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
     </section>
   )
 }

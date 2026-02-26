@@ -6,7 +6,7 @@ export function WhyUsSection() {
   const { t } = useLanguage()
 
   return (
-    <section id="why-us" className="py-24 md:py-32 bg-[#0d0d0d] border-y border-white/5 overflow-hidden">
+    <section id="why-us" className="py-24 md:py-32 bg-surface border-y border-border-subtle overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,7 +17,7 @@ export function WhyUsSection() {
           <span className="text-accent-purple font-mono text-[10px] uppercase tracking-[0.4em] block mb-4">
             Why_Us
           </span>
-          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight text-white mb-4">
+          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight text-text-primary mb-4">
             {t.whyUs.title}
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto font-light">
@@ -25,7 +25,6 @@ export function WhyUsSection() {
           </p>
         </motion.div>
 
-        {/* Metrics row — Charles-style */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +44,6 @@ export function WhyUsSection() {
           ))}
         </motion.div>
 
-        {/* Bullets — Why now, why us (Charles + Kommo) */}
         <motion.ul
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
