@@ -66,6 +66,12 @@ export interface Translations {
     tagline: string
     tagline2: string
   }
+  whyUs: {
+    title: string
+    subtitle: string
+    metrics: { value: string; label: string }[]
+    bullets: string[]
+  }
   security: {
     titleLine1: string
     titleHighlight: string
@@ -271,6 +277,23 @@ const en: Translations = {
     ],
     tagline: 'We are building the AI infrastructure layer for ambitious companies.',
     tagline2: 'Start local. Scale global.',
+  },
+  whyUs: {
+    title: 'Why now, why us?',
+    subtitle: 'Simple, direct, and measurable — the way European businesses deserve.',
+    metrics: [
+      { value: '24/7', label: 'Availability' },
+      { value: '0', label: 'Code required' },
+      { value: 'EU', label: 'Data & GDPR' },
+    ],
+    bullets: [
+      'Personalized at scale — conversations that stay relevant, no matter the volume',
+      'Customer-first — most people prefer messaging; we meet that demand',
+      'Your voice, your way — AI agents speak any language in the right tone',
+      'Privacy & trust — data in the EU, GDPR by design',
+      'No coding needed — set up in minutes with intuitive tools',
+      'Built for revenue — every flow is designed to convert and qualify',
+    ],
   },
   security: {
     titleLine1: 'Built for',
@@ -548,6 +571,23 @@ const pt: Translations = {
     tagline: 'Estamos construindo a camada de infraestrutura em IA para empresas ambiciosas.',
     tagline2: 'Comece local. Escale global.',
   },
+  whyUs: {
+    title: 'Por que agora, por que nós?',
+    subtitle: 'Simples, direto e mensurável — do jeito que empresas europeias merecem.',
+    metrics: [
+      { value: '24/7', label: 'Disponibilidade' },
+      { value: '0', label: 'Código necessário' },
+      { value: 'UE', label: 'Dados e GDPR' },
+    ],
+    bullets: [
+      'Personalização em escala — conversas relevantes, em qualquer volume',
+      'Cliente em primeiro — a maioria prefere mensagens; atendemos a isso',
+      'Sua voz, seu jeito — agentes em qualquer idioma e tom',
+      'Privacidade e confiança — dados na UE, GDPR por design',
+      'Sem código — configure em minutos com ferramentas intuitivas',
+      'Feito para receita — cada fluxo pensado para converter e qualificar',
+    ],
+  },
   security: {
     titleLine1: 'Construído para',
     titleHighlight: 'Escala Global.',
@@ -788,6 +828,23 @@ const es: Translations = {
     ],
     tagline: 'Estamos construyendo la capa de infraestructura en IA para empresas ambiciosas.',
     tagline2: 'Empieza local. Escala global.',
+  },
+  whyUs: {
+    title: '¿Por qué ahora, por qué nosotros?',
+    subtitle: 'Simple, directo y medible — como merecen las empresas europeas.',
+    metrics: [
+      { value: '24/7', label: 'Disponibilidad' },
+      { value: '0', label: 'Código necesario' },
+      { value: 'UE', label: 'Datos y GDPR' },
+    ],
+    bullets: [
+      'Personalización a escala — conversaciones relevantes, sin importar el volumen',
+      'Cliente primero — la mayoría prefiere mensajes; respondemos a eso',
+      'Tu voz, tu manera — agentes en cualquier idioma y tono',
+      'Privacidad y confianza — datos en la UE, GDPR por diseño',
+      'Sin código — configura en minutos con herramientas intuitivas',
+      'Hecho para ingresos — cada flujo pensado para convertir y calificar',
+    ],
   },
   security: {
     titleLine1: 'Construido para',
