@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.kommo.com)",
+      "WebFetch(domain:www.hello-charles.com)",
+      "Bash(\"c:\\\\Users\\\\rsp88\\\\BotfyWebsite\\\\src\\\\components\\\\SolutionsTabs.tsx\":*)"
+    ]
+  }
+}
