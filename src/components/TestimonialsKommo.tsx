@@ -1,3 +1,4 @@
+import { Quote } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '../hooks/useLanguage'
 
@@ -26,25 +27,11 @@ export function TestimonialsKommo() {
               transition={{ delay: i * 0.1 }}
               className="flex flex-col p-7 rounded-2xl bg-white border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all"
             >
-              {/* Metric highlight */}
-              <div className="inline-flex self-start mb-5">
-                <span className="text-2xl font-display font-black text-accent-purple">{item.metric}</span>
-              </div>
-
-              {/* Quote */}
-              <p className="text-text-secondary font-light leading-relaxed flex-1 mb-6">
-                "{item.quote}"
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-3 pt-5 border-t border-gray-100">
-                <div className="w-9 h-9 rounded-full bg-accent-purple/10 flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent-purple font-bold text-sm">{item.name[0]}</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-text-primary text-[14px]">{item.name}</p>
-                  <p className="text-[12px] text-text-muted">{item.role} · {item.company}</p>
-                </div>
+              <Quote className="text-accent-purple/40 mb-4" size={28} />
+              <p className="text-text-primary font-light mb-6 leading-relaxed">"{item.quote}"</p>
+              <div className="mt-auto">
+                <p className="font-semibold text-text-primary">{item.name}</p>
+                <p className="text-sm text-text-muted">{item.role}</p>
               </div>
             </motion.div>
           ))}

@@ -3,9 +3,11 @@ import { motion } from 'framer-motion'
 import { useLanguage } from '../hooks/useLanguage'
 
 const STRIPE_LINKS: (string | null)[] = [
-  'https://buy.stripe.com/fZu4gB3WGaEF8exdYSfQI00',
-  'https://buy.stripe.com/aFabJ32SCdQR7atg70fQI01',
-  null,
+  null, // Free — redirect to register
+  'https://buy.stripe.com/fZu4gB3WGaEF8exdYSfQI00', // Starter
+  'https://buy.stripe.com/aFabJ32SCdQR7atg70fQI01', // Growth
+  null, // Scale
+  null, // Enterprise — contact sales
 ]
 
 export function Pricing() {
@@ -13,7 +15,7 @@ export function Pricing() {
 
   return (
     <section id="pricing" className="py-24 md:py-32 bg-surface border-t border-gray-100">
-      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-16 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -35,10 +37,10 @@ export function Pricing() {
           </motion.p>
         </div>
 
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
           {t.pricing.plans.map((plan, i) => {
-            const isPopular = i === 1
-            const isEnterprise = i === 2
+            const isPopular = i === 2
+            const isEnterprise = i === 4
             return (
               <motion.div
                 key={i}
@@ -58,32 +60,32 @@ export function Pricing() {
                   </div>
                 )}
 
-                <div className="p-7 flex-1 flex flex-col">
-                  <div className="mb-6">
-                    <h3 className={`text-lg font-bold mb-1 ${isPopular ? 'text-white' : 'text-text-primary'}`}>
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="mb-4">
+                    <h3 className={`text-base font-bold mb-1 ${isPopular ? 'text-white' : 'text-text-primary'}`}>
                       {plan.name}
                     </h3>
-                    <p className={`text-[13px] font-light ${isPopular ? 'text-white/70' : 'text-text-muted'}`}>
+                    <p className={`text-[12px] font-light ${isPopular ? 'text-white/70' : 'text-text-muted'}`}>
                       {plan.desc}
                     </p>
                   </div>
 
-                  <div className="flex items-baseline gap-1 mb-7">
-                    <span className={`text-4xl font-display font-black ${isPopular ? 'text-white' : 'text-text-primary'}`}>
+                  <div className="flex items-baseline gap-1 mb-5">
+                    <span className={`text-3xl font-display font-black ${isPopular ? 'text-white' : 'text-text-primary'}`}>
                       {plan.price}
                     </span>
                     {plan.period && (
-                      <span className={`text-sm font-light ${isPopular ? 'text-white/60' : 'text-text-muted'}`}>
+                      <span className={`text-xs font-light ${isPopular ? 'text-white/60' : 'text-text-muted'}`}>
                         {plan.period}
                       </span>
                     )}
                   </div>
 
-                  <ul className="space-y-3 mb-8 flex-1">
+                  <ul className="space-y-2 mb-6 flex-1">
                     {plan.features.map((feature, j) => (
-                      <li key={j} className="flex items-start gap-2.5 text-[13px] leading-snug">
+                      <li key={j} className="flex items-start gap-2 text-[12px] leading-snug">
                         <CheckCircle
-                          size={14}
+                          size={12}
                           className={`shrink-0 mt-0.5 ${isPopular ? 'text-white/80' : 'text-accent-purple'}`}
                         />
                         <span className={isPopular ? 'text-white/85' : 'text-text-secondary'}>
@@ -100,7 +102,7 @@ export function Pricing() {
                     className="no-underline block mt-auto"
                   >
                     <button
-                      className={`cursor-pointer w-full h-11 rounded-xl font-bold text-[13px] transition-all ${
+                      className={`cursor-pointer w-full h-10 rounded-xl font-bold text-[12px] transition-all ${
                         isPopular
                           ? 'bg-white text-accent-purple hover:bg-gray-50'
                           : isEnterprise
