@@ -48,7 +48,7 @@ export function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: Math.min(i * 0.1, 0.4) }}
-                className={`relative flex flex-col rounded-2xl border transition-all duration-300 overflow-hidden ${
+                className={`relative flex flex-col rounded-2xl border transition-[border-color,box-shadow] duration-300 overflow-hidden ${
                   isPopular
                     ? 'bg-accent-purple border-accent-purple shadow-xl shadow-brand-primary/30'
                     : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg'
@@ -99,7 +99,7 @@ export function Pricing() {
                     href={isEnterprise ? 'mailto:contact@botfy.ai' : (STRIPE_LINKS[i] || 'https://botfyai.vercel.app/register')}
                     target={!isEnterprise ? '_blank' : undefined}
                     rel="noopener noreferrer"
-                    className={`no-underline mt-auto inline-flex items-center justify-center w-full h-10 rounded-xl font-bold text-[12px] transition-all ${
+                    className={`no-underline mt-auto inline-flex items-center justify-center w-full h-10 rounded-xl font-bold text-[12px] transition-[background-color] duration-200 ${
                       isPopular
                         ? 'bg-white text-accent-purple hover:bg-gray-50'
                         : isEnterprise

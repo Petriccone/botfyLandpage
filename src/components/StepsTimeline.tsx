@@ -21,9 +21,7 @@ function VerticalArrow() {
       <svg width="12" height="40" viewBox="0 0 12 40" className="overflow-visible">
         <line x1="6" y1="0" x2="6" y2="30" stroke="rgba(124,58,237,0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
         <polygon points="3,28 6,36 9,28" fill="rgba(124,58,237,0.4)" />
-        <circle r="3" fill="#7c3aed" opacity="0.9">
-          <animateMotion dur="1.2s" repeatCount="indefinite" path="M 6 0 L 6 30" />
-        </circle>
+        <circle cx="6" cy="15" r="3" fill="#7c3aed" opacity="0.6" />
       </svg>
     </div>
   )

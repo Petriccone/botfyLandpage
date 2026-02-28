@@ -62,7 +62,7 @@ export function ChannelsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.4, ease: 'easeOut' }}
-              className="relative group flex flex-col items-center gap-3 px-7 py-6 rounded-2xl border border-gray-100 cursor-default transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.03]"
+              className="relative group flex flex-col items-center gap-3 px-7 py-6 rounded-2xl border border-gray-100 cursor-default transition-[transform,border-color] duration-300 hover:-translate-y-1.5"
               style={{ background: ch.bg }}
             >
               {/* Glow on hover */}

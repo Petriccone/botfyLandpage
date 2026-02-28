@@ -39,7 +39,7 @@ export function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: Math.min(i * 0.06, 0.3) }}
-              className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+              className={`rounded-2xl border transition-[border-color,background-color] duration-200 overflow-hidden ${
                 open === i ? 'border-brand-primary/30 bg-brand-primary/[0.04]' : 'border-gray-100 bg-white hover:border-gray-200'
               }`}
             >

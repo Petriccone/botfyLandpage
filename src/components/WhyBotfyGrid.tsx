@@ -41,7 +41,7 @@ export function WhyBotfyGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: Math.min(i * 0.08, 0.4) }}
-                className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-brand-primary/20 hover:shadow-md transition-all group"
+                className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-brand-primary/20 hover:shadow-md transition-[border-color,box-shadow] duration-300 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-accent-purple/8 flex items-center justify-center mb-4 group-hover:bg-accent-purple/12 transition-colors">
                   <Icon size={18} className="text-accent-purple" />

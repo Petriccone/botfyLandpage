@@ -75,7 +75,8 @@ body {
   border-color: rgba(139, 92, 246, 0.3);
   box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.08);
   transform: translateY(-2px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bento-card {
@@ -86,7 +87,7 @@ body {
   height: 100%;
   background: var(--color-surface);
   border: 1px solid var(--color-border-subtle);
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .bento-card:hover {
@@ -265,17 +266,27 @@ body {
     filter: blur(40px);
     opacity: 0.04;
   }
-  /* Only disable truly expensive animations — keep lightweight transform/opacity ones */
+  /* Disable all infinite animations on mobile for smooth 60fps */
   .animate-pulse-ring,
   .animate-ping,
-  .animate-float {
+  .animate-float,
+  .animate-dot-pulse,
+  .animate-step-pulse,
+  .animate-icon-bob,
+  .animate-pulse {
     animation: none !important;
   }
   .animate-glow-breathe {
+    animation: none !important;
     box-shadow: 0 0 10px rgba(124,58,237,0.12);
   }
   .animate-scroll-logos {
     animation-duration: 40s !important;
+  }
+  /* Hide expensive blur backgrounds on mobile */
+  .blur-3xl {
+    filter: none !important;
+    opacity: 0.5;
   }
 }
 

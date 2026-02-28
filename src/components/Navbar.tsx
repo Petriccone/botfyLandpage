@@ -188,7 +188,7 @@ export function Navbar() {
             href="https://botfyai.vercel.app/register"
             target="_blank"
             rel="noopener noreferrer"
-            className="no-underline hidden sm:inline-flex items-center h-9 px-5 rounded-full bg-white border border-gray-200 text-text-primary hover:border-gray-300 hover:bg-gray-50 text-[12px] font-semibold transition-all"
+            className="no-underline hidden sm:inline-flex items-center h-9 px-5 rounded-full bg-white border border-gray-200 text-text-primary hover:border-gray-300 hover:bg-gray-50 text-[12px] font-semibold transition-[background-color,border-color] duration-200"
           >
             {t.nav.bookDemo}
           </a>
@@ -197,7 +197,7 @@ export function Navbar() {
             href="https://botfyai.vercel.app/register"
             target="_blank"
             rel="noopener noreferrer"
-            className="no-underline inline-flex items-center h-9 px-5 rounded-full bg-accent-purple text-white hover:bg-accent-purple/90 text-[12px] font-bold transition-all shadow-md shadow-brand-primary/30"
+            className="no-underline inline-flex items-center h-9 px-5 rounded-full bg-accent-purple text-white hover:bg-accent-purple/90 text-[12px] font-bold transition-[background-color] duration-200 shadow-md shadow-brand-primary/30"
           >
             {t.nav.startFreeTrial}
           </a>
