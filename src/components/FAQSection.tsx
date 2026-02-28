@@ -40,7 +40,7 @@ export function FAQSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
               className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                open === i ? 'border-accent-purple/30 bg-purple-50/30' : 'border-gray-100 bg-white hover:border-gray-200'
+                open === i ? 'border-brand-primary/30 bg-brand-primary/[0.04]' : 'border-gray-100 bg-white hover:border-gray-200'
               }`}
             >
               <button

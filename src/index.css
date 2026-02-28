@@ -1,20 +1,31 @@
 @import "tailwindcss";
 
 @theme {
+  /* Brand colors — Botfy Identity System */
   --color-background: #ffffff;
   --color-surface: #f8f9fa;
   --color-surface-light: #f1f3f5;
   --color-border-subtle: rgba(0, 0, 0, 0.06);
-  --color-border-glow: rgba(139, 92, 246, 0.3);
+  --color-border-glow: rgba(124, 58, 237, 0.3);
   --color-text-primary: #111827;
   --color-text-secondary: #4b5563;
   --color-text-muted: #9ca3af;
+
+  /* Botfy Brand Palette */
+  --color-brand-primary: #7c3aed;   /* Primary */
+  --color-brand-deep: #3a08a2;      /* Deep */
+  --color-brand-mid: #8b5cf6;       /* Mid */
+  --color-brand-dark: #111827;      /* Dark */
+
+  /* Aliases */
   --color-accent-purple: #7c3aed;
   --color-accent-blue: #3b82f6;
   --color-accent-white: #ffffff;
-  --font-sans: "Inter", "Suisse Intl", system-ui, -apple-system, sans-serif;
+
+  /* Brand typography */
+  --font-display: "Bricolage Grotesque", "Inter", sans-serif;
+  --font-sans: "Instrument Sans", "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "Space Mono", monospace;
-  --font-display: "Clash Display", "Inter", sans-serif;
 }
 
 html {
@@ -31,14 +42,21 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #111827, var(--color-accent-purple));
+  background: linear-gradient(135deg, var(--color-brand-deep), var(--color-brand-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-brand {
+  background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-mid));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-blue-purple {
-  background: linear-gradient(135deg, #3b82f6, #7c3aed, #a855f7);
+  background: linear-gradient(135deg, #3b82f6, var(--color-brand-primary), var(--color-brand-mid));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

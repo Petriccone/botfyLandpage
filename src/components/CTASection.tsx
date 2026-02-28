@@ -9,7 +9,7 @@ export function CTASection() {
     <section className="py-24 md:py-32 bg-white relative overflow-hidden border-t border-gray-100">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-purple-50/50 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-brand-primary/[0.06] rounded-full blur-3xl" />
       </div>
 
       <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
@@ -20,7 +20,7 @@ export function CTASection() {
           transition={{ duration: 0.5 }}
           className="bg-white rounded-3xl border border-gray-100 shadow-xl shadow-gray-100 p-12 md:p-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50 border border-purple-100 text-accent-purple text-[12px] font-semibold mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/[0.07] border border-brand-primary/20 text-accent-purple text-[12px] font-semibold mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-accent-purple" />
             14 dias grátis · Sem cartão de crédito
           </div>
@@ -34,7 +34,7 @@ export function CTASection() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline w-full sm:w-auto">
-              <button className="cursor-pointer w-full px-10 py-4 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-purple-200 hover:-translate-y-0.5">
+              <button className="cursor-pointer w-full px-10 py-4 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5">
                 {k.tryFree}
               </button>
             </a>

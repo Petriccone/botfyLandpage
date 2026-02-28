@@ -21,7 +21,7 @@ export function HeroKommo() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50 border border-purple-100 text-accent-purple text-[12px] font-semibold tracking-wide mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/[0.07] border border-brand-primary/20 text-accent-purple text-[12px] font-semibold tracking-wide mb-8"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-accent-purple" />
             {k.badge}
@@ -58,7 +58,7 @@ export function HeroKommo() {
             className="flex flex-col sm:flex-row gap-3 justify-center mb-12"
           >
             <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
-              <button className="cursor-pointer w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-purple-200 hover:-translate-y-0.5">
+              <button className="cursor-pointer w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5">
                 {k.tryFreeCta}
               </button>
             </a>

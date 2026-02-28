@@ -16,7 +16,7 @@ export function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50 border border-purple-100 text-accent-purple text-[12px] font-semibold mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/[0.07] border border-brand-primary/20 text-accent-purple text-[12px] font-semibold mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-purple" />
               {a.title}
             </div>
@@ -98,7 +98,7 @@ export function About() {
           </h2>
           <div className="max-w-2xl mx-auto space-y-4">
             {a.visionList.map((item, i) => (
-              <div key={i} className="flex items-center gap-4 p-5 rounded-2xl border border-gray-100 hover:border-purple-100 transition-colors">
+              <div key={i} className="flex items-center gap-4 p-5 rounded-2xl border border-gray-100 hover:border-brand-primary/20 transition-colors">
                 <div className="w-8 h-8 rounded-full bg-accent-purple/10 flex items-center justify-center flex-shrink-0 text-accent-purple font-bold text-sm">
                   {i + 1}
                 </div>
@@ -120,7 +120,7 @@ export function About() {
           </h3>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
-              <button className="cursor-pointer px-8 py-3.5 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-purple-200">
+              <button className="cursor-pointer px-8 py-3.5 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-brand-primary/30">
                 {a.ctaButton}
               </button>
             </a>

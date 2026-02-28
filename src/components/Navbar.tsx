@@ -68,9 +68,8 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 no-underline flex-shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-accent-purple flex items-center justify-center font-bold text-white text-lg shadow-md">B</div>
-          <span className="text-[17px] font-display font-bold tracking-tight text-text-primary">Botfy</span>
+        <Link to="/" className="flex items-center gap-2 no-underline flex-shrink-0">
+          <img src="/botfy-logo.png" alt="Botfy" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -186,7 +185,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="no-underline"
           >
-            <button className="cursor-pointer h-9 px-5 rounded-full bg-accent-purple text-white hover:bg-accent-purple/90 text-[12px] font-bold transition-all shadow-md shadow-purple-200">
+            <button className="cursor-pointer h-9 px-5 rounded-full bg-accent-purple text-white hover:bg-accent-purple/90 text-[12px] font-bold transition-all shadow-md shadow-brand-primary/30">
               {t.nav.startFreeTrial}
             </button>
           </a>

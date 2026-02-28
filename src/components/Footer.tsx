@@ -14,9 +14,8 @@ export function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-flex items-center gap-2.5 no-underline mb-5">
-              <div className="w-8 h-8 rounded-lg bg-accent-purple flex items-center justify-center font-bold text-white text-lg">B</div>
-              <span className="text-[17px] font-display font-bold tracking-tight text-text-primary">Botfy</span>
+            <Link to="/" className="inline-flex items-center gap-2 no-underline mb-5">
+              <img src="/botfy-logo.png" alt="Botfy" className="h-8 w-auto" />
             </Link>
             <p className="max-w-xs text-text-secondary text-sm leading-relaxed font-light mb-6">
               {t.footer.desc}

@@ -50,7 +50,7 @@ export function Pricing() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className={`relative flex flex-col rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isPopular
-                    ? 'bg-accent-purple border-accent-purple shadow-xl shadow-purple-200'
+                    ? 'bg-accent-purple border-accent-purple shadow-xl shadow-brand-primary/30'
                     : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg'
                 }`}
               >

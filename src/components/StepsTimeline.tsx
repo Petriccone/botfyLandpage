@@ -105,7 +105,7 @@ export function StepsTimeline() {
               transition={{ duration: 0.5, type: 'spring', stiffness: 150 }}
               className="relative flex-shrink-0 flex flex-col items-center justify-center p-8 rounded-3xl text-center animate-glow-breathe"
               style={{
-                background: 'linear-gradient(135deg, #6d28d9, #7c3aed, #8b5cf6)',
+                background: 'linear-gradient(135deg, var(--color-brand-deep), var(--color-brand-primary), var(--color-brand-mid))',
                 minWidth: 210,
               }}
             >
@@ -123,12 +123,12 @@ export function StepsTimeline() {
                 <div className="absolute w-28 h-28 rounded-full border border-white/10 animate-pulse-ring" style={{ animationDelay: '1s' }} />
               </div>
 
-              {/* B logo */}
+              {/* Brand icon */}
               <div className="relative z-10 w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3 border border-white/30">
-                <span className="text-white font-display font-black text-2xl">B</span>
+                <img src="/botfy-icon.svg" alt="Botfy" className="w-9 h-9" />
               </div>
 
-              <p className="relative z-10 text-white font-bold text-lg leading-tight mb-1">Botfy IA</p>
+              <p className="relative z-10 text-white font-display font-bold text-lg leading-tight mb-1">Botfy IA</p>
               <p className="relative z-10 text-white/60 text-[10px] font-mono tracking-[0.2em] uppercase">Neural Engine</p>
             </motion.div>
 
@@ -169,7 +169,7 @@ export function StepsTimeline() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              className="bg-white px-8 py-8 text-center group hover:bg-purple-50/40 transition-colors"
+              className="bg-white px-8 py-8 text-center group hover:bg-brand-primary/[0.04] transition-colors"
             >
               <div className="relative w-12 h-12 mx-auto mb-5">
                 <motion.div
