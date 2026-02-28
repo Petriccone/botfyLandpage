@@ -11,19 +11,19 @@
   "rewrites": [
     {
       "source": "/dashboard/:path*",
-      "destination": "https://botfyai.vercel.app/dashboard/:path*"
+      "destination": "https://botfy-seven.vercel.app/dashboard/:path*"
     },
     {
       "source": "/login",
-      "destination": "https://botfyai.vercel.app/login"
+      "destination": "https://botfy-seven.vercel.app/login"
     },
     {
       "source": "/register",
-      "destination": "https://botfyai.vercel.app/register"
+      "destination": "https://botfy-seven.vercel.app/register"
     },
     {
       "source": "/api/:path*",
-      "destination": "https://botfyai.vercel.app/api/:path*"
+      "destination": "https://botfy-seven.vercel.app/api/:path*"
     },
     {
       "source": "/((?!api|dashboard|login|register).*)",
