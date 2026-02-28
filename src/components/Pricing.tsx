@@ -96,8 +96,8 @@ export function Pricing() {
                   </ul>
 
                   <a
-                    href={isEnterprise ? 'mailto:contact@botfy.ai' : (STRIPE_LINKS[i] || 'https://botfyai.vercel.app/register')}
-                    target={!isEnterprise ? '_blank' : undefined}
+                    href={isEnterprise ? 'mailto:contact@botfy.ai' : (STRIPE_LINKS[i] || '/register')}
+                    target={STRIPE_LINKS[i] ? '_blank' : undefined}
                     rel="noopener noreferrer"
                     className={`no-underline mt-auto inline-flex items-center justify-center w-full h-10 rounded-xl font-bold text-[12px] transition-[background-color] duration-200 ${
                       isPopular

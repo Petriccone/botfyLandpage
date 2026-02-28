@@ -33,7 +33,7 @@ export function CTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-[background-color,transform] duration-200 shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5">
+            <a href="/register" className="no-underline w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-[background-color,transform] duration-200 shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5">
               {k.tryFree}
             </a>
           </div>

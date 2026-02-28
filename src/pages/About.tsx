@@ -119,7 +119,7 @@ export function About() {
             {a.ctaTitle}
           </h3>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
+            <a href="/register" className="no-underline">
               <button className="cursor-pointer px-8 py-3.5 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-brand-primary/30">
                 {a.ctaButton}
               </button>

@@ -57,7 +57,7 @@ export function HeroKommo() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-3 justify-center mb-12"
           >
-            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline inline-flex w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-[background-color,transform] duration-200 shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5 items-center justify-center">
+            <a href="/register" className="no-underline inline-flex w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-[background-color,transform] duration-200 shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5 items-center justify-center">
               {k.tryFreeCta}
             </a>
             <a href="#how-it-works" className="no-underline inline-flex w-full sm:w-auto px-8 py-3.5 rounded-full bg-white border border-gray-200 text-text-primary font-semibold text-[15px] hover:border-gray-300 hover:bg-gray-50 transition-[background-color,border-color] duration-200 items-center justify-center gap-2.5">
