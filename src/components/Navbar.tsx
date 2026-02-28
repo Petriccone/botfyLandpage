@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Menu, X, ChevronDown, Bot, LayoutDashboard, Inbox, BookOpen, ShoppingBag, Building2, HeartPulse, GraduationCap } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 import type { Language } from '../i18n/translations'
 
@@ -14,73 +14,150 @@ export function Navbar() {
   const { language, setLanguage, t } = useLanguage()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [productOpen, setProductOpen] = useState(false)
+  const [solutionsOpen, setSolutionsOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
+  const productRef = useRef<HTMLDivElement>(null)
+  const solutionsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navLinks = [
-    { label: t.nav.howItWorks, href: '/#how-it-works' },
-    { label: t.nav.pricing, href: '/#pricing' },
-    { label: t.nav.aboutUs, href: '/about' },
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (productRef.current && !productRef.current.contains(e.target as Node)) setProductOpen(false)
+      if (solutionsRef.current && !solutionsRef.current.contains(e.target as Node)) setSolutionsOpen(false)
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  const handleHashClick = (e: React.MouseEvent, id: string) => {
+    setMobileOpen(false)
+    setProductOpen(false)
+    setSolutionsOpen(false)
+    if (location.pathname === '/') {
+      e.preventDefault()
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      e.preventDefault()
+      navigate(`/#${id}`)
+    }
+  }
+
+  const productItems = [
+    { icon: Bot, label: { en: 'AI Agents', pt: 'Agentes IA', es: 'Agentes IA' }, id: 'how-it-works' },
+    { icon: LayoutDashboard, label: { en: 'Dashboard', pt: 'Dashboard', es: 'Dashboard' }, id: 'how-it-works' },
+    { icon: Inbox, label: { en: 'Omnichannel Inbox', pt: 'Inbox Omnichannel', es: 'Inbox Omnicanal' }, id: 'how-it-works' },
+    { icon: BookOpen, label: { en: 'AI Training', pt: 'Treinamento IA', es: 'Entrenamiento IA' }, id: 'how-it-works' },
+  ]
+
+  const solutionItems = [
+    { icon: ShoppingBag, label: { en: 'Retail & E-commerce', pt: 'Varejo & E-commerce', es: 'Retail & E-commerce' } },
+    { icon: Building2, label: { en: 'Real Estate', pt: 'Imóveis', es: 'Inmobiliaria' } },
+    { icon: HeartPulse, label: { en: 'Health & Wellness', pt: 'Saúde & Bem-estar', es: 'Salud & Bienestar' } },
+    { icon: GraduationCap, label: { en: 'Education', pt: 'Educação', es: 'Educación' } },
   ]
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6">
-      <nav
-        className={`
-          flex items-center justify-between w-full max-w-4xl px-6 py-3
-          rounded-[2.5rem] transition-all duration-500 ease-out
-          ${scrolled
-            ? 'bg-primary/80 backdrop-blur-xl border border-white/10 shadow-2xl'
-            : 'bg-transparent border border-transparent'}
-        `}
-      >
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-xl border-b border-gray-100 py-3 shadow-sm' : 'bg-white/80 backdrop-blur-md py-4'}`}>
+      <div className="mx-auto max-w-7xl flex items-center justify-between px-6">
+
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group transition-transform duration-300 hover:scale-105">
-          <span className={`
-            font-heading font-black text-xl tracking-tighter
-            ${scrolled ? 'text-background' : 'text-primary'}
-          `}>
-            botfy<span className="text-accent">.</span>
-          </span>
+        <Link to="/" className="flex items-center gap-2.5 no-underline flex-shrink-0">
+          <div
+            className="relative w-[34px] h-[34px] rounded-[9px] flex-shrink-0 flex items-center justify-center"
+            style={{ background: 'linear-gradient(145deg, #7c3aed, #3a08a2)' }}
+          >
+            <span className="text-white font-display font-extrabold text-[19px] leading-none select-none">b</span>
+            <div className="absolute top-[4px] right-[4px] w-[7px] h-[7px] rounded-full bg-white/30 border border-white/60" />
+          </div>
+          <span className="font-display font-bold text-[18px] tracking-tight text-text-primary leading-none">botfy</span>
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.href}
-              className={`
-                px-4 py-2 text-[13px] font-medium tracking-tight rounded-full transition-all
-                ${scrolled
-                  ? 'text-background/70 hover:text-background hover:bg-white/5'
-                  : 'text-primary/70 hover:text-primary hover:bg-primary/5'}
-              `}
+        {/* Desktop Nav */}
+        <div className="hidden lg:flex items-center gap-1">
+
+          {/* Product Dropdown */}
+          <div ref={productRef} className="relative">
+            <button
+              onClick={() => { setProductOpen(!productOpen); setSolutionsOpen(false) }}
+              className="cursor-pointer flex items-center gap-1 px-4 py-2 text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-gray-50"
             >
-              {link.label}
-            </Link>
-          ))}
+              {t.nav.product}
+              <ChevronDown size={14} className={`transition-transform duration-200 ${productOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {productOpen && (
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 z-50">
+                {productItems.map((item) => (
+                  <Link
+                    key={item.label.en}
+                    to={`/#${item.id}`}
+                    onClick={(e) => handleHashClick(e, item.id)}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] text-text-secondary hover:text-text-primary hover:bg-gray-50 transition-colors no-underline"
+                  >
+                    <item.icon size={15} className="text-accent-purple flex-shrink-0" />
+                    {item.label[language]}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Solutions Dropdown */}
+          <div ref={solutionsRef} className="relative">
+            <button
+              onClick={() => { setSolutionsOpen(!solutionsOpen); setProductOpen(false) }}
+              className="cursor-pointer flex items-center gap-1 px-4 py-2 text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-gray-50"
+            >
+              {t.nav.solutions}
+              <ChevronDown size={14} className={`transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {solutionsOpen && (
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 z-50">
+                {solutionItems.map((item) => (
+                  <button
+                    key={item.label.en}
+                    onClick={() => setSolutionsOpen(false)}
+                    className="cursor-pointer w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] text-text-secondary hover:text-text-primary hover:bg-gray-50 transition-colors text-left"
+                  >
+                    <item.icon size={15} className="text-accent-purple flex-shrink-0" />
+                    {item.label[language]}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <Link
+            to="/#pricing"
+            onClick={(e) => handleHashClick(e, 'pricing')}
+            className="px-4 py-2 text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-gray-50 no-underline"
+          >
+            {t.nav.pricing}
+          </Link>
+
+          <Link
+            to="/about"
+            className="px-4 py-2 text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-gray-50 no-underline"
+          >
+            {t.nav.aboutUs}
+          </Link>
         </div>
 
-        {/* Right Actions */}
+        {/* Right side */}
         <div className="flex items-center gap-3">
-          {/* Lang Switch */}
-          <div className="hidden sm:flex items-center gap-2 mr-2">
+          {/* Language */}
+          <div className="hidden lg:flex items-center gap-3 border-r border-gray-200 pr-4 mr-1">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => setLanguage(lang.code)}
-                className={`
-                  text-[10px] font-mono font-bold tracking-widest transition-colors
-                  ${language === lang.code
-                    ? (scrolled ? 'text-accent' : 'text-accent')
-                    : (scrolled ? 'text-background/40 hover:text-background/60' : 'text-primary/40 hover:text-primary/60')}
-                `}
+                className={`cursor-pointer text-[11px] font-bold tracking-widest transition-colors ${language === lang.code ? 'text-text-primary' : 'text-text-muted hover:text-text-secondary'}`}
               >
                 {lang.label}
               </button>
@@ -88,56 +165,100 @@ export function Navbar() {
           </div>
 
           <a
-            href="https://botfyai.vercel.app/register"
+            href="https://botfyai.vercel.app/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="magnetic-button group h-10 px-6 flex items-center justify-center bg-accent text-primary font-bold text-[13px] transition-all"
+            className="no-underline hidden lg:inline-flex"
           >
-            <span className="bg-layer !bg-primary"></span>
-            <span className="text-layer group-hover:text-background transition-colors duration-400">
-              {t.nav.startFreeTrial}
+            <span className="text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer px-3">
+              {t.nav.login}
             </span>
           </a>
 
-          {/* Mobile Toggle */}
+          <a
+            href="https://botfyai.vercel.app/register"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline hidden sm:inline-flex"
+          >
+            <button className="cursor-pointer h-9 px-5 rounded-full bg-white border border-gray-200 text-text-primary hover:border-gray-300 hover:bg-gray-50 text-[12px] font-semibold transition-all">
+              {t.nav.bookDemo}
+            </button>
+          </a>
+
+          <a
+            href="https://botfyai.vercel.app/register"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline"
+          >
+            <button className="cursor-pointer h-9 px-5 rounded-full bg-accent-purple text-white hover:bg-accent-purple/90 text-[12px] font-bold transition-all shadow-md shadow-brand-primary/30">
+              {t.nav.startFreeTrial}
+            </button>
+          </a>
+
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`md:hidden p-2 rounded-full transition-colors ${scrolled ? 'text-background hover:bg-white/10' : 'text-primary hover:bg-primary/5'}`}
+            className="cursor-pointer inline-flex items-center justify-center p-2 text-text-secondary hover:text-text-primary lg:hidden"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-      </nav>
+      </div>
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="absolute top-20 left-6 right-6 bg-primary rounded-[2rem] p-8 shadow-3xl border border-white/5 md:hidden animate-in fade-in slide-in-from-top-4 duration-300">
-          <div className="flex flex-col gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-2xl font-drama italic text-background/80 hover:text-background transition-colors"
+        <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-100 p-6 flex flex-col gap-5 lg:hidden shadow-lg">
+          <div className="flex flex-col gap-1">
+            <Link
+              to="/#how-it-works"
+              onClick={(e) => handleHashClick(e, 'how-it-works')}
+              className="px-4 py-3 text-base font-medium text-text-secondary no-underline rounded-xl hover:bg-gray-50"
+            >
+              {t.nav.howItWorks}
+            </Link>
+            <Link
+              to="/#pricing"
+              onClick={(e) => handleHashClick(e, 'pricing')}
+              className="px-4 py-3 text-base font-medium text-text-secondary no-underline rounded-xl hover:bg-gray-50"
+            >
+              {t.nav.pricing}
+            </Link>
+            <Link
+              to="/about"
+              className="px-4 py-3 text-base font-medium text-text-secondary no-underline rounded-xl hover:bg-gray-50"
+              onClick={() => setMobileOpen(false)}
+            >
+              {t.nav.aboutUs}
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => setLanguage(lang.code)}
+                className={`cursor-pointer text-sm font-bold tracking-widest ${language === lang.code ? 'text-text-primary' : 'text-text-muted'}`}
               >
-                {link.label}
-              </Link>
+                {lang.label}
+              </button>
             ))}
-            <div className="h-[1px] bg-white/10 w-full my-2" />
-            <div className="flex items-center gap-6">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => { setLanguage(lang.code); setMobileOpen(false) }}
-                  className={`text-sm font-mono tracking-widest ${language === lang.code ? 'text-accent' : 'text-background/40'}`}
-                >
-                  {lang.label}
-                </button>
-              ))}
-            </div>
+          </div>
+
+          <div className="flex flex-col gap-3 pt-2">
+            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
+              <button className="cursor-pointer w-full h-12 rounded-xl bg-white border border-gray-200 text-text-primary text-sm font-semibold">
+                {t.nav.bookDemo}
+              </button>
+            </a>
+            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
+              <button className="cursor-pointer w-full h-12 rounded-xl bg-accent-purple text-white text-sm font-bold">
+                {t.nav.startFreeTrial}
+              </button>
+            </a>
           </div>
         </div>
       )}
-    </div>
+    </nav>
   )
 }
