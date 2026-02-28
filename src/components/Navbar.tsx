@@ -73,7 +73,7 @@ export function Navbar() {
   ]
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-xl border-b border-gray-100 py-3 shadow-sm' : 'bg-white/80 backdrop-blur-md py-4'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-[padding,background-color,border-color,box-shadow] duration-300 ${scrolled ? 'bg-white/[0.97] md:bg-white/95 md:backdrop-blur-xl border-b border-gray-100 py-3 shadow-sm' : 'bg-white/95 md:bg-white/80 md:backdrop-blur-md py-4'}`}>
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6">
 
         {/* Logo */}
@@ -188,22 +188,18 @@ export function Navbar() {
             href="https://botfyai.vercel.app/register"
             target="_blank"
             rel="noopener noreferrer"
-            className="no-underline hidden sm:inline-flex"
+            className="no-underline hidden sm:inline-flex items-center h-9 px-5 rounded-full bg-white border border-gray-200 text-text-primary hover:border-gray-300 hover:bg-gray-50 text-[12px] font-semibold transition-all"
           >
-            <button className="cursor-pointer h-9 px-5 rounded-full bg-white border border-gray-200 text-text-primary hover:border-gray-300 hover:bg-gray-50 text-[12px] font-semibold transition-all">
-              {t.nav.bookDemo}
-            </button>
+            {t.nav.bookDemo}
           </a>
 
           <a
             href="https://botfyai.vercel.app/register"
             target="_blank"
             rel="noopener noreferrer"
-            className="no-underline"
+            className="no-underline inline-flex items-center h-9 px-5 rounded-full bg-accent-purple text-white hover:bg-accent-purple/90 text-[12px] font-bold transition-all shadow-md shadow-brand-primary/30"
           >
-            <button className="cursor-pointer h-9 px-5 rounded-full bg-accent-purple text-white hover:bg-accent-purple/90 text-[12px] font-bold transition-all shadow-md shadow-brand-primary/30">
-              {t.nav.startFreeTrial}
-            </button>
+            {t.nav.startFreeTrial}
           </a>
 
           <button
@@ -217,7 +213,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-100 p-6 flex flex-col gap-5 lg:hidden shadow-lg">
+        <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-100 p-6 flex flex-col gap-5 lg:hidden shadow-lg max-h-[calc(100dvh-64px)] overflow-y-auto">
           <div className="flex flex-col gap-1">
             <Link
               to="/#how-it-works"
@@ -255,15 +251,11 @@ export function Navbar() {
           </div>
 
           <div className="flex flex-col gap-3 pt-2">
-            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
-              <button className="cursor-pointer w-full h-12 rounded-xl bg-white border border-gray-200 text-text-primary text-sm font-semibold">
-                {t.nav.bookDemo}
-              </button>
+            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline flex items-center justify-center w-full h-12 rounded-xl bg-white border border-gray-200 text-text-primary text-sm font-semibold">
+              {t.nav.bookDemo}
             </a>
-            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
-              <button className="cursor-pointer w-full h-12 rounded-xl bg-accent-purple text-white text-sm font-bold">
-                {t.nav.startFreeTrial}
-              </button>
+            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline flex items-center justify-center w-full h-12 rounded-xl bg-accent-purple text-white text-sm font-bold">
+              {t.nav.startFreeTrial}
             </a>
           </div>
         </div>

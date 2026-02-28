@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Plus, Minus } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 
@@ -38,7 +38,7 @@ export function FAQSection() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
+              transition={{ delay: Math.min(i * 0.06, 0.3) }}
               className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                 open === i ? 'border-brand-primary/30 bg-brand-primary/[0.04]' : 'border-gray-100 bg-white hover:border-gray-200'
               }`}
@@ -55,20 +55,16 @@ export function FAQSection() {
                   }
                 </div>
               </button>
-              <AnimatePresence>
-                {open === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <div className="px-6 pb-5">
-                      <p className="text-text-secondary leading-relaxed font-light">{item.a}</p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <div
+                className="grid transition-all duration-300 ease-out"
+                style={{ gridTemplateRows: open === i ? '1fr' : '0fr' }}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-6 pb-5">
+                    <p className="text-text-secondary leading-relaxed font-light">{item.a}</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -147,6 +147,7 @@ export interface Translations {
     }
     testimonialsTitle: string
     testimonials: { quote: string; name: string; role: string }[]
+    ctaBadge: string
     ctaHeadline: string
     ctaSub: string
     tryFree: string
@@ -461,6 +462,7 @@ const en: Translations = {
       { quote: 'Simple, direct, measurable. Finally an AI platform that just works and delivers results.', name: 'James K.', role: 'Founder' },
       { quote: 'Our response time dropped from hours to under a minute. Revenue went up significantly.', name: 'Elena R.', role: 'Operations Lead' },
     ],
+    ctaBadge: '14-day free trial · No credit card',
     ctaHeadline: 'Get Botfy free for 14 days',
     ctaSub: 'Start building your AI sales pipeline today. No credit card required.',
     tryFree: 'Start free',
@@ -825,6 +827,7 @@ const pt: Translations = {
       { quote: 'Simples, direto, mensurável. Finalmente uma plataforma de IA que funciona de verdade.', name: 'James K.', role: 'Fundador' },
       { quote: 'O tempo de resposta caiu de horas para menos de um minuto. A receita subiu.', name: 'Elena R.', role: 'Operações' },
     ],
+    ctaBadge: '14 dias grátis · Sem cartão de crédito',
     ctaHeadline: 'Use a Botfy grátis por 14 dias',
     ctaSub: 'Comece a construir seu pipeline de vendas com IA hoje. Sem cartão de crédito.',
     tryFree: 'Começar grátis',
@@ -1189,6 +1192,7 @@ const es: Translations = {
       { quote: 'Simple, directo, medible. Por fin una plataforma de IA que funciona de verdad.', name: 'James K.', role: 'Fundador' },
       { quote: 'El tiempo de respuesta pasó de horas a menos de un minuto. Los ingresos subieron.', name: 'Elena R.', role: 'Operaciones' },
     ],
+    ctaBadge: '14 días gratis · Sin tarjeta de crédito',
     ctaHeadline: 'Prueba Botfy gratis 14 días',
     ctaSub: 'Empieza a construir tu pipeline de ventas con IA hoy. Sin tarjeta de crédito.',
     tryFree: 'Empezar gratis',

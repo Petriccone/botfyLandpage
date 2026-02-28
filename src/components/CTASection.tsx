@@ -22,7 +22,7 @@ export function CTASection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/[0.07] border border-brand-primary/20 text-accent-purple text-[12px] font-semibold mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-accent-purple" />
-            14 dias grátis · Sem cartão de crédito
+            {k.ctaBadge}
           </div>
 
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-text-primary mb-5">
@@ -33,15 +33,11 @@ export function CTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline w-full sm:w-auto">
-              <button className="cursor-pointer w-full px-10 py-4 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5">
-                {k.tryFree}
-              </button>
+            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5">
+              {k.tryFree}
             </a>
-            <a href="mailto:contact@botfy.ai" className="no-underline w-full sm:w-auto">
-              <button className="cursor-pointer w-full px-10 py-4 rounded-full bg-white border border-gray-200 text-text-primary font-semibold text-[15px] hover:border-gray-300 hover:bg-gray-50 transition-all">
-                {k.bookDemo}
-              </button>
+            <a href="mailto:contact@botfy.ai" className="no-underline w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full bg-white border border-gray-200 text-text-primary font-semibold text-[15px] hover:border-gray-300 hover:bg-gray-50 transition-all">
+              {k.bookDemo}
             </a>
           </div>
         </motion.div>

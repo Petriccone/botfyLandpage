@@ -57,17 +57,15 @@ export function HeroKommo() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-3 justify-center mb-12"
           >
-            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline">
-              <button className="cursor-pointer w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5">
-                {k.tryFreeCta}
-              </button>
+            <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline inline-flex w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-all shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5 items-center justify-center">
+              {k.tryFreeCta}
             </a>
-            <button className="cursor-pointer w-full sm:w-auto px-8 py-3.5 rounded-full bg-white border border-gray-200 text-text-primary font-semibold text-[15px] hover:border-gray-300 hover:bg-gray-50 transition-all flex items-center justify-center gap-2.5">
+            <a href="mailto:contact@botfy.ai" className="no-underline inline-flex w-full sm:w-auto px-8 py-3.5 rounded-full bg-white border border-gray-200 text-text-primary font-semibold text-[15px] hover:border-gray-300 hover:bg-gray-50 transition-all items-center justify-center gap-2.5">
               <div className="w-6 h-6 rounded-full bg-accent-purple/10 flex items-center justify-center">
                 <Play size={10} className="text-accent-purple fill-accent-purple ml-0.5" />
               </div>
               {k.heroBookDemo}
-            </button>
+            </a>
           </motion.div>
 
           {/* Stats */}
@@ -111,6 +109,7 @@ export function HeroKommo() {
               src="/screens/dashboard.png"
               alt="Botfy Dashboard"
               className="w-full block"
+              loading="eager"
             />
           </div>
 

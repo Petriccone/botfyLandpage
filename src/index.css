@@ -111,11 +111,10 @@ body {
 
 .aurora-glow {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 60vh;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.08) 0%, rgba(59, 130, 246, 0.05) 30%, transparent 70%);
   pointer-events: none;
   z-index: 0;
@@ -158,11 +157,9 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
-  will-change: transform;
 }
 
 .animate-scroll-logos {
-  will-change: transform;
 }
 
 @keyframes float {
@@ -200,7 +197,6 @@ body {
 
 .animate-pulse-ring {
   animation: pulse-ring 2.5s ease-out infinite;
-  will-change: transform, opacity;
 }
 
 /* GPU-friendly dot pulse — replaces framer-motion infinite animations */
@@ -210,7 +206,6 @@ body {
 }
 .animate-dot-pulse {
   animation: dot-pulse 2.5s ease-in-out infinite;
-  will-change: transform, opacity;
 }
 
 /* GPU-friendly step pulse */
@@ -220,7 +215,6 @@ body {
 }
 .animate-step-pulse {
   animation: step-pulse 3s ease-in-out infinite;
-  will-change: transform, opacity;
 }
 
 /* GPU-friendly icon bob — replaces framer-motion infinite bob */
@@ -230,13 +224,11 @@ body {
 }
 .animate-icon-bob {
   animation: icon-bob 4s ease-in-out infinite;
-  will-change: transform;
 }
 
 .animate-glow-breathe {
   animation: glow-breathe 3s ease-in-out infinite;
-  will-change: opacity;
-  box-shadow: 0 0 20px rgba(124,58,237,0.2), 0 0 50px rgba(124,58,237,0.08);
+  box-shadow: 0 0 15px rgba(124,58,237,0.15), 0 0 30px rgba(124,58,237,0.05);
 }
 
 ::-webkit-scrollbar {
@@ -255,18 +247,38 @@ body {
   background: var(--color-accent-purple);
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Reduce heavy effects on mobile for better performance */
 @media (max-width: 768px) {
   .glass-panel {
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
   .glow-aura {
-    filter: blur(60px);
+    filter: blur(40px);
+    opacity: 0.04;
   }
   .animate-pulse-ring,
-  .animate-ping {
+  .animate-ping,
+  .animate-dot-pulse,
+  .animate-step-pulse,
+  .animate-icon-bob,
+  .animate-glow-breathe,
+  .animate-float {
     animation: none !important;
+  }
+  .animate-glow-breathe {
+    box-shadow: none !important;
+  }
+  .animate-scroll-logos {
+    animation-duration: 40s !important;
   }
 }
 

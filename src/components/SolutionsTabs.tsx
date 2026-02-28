@@ -42,13 +42,13 @@ export function SolutionsTabs() {
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center mb-10">
-          <div className="inline-flex bg-white border border-gray-200 rounded-2xl p-1.5 gap-1">
+        <div className="flex justify-center mb-10 -mx-6 px-6">
+          <div className="inline-flex bg-white border border-gray-200 rounded-2xl p-1.5 gap-1 max-w-full overflow-x-auto scrollbar-hide">
             {tabs.map((tab, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`cursor-pointer px-5 py-2.5 rounded-xl text-[13px] font-semibold transition-all ${
+                className={`cursor-pointer px-4 md:px-5 py-2.5 rounded-xl text-[12px] md:text-[13px] font-semibold transition-all whitespace-nowrap flex-shrink-0 ${
                   active === i
                     ? 'bg-accent-purple text-white shadow-sm'
                     : 'text-text-secondary hover:text-text-primary hover:bg-gray-50'
@@ -102,6 +102,7 @@ export function SolutionsTabs() {
                   src={screenMap[current.screen] || screenMap['dashboard']}
                   alt={current.title}
                   className="w-full block"
+                  loading="lazy"
                 />
               </div>
             </div>

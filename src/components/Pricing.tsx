@@ -47,7 +47,7 @@ export function Pricing() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
+                transition={{ duration: 0.4, delay: Math.min(i * 0.1, 0.4) }}
                 className={`relative flex flex-col rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isPopular
                     ? 'bg-accent-purple border-accent-purple shadow-xl shadow-brand-primary/30'
@@ -99,19 +99,15 @@ export function Pricing() {
                     href={isEnterprise ? 'mailto:contact@botfy.ai' : (STRIPE_LINKS[i] || 'https://botfyai.vercel.app/register')}
                     target={!isEnterprise ? '_blank' : undefined}
                     rel="noopener noreferrer"
-                    className="no-underline block mt-auto"
+                    className={`no-underline mt-auto inline-flex items-center justify-center w-full h-10 rounded-xl font-bold text-[12px] transition-all ${
+                      isPopular
+                        ? 'bg-white text-accent-purple hover:bg-gray-50'
+                        : isEnterprise
+                        ? 'bg-gray-900 text-white hover:bg-gray-800'
+                        : 'bg-accent-purple text-white hover:bg-accent-purple/90'
+                    }`}
                   >
-                    <button
-                      className={`cursor-pointer w-full h-10 rounded-xl font-bold text-[12px] transition-all ${
-                        isPopular
-                          ? 'bg-white text-accent-purple hover:bg-gray-50'
-                          : isEnterprise
-                          ? 'bg-gray-900 text-white hover:bg-gray-800'
-                          : 'bg-accent-purple text-white hover:bg-accent-purple/90'
-                      }`}
-                    >
-                      {plan.cta}
-                    </button>
+                    {plan.cta}
                   </a>
                 </div>
               </motion.div>

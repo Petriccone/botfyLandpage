@@ -124,7 +124,7 @@ export function StepsTimeline() {
 
               {/* Brand icon */}
               <div className="relative z-10 w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3 border border-white/30">
-                <img src="/botfy-icon.svg" alt="Botfy" className="w-9 h-9" />
+                <img src="/botfy-icon.svg" alt="Botfy" className="w-9 h-9" loading="lazy" />
               </div>
 
               <p className="relative z-10 text-white font-display font-bold text-lg leading-tight mb-1">Botfy IA</p>

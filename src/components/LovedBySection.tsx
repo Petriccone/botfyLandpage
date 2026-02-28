@@ -27,6 +27,7 @@ function LogoCard({ logo }: { logo: typeof logos[0] }) {
           src={`https://logo.clearbit.com/${logo.domain}`}
           alt={logo.name}
           className="h-8 w-auto max-w-[80px] object-contain opacity-80"
+          loading="lazy"
           onError={() => setImgError(true)}
         />
       ) : (
