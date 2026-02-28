@@ -261,7 +261,7 @@ const en: Translations = {
     titleHighlight: 'Sell on Autopilot.',
     subtitle: 'Automate conversations, qualify leads and close sales 24/7 — without hiring, without complexity.',
     subtitle2: 'Deploy intelligent AI agents in minutes and turn every message into revenue.',
-    cta: 'Start Free Trial',
+    cta: 'Start Free',
     ctaSecondary: 'See How It Works',
     trustBullets: ['No setup fees.', 'Self-service platform.', 'Go live in minutes.'],
   },
@@ -411,7 +411,7 @@ const en: Translations = {
   cta: {
     title: 'Ready to Sell on Autopilot?',
     subtitle: 'Deploy your AI workforce today.',
-    button: 'Start Free Trial',
+    button: 'Start Free',
   },
   kommo: {
     badge: 'AI Agent for WhatsApp & Messaging',
@@ -420,7 +420,7 @@ const en: Translations = {
     heroLine3: 'On autopilot.',
     heroHeadline: 'All the ways you sell — combined in one AI platform',
     heroSubline: 'Create AI agents trained on your business that sell 24/7 on WhatsApp, Instagram, and more.',
-    tryFreeCta: 'Try free for 14 days',
+    tryFreeCta: 'Start for free',
     heroBookDemo: 'Watch demo',
     heroStats: [
       { value: '50+', label: 'countries' },
@@ -462,8 +462,8 @@ const en: Translations = {
       { quote: 'Simple, direct, measurable. Finally an AI platform that just works and delivers results.', name: 'James K.', role: 'Founder' },
       { quote: 'Our response time dropped from hours to under a minute. Revenue went up significantly.', name: 'Elena R.', role: 'Operations Lead' },
     ],
-    ctaBadge: '14-day free trial · No credit card',
-    ctaHeadline: 'Get Botfy free for 14 days',
+    ctaBadge: 'Free forever · No credit card',
+    ctaHeadline: 'Start using Botfy for free',
     ctaSub: 'Start building your AI sales pipeline today. No credit card required.',
     tryFree: 'Start free',
     bookDemo: 'Book a demo',
@@ -534,7 +534,7 @@ const en: Translations = {
     title: 'Frequently asked questions',
     subtitle: 'Still have questions? Our team is ready to help.',
     items: [
-      { q: 'How does the free trial work?', a: 'You get 14 days of full access to every feature — AI agents, omnichannel inbox, CRM, analytics, and team management. No credit card is required to start. At the end of the trial, you can choose a plan or simply let it expire. Your data is preserved for 30 days so you can pick up right where you left off.' },
+      { q: 'How does the free plan work?', a: 'Botfy offers a free plan with no time limit — you can use it for as long as you want. The free plan includes access to AI agents, the omnichannel inbox, and core features so you can experience the platform with real conversations. No credit card is required. When you need more volume, advanced analytics, or team features, you can upgrade to a paid plan at any time.' },
       { q: 'Does it work with WhatsApp Business API?', a: 'Yes. Botfy connects directly to the official WhatsApp Business API through Meta\'s Cloud API. You keep full ownership of your phone number and business account. We support message templates, interactive buttons, list messages, and media sharing — all managed from the Botfy dashboard without needing a separate BSP.' },
       { q: 'Do I need to know how to code?', a: 'Not at all. Botfy is designed for business teams, not developers. You configure conversation flows with a visual builder, train the AI by uploading your own content (PDFs, websites, FAQs), and customize the agent\'s personality through simple text prompts. If you do want deeper integrations, we offer a REST API and webhooks for your development team.' },
       { q: 'How long does setup take?', a: 'Most customers have their first AI agent live in under 30 minutes. The process is simple: connect your messaging channel (WhatsApp, Telegram, or Web Chat), upload your training content (product catalog, FAQ documents, company policies), customize the agent\'s tone and behavior, then activate. Our onboarding wizard guides you through each step.' },
@@ -586,7 +586,7 @@ const en: Translations = {
       visionTitle: 'Our Vision',
       visionList: ['Build the AI layer that powers business communication', 'Accessible for small teams, scalable for enterprise', 'Make instant, intelligent responses the new standard'],
       ctaTitle: 'Ready to see Botfy in action?',
-      ctaButton: 'Start free — 14 days',
+      ctaButton: 'Start free',
       ctaSecondary: 'Talk to us',
     },
     contact: {
@@ -626,7 +626,7 @@ const pt: Translations = {
     titleHighlight: 'Venda no Piloto Automático.',
     subtitle: 'Automatize conversas, qualifique leads e feche vendas 24/7 — sem contratar, sem complexidade.',
     subtitle2: 'Implante agentes de IA em minutos e transforme cada mensagem em receita.',
-    cta: 'Teste Grátis',
+    cta: 'Começar Grátis',
     ctaSecondary: 'Ver Como Funciona',
     trustBullets: ['Sem taxas de configuração.', 'Plataforma self-service.', 'No ar em minutos.'],
   },
@@ -776,7 +776,7 @@ const pt: Translations = {
   cta: {
     title: 'Pronto para Vender no Piloto Automático?',
     subtitle: 'Implante sua força de trabalho em IA hoje.',
-    button: 'Teste Grátis',
+    button: 'Começar Grátis',
   },
   kommo: {
     badge: 'Agente de IA para WhatsApp & Mensageiros',
@@ -785,7 +785,7 @@ const pt: Translations = {
     heroLine3: 'No piloto automático.',
     heroHeadline: 'Tudo o que você precisa para vender — em uma plataforma de IA',
     heroSubline: 'Crie agentes de IA treinados com o seu negócio que vendem 24/7 pelo WhatsApp, Instagram e mais.',
-    tryFreeCta: 'Começar grátis — 14 dias',
+    tryFreeCta: 'Começar grátis',
     heroBookDemo: 'Ver demonstração',
     heroStats: [
       { value: '50+', label: 'países' },
@@ -827,8 +827,8 @@ const pt: Translations = {
       { quote: 'Simples, direto, mensurável. Finalmente uma plataforma de IA que funciona de verdade.', name: 'James K.', role: 'Fundador' },
       { quote: 'O tempo de resposta caiu de horas para menos de um minuto. A receita subiu.', name: 'Elena R.', role: 'Operações' },
     ],
-    ctaBadge: '14 dias grátis · Sem cartão de crédito',
-    ctaHeadline: 'Use a Botfy grátis por 14 dias',
+    ctaBadge: 'Grátis para sempre · Sem cartão de crédito',
+    ctaHeadline: 'Comece a usar a Botfy gratuitamente',
     ctaSub: 'Comece a construir seu pipeline de vendas com IA hoje. Sem cartão de crédito.',
     tryFree: 'Começar grátis',
     bookDemo: 'Agendar demo',
@@ -899,7 +899,7 @@ const pt: Translations = {
     title: 'Perguntas frequentes',
     subtitle: 'Ainda com dúvidas? Nossa equipe está pronta para ajudar.',
     items: [
-      { q: 'Como funciona o período de teste?', a: 'Você recebe 14 dias de acesso completo a todos os recursos — agentes IA, inbox omnichannel, CRM, analytics e gestão de equipe. Não é necessário cartão de crédito para começar. Ao final do período, você escolhe um plano ou simplesmente deixa expirar. Seus dados são preservados por 30 dias para você retomar de onde parou.' },
+      { q: 'Como funciona o plano gratuito?', a: 'A Botfy oferece um plano gratuito sem limite de tempo — você pode usar pelo tempo que quiser. O plano gratuito inclui acesso a agentes de IA, inbox omnichannel e funcionalidades essenciais para que você experimente a plataforma com conversas reais. Não é necessário cartão de crédito. Quando precisar de mais volume, analytics avançados ou funcionalidades de equipe, você pode fazer upgrade para um plano pago a qualquer momento.' },
       { q: 'Funciona com o WhatsApp Business?', a: 'Sim. A Botfy se conecta diretamente à API oficial do WhatsApp Business através da Cloud API da Meta. Você mantém total propriedade do seu número e conta comercial. Suportamos templates de mensagens, botões interativos, listas e envio de mídia — tudo gerenciado pelo painel da Botfy sem precisar de um BSP separado.' },
       { q: 'Preciso saber programar?', a: 'De jeito nenhum. A Botfy foi feita para equipes de negócio, não para desenvolvedores. Você configura fluxos de conversa com um construtor visual, treina a IA enviando seu próprio conteúdo (PDFs, sites, FAQs) e personaliza a personalidade do agente com prompts simples de texto. Se quiser integrações mais profundas, oferecemos API REST e webhooks para sua equipe técnica.' },
       { q: 'Quanto tempo leva para configurar?', a: 'A maioria dos clientes coloca seu primeiro agente de IA no ar em menos de 30 minutos. O processo é simples: conecte seu canal de mensagens (WhatsApp, Telegram ou Web Chat), envie seu conteúdo de treinamento (catálogo de produtos, documentos FAQ, políticas da empresa), personalize o tom e comportamento do agente, e ative. Nosso assistente de onboarding te guia em cada etapa.' },
@@ -951,7 +951,7 @@ const pt: Translations = {
       visionTitle: 'Nossa Visão',
       visionList: ['Construir a camada de IA que potencializa a comunicação empresarial', 'Acessível para pequenas equipes, escalável para grandes empresas', 'Tornar respostas instantâneas e inteligentes o novo padrão'],
       ctaTitle: 'Pronto para ver a Botfy em ação?',
-      ctaButton: 'Começar grátis — 14 dias',
+      ctaButton: 'Começar grátis',
       ctaSecondary: 'Fale com a gente',
     },
     contact: {
@@ -991,7 +991,7 @@ const es: Translations = {
     titleHighlight: 'Vende en Piloto Automático.',
     subtitle: 'Automatiza conversaciones, califica leads y cierra ventas 24/7 — sin contratar, sin complejidad.',
     subtitle2: 'Despliega agentes de IA en minutos y convierte cada mensaje en ingresos.',
-    cta: 'Prueba Gratis',
+    cta: 'Empezar Gratis',
     ctaSecondary: 'Ver Cómo Funciona',
     trustBullets: ['Sin costes de configuración.', 'Plataforma self-service.', 'En vivo en minutos.'],
   },
@@ -1141,7 +1141,7 @@ const es: Translations = {
   cta: {
     title: '¿Listo para Vender en Piloto Automático?',
     subtitle: 'Despliega tu fuerza de trabajo en IA hoy.',
-    button: 'Prueba Gratis',
+    button: 'Empezar Gratis',
   },
   kommo: {
     badge: 'Agente IA para WhatsApp y Mensajería',
@@ -1150,7 +1150,7 @@ const es: Translations = {
     heroLine3: 'En piloto automático.',
     heroHeadline: 'Todo lo que necesitas para vender — en una plataforma de IA',
     heroSubline: 'Crea agentes de IA entrenados en tu negocio que venden 24/7 por WhatsApp, Instagram y más.',
-    tryFreeCta: 'Empezar gratis — 14 días',
+    tryFreeCta: 'Empezar gratis',
     heroBookDemo: 'Ver demostración',
     heroStats: [
       { value: '50+', label: 'países' },
@@ -1192,8 +1192,8 @@ const es: Translations = {
       { quote: 'Simple, directo, medible. Por fin una plataforma de IA que funciona de verdad.', name: 'James K.', role: 'Fundador' },
       { quote: 'El tiempo de respuesta pasó de horas a menos de un minuto. Los ingresos subieron.', name: 'Elena R.', role: 'Operaciones' },
     ],
-    ctaBadge: '14 días gratis · Sin tarjeta de crédito',
-    ctaHeadline: 'Prueba Botfy gratis 14 días',
+    ctaBadge: 'Gratis para siempre · Sin tarjeta de crédito',
+    ctaHeadline: 'Empieza a usar Botfy gratis',
     ctaSub: 'Empieza a construir tu pipeline de ventas con IA hoy. Sin tarjeta de crédito.',
     tryFree: 'Empezar gratis',
     bookDemo: 'Reservar demo',
@@ -1264,7 +1264,7 @@ const es: Translations = {
     title: 'Preguntas frecuentes',
     subtitle: '¿Aún tienes dudas? Nuestro equipo está listo para ayudar.',
     items: [
-      { q: '¿Cómo funciona el período de prueba?', a: 'Obtienes 14 días de acceso completo a todas las funcionalidades — agentes IA, bandeja omnicanal, CRM, analíticas y gestión de equipos. No se requiere tarjeta de crédito para empezar. Al finalizar el período, puedes elegir un plan o simplemente dejarlo expirar. Tus datos se conservan durante 30 días para que puedas retomar justo donde lo dejaste.' },
+      { q: '¿Cómo funciona el plan gratuito?', a: 'Botfy ofrece un plan gratuito sin límite de tiempo — puedes usarlo el tiempo que quieras. El plan gratuito incluye acceso a agentes de IA, bandeja omnicanal y funcionalidades esenciales para que experimentes la plataforma con conversaciones reales. No se requiere tarjeta de crédito. Cuando necesites más volumen, analíticas avanzadas o funcionalidades de equipo, puedes actualizar a un plan de pago en cualquier momento.' },
       { q: '¿Funciona con WhatsApp Business API?', a: 'Sí. Botfy se conecta directamente a la API oficial de WhatsApp Business a través de la Cloud API de Meta. Mantienes la propiedad total de tu número de teléfono y cuenta empresarial. Soportamos plantillas de mensajes, botones interactivos, mensajes de lista y envío de medios — todo gestionado desde el panel de Botfy sin necesidad de un BSP separado.' },
       { q: '¿Necesito saber programar?', a: 'Para nada. Botfy está diseñado para equipos de negocio, no para desarrolladores. Configuras flujos de conversación con un constructor visual, entrenas la IA subiendo tu propio contenido (PDFs, sitios web, FAQs) y personalizas la personalidad del agente con prompts de texto simples. Si quieres integraciones más profundas, ofrecemos una API REST y webhooks para tu equipo técnico.' },
       { q: '¿Cuánto tiempo tarda la configuración?', a: 'La mayoría de los clientes tienen su primer agente de IA en vivo en menos de 30 minutos. El proceso es simple: conecta tu canal de mensajería (WhatsApp, Telegram o Web Chat), sube tu contenido de entrenamiento (catálogo de productos, documentos FAQ, políticas de empresa), personaliza el tono y comportamiento del agente, y activa. Nuestro asistente de onboarding te guía en cada paso.' },
@@ -1316,7 +1316,7 @@ const es: Translations = {
       visionTitle: 'Nuestra Visión',
       visionList: ['Construir la capa de IA que potencia la comunicación empresarial', 'Accesible para equipos pequeños, escalable para grandes empresas', 'Hacer de las respuestas instantáneas e inteligentes el nuevo estándar'],
       ctaTitle: '¿Listo para ver Botfy en acción?',
-      ctaButton: 'Empezar gratis — 14 días',
+      ctaButton: 'Empezar gratis',
       ctaSecondary: 'Habla con nosotros',
     },
     contact: {
