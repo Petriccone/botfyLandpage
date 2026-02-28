@@ -1,13 +1,11 @@
 import { motion } from 'framer-motion'
-import { MessageCircle, Instagram, MessageSquare, Globe, Mail } from 'lucide-react'
+import { MessageCircle, Send, Globe } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 
 const channels = [
   { icon: MessageCircle, name: 'WhatsApp', color: '#25D366', bg: 'rgba(37,211,102,0.06)' },
-  { icon: Instagram, name: 'Instagram', color: '#E1306C', bg: 'rgba(225,48,108,0.06)' },
-  { icon: MessageSquare, name: 'Messenger', color: '#0084FF', bg: 'rgba(0,132,255,0.06)' },
+  { icon: Send, name: 'Telegram', color: '#26A5E4', bg: 'rgba(38,165,228,0.06)' },
   { icon: Globe, name: 'Web Chat', color: '#7c3aed', bg: 'rgba(124,58,237,0.06)' },
-  { icon: Mail, name: 'E-mail', color: '#EA4335', bg: 'rgba(234,67,53,0.06)' },
 ]
 
 export function ChannelsSection() {
@@ -34,7 +32,7 @@ export function ChannelsSection() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
           </span>
-          <span className="text-[11px] font-mono font-medium text-green-700 uppercase tracking-widest">Live — 5 channels active</span>
+          <span className="text-[11px] font-mono font-medium text-green-700 uppercase tracking-widest">Live — 3 channels active</span>
         </motion.div>
 
         <motion.h2
@@ -109,7 +107,7 @@ export function ChannelsSection() {
           className="mt-12 inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-gray-200 bg-white shadow-sm"
         >
           <div className="flex -space-x-1.5">
-            {channels.slice(0, 4).map((ch, i) => (
+            {channels.map((ch, i) => (
               <div
                 key={i}
                 className="w-6 h-6 rounded-full border-2 border-white flex items-center justify-center"
