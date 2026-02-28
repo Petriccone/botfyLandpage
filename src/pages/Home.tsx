@@ -1,9 +1,8 @@
 import { HeroKommo } from '../components/HeroKommo'
 import { LovedBySection } from '../components/LovedBySection'
-import { SolutionsTabs } from '../components/SolutionsTabs'
-import { StepsTimeline } from '../components/StepsTimeline'
-import { ChannelsSection } from '../components/ChannelsSection'
-import { WhyBotfyGrid } from '../components/WhyBotfyGrid'
+import { FeaturesCinematic } from '../components/FeaturesCinematic'
+import { PhilosophyManifesto } from '../components/PhilosophyManifesto'
+import { ProtocolStack } from '../components/ProtocolStack'
 import { TestimonialsKommo } from '../components/TestimonialsKommo'
 import { Pricing } from '../components/Pricing'
 import { FAQSection } from '../components/FAQSection'
@@ -14,10 +13,9 @@ export function Home() {
     <>
       <HeroKommo />
       <LovedBySection />
-      <SolutionsTabs />
-      <StepsTimeline />
-      <ChannelsSection />
-      <WhyBotfyGrid />
+      <FeaturesCinematic />
+      <PhilosophyManifesto />
+      <ProtocolStack />
       <TestimonialsKommo />
       <Pricing />
       <FAQSection />

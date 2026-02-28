@@ -7,5 +7,27 @@
       "destination": "/botfy-icon.svg",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/dashboard/:path*",
+      "destination": "https://botfyai.vercel.app/dashboard/:path*"
+    },
+    {
+      "source": "/login",
+      "destination": "https://botfyai.vercel.app/login"
+    },
+    {
+      "source": "/register",
+      "destination": "https://botfyai.vercel.app/register"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://botfyai.vercel.app/api/:path*"
+    },
+    {
+      "source": "/((?!api|dashboard|login|register).*)",
+      "destination": "/index.html"
+    }
   ]
 }

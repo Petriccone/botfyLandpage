@@ -1,33 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand colors — Botfy Identity System */
-  --color-background: #ffffff;
-  --color-surface: #f8f9fa;
-  --color-surface-light: #f1f3f5;
-  --color-border-subtle: rgba(0, 0, 0, 0.06);
-  --color-border-glow: rgba(124, 58, 237, 0.3);
-  --color-text-primary: #111827;
-  --color-text-secondary: #4b5563;
-  --color-text-muted: #9ca3af;
+  /* Preset B — Luxo Noturno (Editorial Dark) */
+  --color-primary: #0D0D12;
+  /* Obsidian */
+  --color-accent: #C9A84C;
+  /* Champagne */
+  --color-background: #FAF8F5;
+  /* Ivory */
+  --color-text-dark: #2A2A35;
+  /* Slate */
 
-  /* Botfy Brand Palette */
-  --color-brand-primary: #7c3aed;   /* Primary */
-  --color-brand-deep: #3a08a2;      /* Deep */
-  --color-brand-mid: #8b5cf6;       /* Mid */
-  --color-brand-dark: #111827;      /* Dark */
+  --color-background-obsidian: #0D0D12;
+  --color-background-ivory: #FAF8F5;
 
-  /* Aliases */
-  --color-accent-purple: #7c3aed;
-  --color-accent-blue: #3b82f6;
-  --color-accent-white: #ffffff;
+  --font-heading: "Inter", sans-serif;
+  --font-drama: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
 
-  /* Brand typography */
-  --font-display: "Bricolage Grotesque", "Inter", sans-serif;
-  --font-sans: "Instrument Sans", "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", "Space Mono", monospace;
+  /* Global Radius System */
+  --radius-xl-custom: 2.5rem;
+  --radius-2xl-custom: 3rem;
 }
 
+/* Global Styles */
 html {
   scroll-behavior: smooth;
 }
@@ -35,10 +31,69 @@ html {
 body {
   margin: 0;
   background-color: var(--color-background);
-  color: var(--color-text-primary);
-  font-family: var(--font-sans);
+  color: var(--color-text-dark);
+  font-family: var(--font-heading);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Noise Texture */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Cinematic Utilities */
+.magnetic-button {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--radius-xl-custom);
+}
+
+.magnetic-button:hover {
+  transform: scale(1.03) translateY(-1px);
+}
+
+.magnetic-button span.bg-layer {
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.magnetic-button:hover span.bg-layer {
+  transform: translateY(0);
+}
+
+.magnetic-button span.text-layer {
+  position: relative;
+  z-index: 1;
+}
+
+.grainy-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-primary), transparent);
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+}
+
+.rounded-cinematic {
+  border-radius: var(--radius-xl-custom);
+}
+
+.shadow-cinematic {
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.2);
 }
 
 .gradient-text {
@@ -161,36 +216,85 @@ body {
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes scrollLogos {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.333%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
 }
 
 @keyframes pulse-ring {
-  0% { transform: scale(0.9); opacity: 0.6; }
-  100% { transform: scale(1.6); opacity: 0; }
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
 
 @keyframes signal-pulse {
-  0%, 100% { opacity: 0.3; transform: scaleX(1); }
-  50% { opacity: 1; transform: scaleX(1.02); }
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleX(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1.02);
+  }
 }
 
 @keyframes dot-travel {
-  0% { transform: translateX(-8px); opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateX(72px); opacity: 0; }
+  0% {
+    transform: translateX(-8px);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(72px);
+    opacity: 0;
+  }
 }
 
 @keyframes glow-breathe {
-  0%, 100% { box-shadow: 0 0 15px rgba(124,58,237,0.15), 0 0 40px rgba(124,58,237,0.05); }
-  50% { box-shadow: 0 0 30px rgba(124,58,237,0.3), 0 0 60px rgba(124,58,237,0.1); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.15), 0 0 40px rgba(124, 58, 237, 0.05);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.3), 0 0 60px rgba(124, 58, 237, 0.1);
+  }
 }
 
 .animate-pulse-ring {

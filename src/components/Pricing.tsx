@@ -1,120 +1,110 @@
+import { useRef } from 'react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 import { CheckCircle } from 'lucide-react'
-import { motion } from 'framer-motion'
 import { useLanguage } from '../hooks/useLanguage'
 
 const STRIPE_LINKS: (string | null)[] = [
-  null, // Free — redirect to register
+  null, // Free
   'https://buy.stripe.com/fZu4gB3WGaEF8exdYSfQI00', // Starter
   'https://buy.stripe.com/aFabJ32SCdQR7atg70fQI01', // Growth
   null, // Scale
-  null, // Enterprise — contact sales
+  null, // Enterprise
 ]
 
 export function Pricing() {
   const { t } = useLanguage()
+  const container = useRef(null)
+
+  useGSAP(() => {
+    gsap.from('.pricing-card', {
+      scrollTrigger: {
+        trigger: container.current,
+        start: 'top 80%',
+      },
+      y: 40,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 1,
+      ease: 'power3.out'
+    })
+  }, { scope: container })
 
   return (
-    <section id="pricing" className="py-24 md:py-32 bg-surface border-t border-gray-100">
+    <section id="pricing" ref={container} className="py-24 md:py-32 bg-background border-t border-primary/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="mb-16 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-display font-bold mb-4 tracking-tight text-text-primary"
-          >
+        <div className="mb-20 text-center">
+          <h2 className="font-heading font-extrabold text-4xl md:text-5xl tracking-tighter text-primary mb-4 uppercase">
             {t.pricing.titleStart}{' '}
-            <span className="text-accent-purple">{t.pricing.titleHighlight}</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-text-secondary text-lg font-light"
-          >
+            <span className="text-accent">{t.pricing.titleHighlight}</span>
+          </h2>
+          <p className="font-drama italic text-2xl text-primary/40">
             {t.pricing.subtitle}
-          </motion.p>
+          </p>
         </div>
 
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
           {t.pricing.plans.map((plan, i) => {
             const isPopular = i === 2
             const isEnterprise = i === 4
             return (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className={`relative flex flex-col rounded-2xl border transition-all duration-300 overflow-hidden ${
-                  isPopular
-                    ? 'bg-accent-purple border-accent-purple shadow-xl shadow-brand-primary/30'
-                    : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-lg'
-                }`}
+                className={`
+                  pricing-card flex flex-col rounded-[2.5rem] p-8 border transition-all duration-500
+                  ${isPopular
+                    ? 'bg-primary border-accent shadow-2xl scale-105 z-10'
+                    : 'bg-white border-primary/5 hover:border-accent/30'}
+                `}
               >
                 {isPopular && (
-                  <div className="bg-white/20 text-white text-[10px] font-bold uppercase tracking-widest text-center py-2">
+                  <div className="text-accent text-[9px] font-mono font-bold uppercase tracking-[0.3em] mb-6">
                     {t.pricing.mostPopular}
                   </div>
                 )}
 
-                <div className="p-6 flex-1 flex flex-col">
-                  <div className="mb-4">
-                    <h3 className={`text-base font-bold mb-1 ${isPopular ? 'text-white' : 'text-text-primary'}`}>
-                      {plan.name}
-                    </h3>
-                    <p className={`text-[12px] font-light ${isPopular ? 'text-white/70' : 'text-text-muted'}`}>
-                      {plan.desc}
-                    </p>
-                  </div>
-
-                  <div className="flex items-baseline gap-1 mb-5">
-                    <span className={`text-3xl font-display font-black ${isPopular ? 'text-white' : 'text-text-primary'}`}>
+                <div className="mb-8">
+                  <h3 className={`text-lg font-bold mb-2 ${isPopular ? 'text-background' : 'text-primary'}`}>
+                    {plan.name}
+                  </h3>
+                  <div className="flex items-baseline gap-2">
+                    <span className={`text-3xl font-heading font-black ${isPopular ? 'text-background' : 'text-primary'}`}>
                       {plan.price}
                     </span>
                     {plan.period && (
-                      <span className={`text-xs font-light ${isPopular ? 'text-white/60' : 'text-text-muted'}`}>
+                      <span className={`text-xs font-mono tracking-tighter ${isPopular ? 'text-background/40' : 'text-primary/40'}`}>
                         {plan.period}
                       </span>
                     )}
                   </div>
-
-                  <ul className="space-y-2 mb-6 flex-1">
-                    {plan.features.map((feature, j) => (
-                      <li key={j} className="flex items-start gap-2 text-[12px] leading-snug">
-                        <CheckCircle
-                          size={12}
-                          className={`shrink-0 mt-0.5 ${isPopular ? 'text-white/80' : 'text-accent-purple'}`}
-                        />
-                        <span className={isPopular ? 'text-white/85' : 'text-text-secondary'}>
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <a
-                    href={isEnterprise ? 'mailto:contact@botfy.ai' : (STRIPE_LINKS[i] || 'https://botfyai.vercel.app/register')}
-                    target={!isEnterprise ? '_blank' : undefined}
-                    rel="noopener noreferrer"
-                    className="no-underline block mt-auto"
-                  >
-                    <button
-                      className={`cursor-pointer w-full h-10 rounded-xl font-bold text-[12px] transition-all ${
-                        isPopular
-                          ? 'bg-white text-accent-purple hover:bg-gray-50'
-                          : isEnterprise
-                          ? 'bg-gray-900 text-white hover:bg-gray-800'
-                          : 'bg-accent-purple text-white hover:bg-accent-purple/90'
-                      }`}
-                    >
-                      {plan.cta}
-                    </button>
-                  </a>
                 </div>
-              </motion.div>
+
+                <ul className="space-y-4 mb-10 flex-1">
+                  {plan.features.map((feature, j) => (
+                    <li key={j} className="flex items-start gap-3 text-[12px] leading-relaxed">
+                      <CheckCircle
+                        size={14}
+                        className={`shrink-0 mt-0.5 ${isPopular ? 'text-accent' : 'text-primary/20'}`}
+                      />
+                      <span className={isPopular ? 'text-background/70' : 'text-primary/60'}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={isEnterprise ? 'mailto:contact@botfy.ai' : (STRIPE_LINKS[i] || 'https://botfyai.vercel.app/register')}
+                  target={!isEnterprise ? '_blank' : undefined}
+                  rel="noopener noreferrer"
+                  className="magnetic-button group h-12 w-full flex items-center justify-center bg-accent text-primary font-bold text-sm"
+                >
+                  <span className={`bg-layer ${isPopular ? '!bg-background' : '!bg-primary'}`}></span>
+                  <span className={`text-layer ${isPopular ? 'group-hover:text-primary' : 'group-hover:text-background'} transition-colors duration-400`}>
+                    {plan.cta}
+                  </span>
+                </a>
+              </div>
             )
           })}
         </div>
