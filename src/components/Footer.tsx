@@ -14,8 +14,15 @@ export function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="inline-flex items-center gap-2 no-underline mb-5">
-              <img src="/botfy-logo.png" alt="Botfy" className="h-8 w-auto" />
+            <Link to="/" className="inline-flex items-center gap-2.5 no-underline mb-5">
+              <div
+                className="relative w-[34px] h-[34px] rounded-[9px] flex-shrink-0 flex items-center justify-center"
+                style={{ background: 'linear-gradient(145deg, #7c3aed, #3a08a2)' }}
+              >
+                <span className="text-white font-display font-extrabold text-[19px] leading-none select-none">b</span>
+                <div className="absolute top-[4px] right-[4px] w-[7px] h-[7px] rounded-full bg-white/30 border border-white/60" />
+              </div>
+              <span className="font-display font-bold text-[18px] tracking-tight text-text-primary leading-none">botfy</span>
             </Link>
             <p className="max-w-xs text-text-secondary text-sm leading-relaxed font-light mb-6">
               {t.footer.desc}
