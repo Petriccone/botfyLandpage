@@ -11,19 +11,19 @@
   "rewrites": [
     {
       "source": "/dashboard/:path*",
-      "destination": "https://botfy-seven.vercel.app/dashboard/:path*"
+      "destination": "https://bnbbot.vercel.app/dashboard/:path*"
     },
     {
       "source": "/login",
-      "destination": "https://botfy-seven.vercel.app/login"
+      "destination": "https://bnbbot.vercel.app/login"
     },
     {
       "source": "/register",
-      "destination": "https://botfy-seven.vercel.app/register"
+      "destination": "https://bnbbot.vercel.app/register"
     },
     {
       "source": "/api/:path*",
-      "destination": "https://botfy-seven.vercel.app/api/:path*"
+      "destination": "https://bnbbot.vercel.app/api/:path*"
     },
     {
       "source": "/((?!api|dashboard|login|register).*)",
