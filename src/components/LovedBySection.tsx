@@ -60,10 +60,10 @@ export function LovedBySection() {
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
         <div
-          className="flex gap-5"
-          style={{ animation: 'scrollLogos 35s linear infinite', width: 'max-content' }}
+          className="flex gap-5 animate-scroll-logos"
+          style={{ animation: 'scrollLogos 30s linear infinite', width: 'max-content' }}
         >
-          {[...logos, ...logos, ...logos].map((logo, i) => (
+          {[...logos, ...logos].map((logo, i) => (
             <LogoCard key={i} logo={logo} />
           ))}
         </div>

@@ -90,9 +90,9 @@ export function HeroKommo() {
 
         {/* Product Mockup */}
         <motion.div
-          initial={{ opacity: 0, y: 48 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="relative mx-auto max-w-4xl"
         >
           {/* Browser chrome + screenshot */}

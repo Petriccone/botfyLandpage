@@ -83,10 +83,9 @@ export function StepsTimeline() {
               <ul className="space-y-3">
                 {h.inputs.map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm text-text-secondary">
-                    <motion.div
-                      className="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"
-                      animate={{ scale: [1, 1.8, 1], opacity: [0.4, 1, 0.4] }}
-                      transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.4 }}
+                    <div
+                      className="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 animate-dot-pulse"
+                      style={{ animationDelay: `${i * 0.4}s` }}
                     />
                     {item}
                   </li>
@@ -102,7 +101,7 @@ export function StepsTimeline() {
               initial={{ opacity: 0, scale: 0.85 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, type: 'spring', stiffness: 150 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
               className="relative flex-shrink-0 flex flex-col items-center justify-center p-8 rounded-3xl text-center animate-glow-breathe"
               style={{
                 background: 'linear-gradient(135deg, var(--color-brand-deep), var(--color-brand-primary), var(--color-brand-mid))',
@@ -147,10 +146,9 @@ export function StepsTimeline() {
               <ul className="space-y-3">
                 {h.outputs.map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm text-text-secondary">
-                    <motion.div
-                      className="w-1.5 h-1.5 rounded-full bg-accent-purple/50 flex-shrink-0"
-                      animate={{ scale: [1, 1.8, 1], opacity: [0.4, 1, 0.4] }}
-                      transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.4 + 0.5 }}
+                    <div
+                      className="w-1.5 h-1.5 rounded-full bg-accent-purple/50 flex-shrink-0 animate-dot-pulse"
+                      style={{ animationDelay: `${i * 0.4 + 0.5}s` }}
                     />
                     {item}
                   </li>
@@ -172,10 +170,9 @@ export function StepsTimeline() {
               className="bg-white px-8 py-8 text-center group hover:bg-brand-primary/[0.04] transition-colors"
             >
               <div className="relative w-12 h-12 mx-auto mb-5">
-                <motion.div
-                  className="absolute inset-0 rounded-full bg-accent-purple/10"
-                  animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: i * 0.8 }}
+                <div
+                  className="absolute inset-0 rounded-full bg-accent-purple/10 animate-step-pulse"
+                  style={{ animationDelay: `${i * 0.8}s` }}
                 />
                 <div className="relative w-12 h-12 rounded-full border-2 border-accent-purple/25 bg-white flex items-center justify-center text-sm font-bold text-accent-purple group-hover:border-accent-purple/50 transition-colors">
                   {i + 1}

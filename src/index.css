@@ -158,6 +158,11 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-scroll-logos {
+  will-change: transform;
 }
 
 @keyframes float {
@@ -168,7 +173,7 @@ body {
 
 @keyframes scrollLogos {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-33.333%); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes pulse-ring {
@@ -189,16 +194,49 @@ body {
 }
 
 @keyframes glow-breathe {
-  0%, 100% { box-shadow: 0 0 15px rgba(124,58,237,0.15), 0 0 40px rgba(124,58,237,0.05); }
-  50% { box-shadow: 0 0 30px rgba(124,58,237,0.3), 0 0 60px rgba(124,58,237,0.1); }
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
 }
 
 .animate-pulse-ring {
   animation: pulse-ring 2.5s ease-out infinite;
+  will-change: transform, opacity;
+}
+
+/* GPU-friendly dot pulse — replaces framer-motion infinite animations */
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.8); opacity: 1; }
+}
+.animate-dot-pulse {
+  animation: dot-pulse 2.5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* GPU-friendly step pulse */
+@keyframes step-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.4); opacity: 0; }
+}
+.animate-step-pulse {
+  animation: step-pulse 3s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* GPU-friendly icon bob — replaces framer-motion infinite bob */
+@keyframes icon-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.animate-icon-bob {
+  animation: icon-bob 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-glow-breathe {
   animation: glow-breathe 3s ease-in-out infinite;
+  will-change: opacity;
+  box-shadow: 0 0 20px rgba(124,58,237,0.2), 0 0 50px rgba(124,58,237,0.08);
 }
 
 ::-webkit-scrollbar {
@@ -215,4 +253,29 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent-purple);
+}
+
+/* Reduce heavy effects on mobile for better performance */
+@media (max-width: 768px) {
+  .glass-panel {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .glow-aura {
+    filter: blur(60px);
+  }
+  .animate-pulse-ring,
+  .animate-ping {
+    animation: none !important;
+  }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
 }
