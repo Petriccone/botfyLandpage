@@ -361,7 +361,7 @@ const en: Translations = {
     plans: [
       {
         name: 'Free',
-        desc: 'Try it out',
+        desc: 'Free forever',
         price: '€0',
         period: '/mo',
         features: ['1 AI Agent', '500 Messages/mo', 'WhatsApp only', 'Community support'],
@@ -726,7 +726,7 @@ const pt: Translations = {
     plans: [
       {
         name: 'Free',
-        desc: 'Experimente',
+        desc: 'Grátis para sempre',
         price: '€0',
         period: '/mês',
         features: ['1 Agente IA', '500 Mensagens/mês', 'Só WhatsApp', 'Suporte da comunidade'],
@@ -1091,7 +1091,7 @@ const es: Translations = {
     plans: [
       {
         name: 'Free',
-        desc: 'Pruébalo',
+        desc: 'Gratis para siempre',
         price: '€0',
         period: '/mes',
         features: ['1 Agente IA', '500 Mensajes/mes', 'Solo WhatsApp', 'Soporte comunidad'],
