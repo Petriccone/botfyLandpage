@@ -36,9 +36,6 @@ export function CTASection() {
             <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-[background-color,transform] duration-200 shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5">
               {k.tryFree}
             </a>
-            <a href="mailto:contact@botfy.ai" className="no-underline w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full bg-white border border-gray-200 text-text-primary font-semibold text-[15px] hover:border-gray-300 hover:bg-gray-50 transition-[background-color,border-color] duration-200">
-              {k.bookDemo}
-            </a>
           </div>
         </motion.div>
       </div>

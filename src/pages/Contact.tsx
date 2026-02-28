@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Send, Calendar, Mail } from 'lucide-react'
+import { Send, Mail } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 
 export function Contact() {
@@ -98,22 +98,6 @@ export function Contact() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-5"
           >
-            {/* Book Demo card */}
-            <div className="bg-accent-purple rounded-3xl p-7 text-white">
-              <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center mb-4">
-                <Calendar size={18} className="text-white" />
-              </div>
-              <h3 className="font-bold text-lg mb-2">{c.bookDemoTitle}</h3>
-              <p className="text-white/75 text-sm font-light leading-relaxed mb-5">
-                {c.bookDemoDesc}
-              </p>
-              <a href="mailto:contact@botfy.ai?subject=Demo%20Request" className="no-underline">
-                <button className="cursor-pointer w-full h-11 rounded-xl bg-white text-accent-purple font-bold text-[13px] hover:bg-gray-50 transition-all">
-                  {c.bookDemoBtn}
-                </button>
-              </a>
-            </div>
-
             {/* Email card */}
             <div className="bg-surface border border-gray-100 rounded-3xl p-7">
               <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center mb-4">

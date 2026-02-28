@@ -60,11 +60,11 @@ export function HeroKommo() {
             <a href="https://botfyai.vercel.app/register" target="_blank" rel="noopener noreferrer" className="no-underline inline-flex w-full sm:w-auto px-8 py-3.5 rounded-full bg-accent-purple text-white font-bold text-[15px] hover:bg-accent-purple/90 transition-[background-color,transform] duration-200 shadow-lg shadow-brand-primary/30 hover:-translate-y-0.5 items-center justify-center">
               {k.tryFreeCta}
             </a>
-            <a href="mailto:contact@botfy.ai" className="no-underline inline-flex w-full sm:w-auto px-8 py-3.5 rounded-full bg-white border border-gray-200 text-text-primary font-semibold text-[15px] hover:border-gray-300 hover:bg-gray-50 transition-[background-color,border-color] duration-200 items-center justify-center gap-2.5">
+            <a href="#how-it-works" className="no-underline inline-flex w-full sm:w-auto px-8 py-3.5 rounded-full bg-white border border-gray-200 text-text-primary font-semibold text-[15px] hover:border-gray-300 hover:bg-gray-50 transition-[background-color,border-color] duration-200 items-center justify-center gap-2.5">
               <div className="w-6 h-6 rounded-full bg-accent-purple/10 flex items-center justify-center">
                 <Play size={10} className="text-accent-purple fill-accent-purple ml-0.5" />
               </div>
-              {k.heroBookDemo}
+              {t.hero.ctaSecondary}
             </a>
           </motion.div>
 

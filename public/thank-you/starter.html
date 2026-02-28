@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Botfy Starter</title>
+  <link rel="icon" href="/botfy-icon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--brand:#7c3aed;--brand-deep:#3a08a2;--brand-mid:#8b5cf6;--text:#111827;--text-sec:#4b5563;--text-muted:#9ca3af;--bg:#ffffff;--surface:#f8f9fa}
+    body{font-family:'Instrument Sans','Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;overflow:hidden}
+    .confetti-canvas{position:fixed;inset:0;pointer-events:none;z-index:50}
+    .card{position:relative;z-index:10;max-width:520px;width:100%;text-align:center;animation:fadeUp .6s ease-out both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .logo{width:48px;height:48px;margin:0 auto 24px}
+    .badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brand);background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.15);border-radius:20px;padding:6px 16px;margin-bottom:20px}
+    h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(28px,5vw,42px);font-weight:800;line-height:1.15;margin-bottom:12px;letter-spacing:-.02em}
+    h1 span{background:linear-gradient(135deg,var(--brand-deep),var(--brand));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .subtitle{color:var(--text-sec);font-size:17px;font-weight:400;line-height:1.6;margin-bottom:32px}
+    .plan-card{background:var(--surface);border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:24px;margin-bottom:32px;text-align:left}
+    .plan-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+    .plan-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px}
+    .plan-price{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:var(--brand)}
+    .plan-price span{font-size:13px;font-weight:400;color:var(--text-muted)}
+    .features{list-style:none;display:grid;gap:8px}
+    .features li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-sec)}
+    .features li::before{content:'';width:18px;height:18px;border-radius:50%;background:rgba(124,58,237,.1);flex-shrink:0;display:flex;align-items:center;justify-content:center;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+    .cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;height:52px;border-radius:14px;border:none;background:linear-gradient(135deg,var(--brand-deep),var(--brand));color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+    .cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(124,58,237,.35)}
+    .cta svg{width:16px;height:16px}
+    .footer-note{margin-top:24px;font-size:12px;color:var(--text-muted)}
+    .footer-note a{color:var(--brand);text-decoration:none}
+  </style>
+</head>
+<body>
+  <canvas class="confetti-canvas" id="confetti"></canvas>
+  <div class="card">
+    <img src="/botfy-icon.svg" alt="Botfy" class="logo">
+    <div class="badge">Payment confirmed</div>
+    <h1>Welcome to <span>Starter</span></h1>
+    <p class="subtitle">Your AI agent is ready to go. Log into the platform, connect your first channel, and start automating conversations today.</p>
+    <div class="plan-card">
+      <div class="plan-header">
+        <div class="plan-name">Starter Plan</div>
+        <div class="plan-price">€49<span>/mo</span></div>
+      </div>
+      <ul class="features">
+        <li>1 AI Agent</li>
+        <li>2,000 Messages/mo</li>
+        <li>WhatsApp + Web Chat</li>
+        <li>Email support</li>
+        <li>Basic analytics</li>
+      </ul>
+    </div>
+    <a href="https://botfyai.vercel.app" class="cta">
+      Go to Dashboard
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <p class="footer-note">Need help getting started? <a href="mailto:contact@botfy.ai">contact@botfy.ai</a></p>
+  </div>
+  <script>
+    const C=document.getElementById('confetti'),ctx=C.getContext('2d');
+    C.width=window.innerWidth;C.height=window.innerHeight;
+    const colors=['#7c3aed','#8b5cf6','#3a08a2','#a78bfa','#c4b5fd','#3b82f6'];
+    const pieces=Array.from({length:120},()=>({x:Math.random()*C.width,y:Math.random()*C.height-C.height,w:Math.random()*8+4,h:Math.random()*6+3,c:colors[Math.floor(Math.random()*colors.length)],vy:Math.random()*3+2,vx:(Math.random()-.5)*2,r:Math.random()*360,rv:(Math.random()-.5)*8,a:1}));
+    let frame=0;function draw(){ctx.clearRect(0,0,C.width,C.height);pieces.forEach(p=>{p.y+=p.vy;p.x+=p.vx;p.r+=p.rv;if(frame>100)p.a=Math.max(0,p.a-.008);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r*Math.PI/180);ctx.globalAlpha=p.a;ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore()});frame++;if(frame<260)requestAnimationFrame(draw)}
+    draw();
+  </script>
+</body>
+</html>
