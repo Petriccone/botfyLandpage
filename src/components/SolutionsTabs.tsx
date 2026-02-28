@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useCallback } from 'react'
+import { motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 
@@ -14,8 +14,18 @@ const screenMap: Record<string, string> = {
 export function SolutionsTabs() {
   const { t } = useLanguage()
   const [active, setActive] = useState(0)
+  const [fading, setFading] = useState(false)
   const tabs = t.solutionsTabs.tabs
   const current = tabs[active]
+
+  const switchTab = useCallback((i: number) => {
+    if (i === active) return
+    setFading(true)
+    setTimeout(() => {
+      setActive(i)
+      setFading(false)
+    }, 150)
+  }, [active])
 
   return (
     <section id="solution" className="py-24 md:py-32 bg-surface border-t border-gray-100">
@@ -47,7 +57,7 @@ export function SolutionsTabs() {
             {tabs.map((tab, i) => (
               <button
                 key={i}
-                onClick={() => setActive(i)}
+                onClick={() => switchTab(i)}
                 className={`cursor-pointer px-4 md:px-5 py-2.5 rounded-xl text-[12px] md:text-[13px] font-semibold transition-all whitespace-nowrap flex-shrink-0 ${
                   active === i
                     ? 'bg-accent-purple text-white shadow-sm'
@@ -60,54 +70,48 @@ export function SolutionsTabs() {
           </div>
         </div>
 
-        {/* Content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.35 }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
-          >
-            {/* Text side */}
-            <div className="order-2 lg:order-1">
-              <h3 className="text-2xl md:text-3xl font-display font-bold text-text-primary mb-4 tracking-tight">
-                {current.title}
-              </h3>
-              <p className="text-text-secondary leading-relaxed mb-8 font-light text-lg">
-                {current.desc}
-              </p>
-              <ul className="space-y-4">
-                {current.bullets.map((bullet, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-accent-purple/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle size={12} className="text-accent-purple" />
-                    </div>
-                    <span className="text-text-secondary leading-snug">{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        {/* Content — CSS opacity transition, no remount */}
+        <div
+          className="grid lg:grid-cols-2 gap-12 items-center transition-opacity duration-150 ease-out"
+          style={{ opacity: fading ? 0 : 1 }}
+        >
+          {/* Text side */}
+          <div className="order-2 lg:order-1">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-text-primary mb-4 tracking-tight">
+              {current.title}
+            </h3>
+            <p className="text-text-secondary leading-relaxed mb-8 font-light text-lg">
+              {current.desc}
+            </p>
+            <ul className="space-y-4">
+              {current.bullets.map((bullet, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-accent-purple/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle size={12} className="text-accent-purple" />
+                  </div>
+                  <span className="text-text-secondary leading-snug">{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Screenshot side */}
-            <div className="order-1 lg:order-2">
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-white">
-                <div className="bg-gray-50 px-4 py-2.5 flex items-center gap-1.5 border-b border-gray-100">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-300" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-300" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-300" />
-                </div>
-                <img
-                  src={screenMap[current.screen] || screenMap['dashboard']}
-                  alt={current.title}
-                  className="w-full block"
-                  loading="lazy"
-                />
+          {/* Screenshot side */}
+          <div className="order-1 lg:order-2">
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-white">
+              <div className="bg-gray-50 px-4 py-2.5 flex items-center gap-1.5 border-b border-gray-100">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-300" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-300" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-300" />
               </div>
+              <img
+                src={screenMap[current.screen] || screenMap['dashboard']}
+                alt={current.title}
+                className="w-full block"
+                loading="lazy"
+              />
             </div>
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        </div>
       </div>
     </section>
   )
