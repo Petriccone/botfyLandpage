@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
@@ -14,18 +14,23 @@ const screenMap: Record<string, string> = {
 export function SolutionsTabs() {
   const { t } = useLanguage()
   const [active, setActive] = useState(0)
-  const [fading, setFading] = useState(false)
+  const [displayed, setDisplayed] = useState(0)
+  const [transitioning, setTransitioning] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined)
   const tabs = t.solutionsTabs.tabs
-  const current = tabs[active]
+  const current = tabs[displayed]
 
-  const switchTab = useCallback((i: number) => {
-    if (i === active) return
-    setFading(true)
-    setTimeout(() => {
-      setActive(i)
-      setFading(false)
-    }, 150)
-  }, [active])
+  function switchTab(i: number) {
+    if (i === active || transitioning) return
+    setActive(i)
+    setTransitioning(true)
+    clearTimeout(timerRef.current)
+    // Fade out → swap content → fade in
+    timerRef.current = setTimeout(() => {
+      setDisplayed(i)
+      setTransitioning(false)
+    }, 200)
+  }
 
   return (
     <section id="solution" className="py-24 md:py-32 bg-surface border-t border-gray-100">
@@ -58,7 +63,7 @@ export function SolutionsTabs() {
               <button
                 key={i}
                 onClick={() => switchTab(i)}
-                className={`cursor-pointer px-4 md:px-5 py-2.5 rounded-xl text-[12px] md:text-[13px] font-semibold transition-all whitespace-nowrap flex-shrink-0 ${
+                className={`cursor-pointer px-4 md:px-5 py-2.5 rounded-xl text-[12px] md:text-[13px] font-semibold transition-colors duration-200 whitespace-nowrap flex-shrink-0 ${
                   active === i
                     ? 'bg-accent-purple text-white shadow-sm'
                     : 'text-text-secondary hover:text-text-primary hover:bg-gray-50'
@@ -70,10 +75,10 @@ export function SolutionsTabs() {
           </div>
         </div>
 
-        {/* Content — CSS opacity transition, no remount */}
+        {/* Content */}
         <div
-          className="grid lg:grid-cols-2 gap-12 items-center transition-opacity duration-150 ease-out"
-          style={{ opacity: fading ? 0 : 1 }}
+          className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center transition-opacity duration-200 ease-in-out"
+          style={{ opacity: transitioning ? 0 : 1 }}
         >
           {/* Text side */}
           <div className="order-2 lg:order-1">

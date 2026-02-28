@@ -1,25 +1,28 @@
 import { motion } from 'framer-motion'
 import { useLanguage } from '../hooks/useLanguage'
 
-function AnimatedArrow() {
+function HorizontalArrow() {
   return (
     <div className="hidden md:flex items-center justify-center flex-shrink-0 w-16">
       <svg width="64" height="12" viewBox="0 0 64 12" className="overflow-visible">
-        {/* Dashed track */}
-        <line
-          x1="0" y1="6" x2="52" y2="6"
-          stroke="rgba(124,58,237,0.25)"
-          strokeWidth="1.5"
-          strokeDasharray="4 4"
-        />
-        {/* Arrowhead */}
-        <polygon
-          points="50,3 60,6 50,9"
-          fill="rgba(124,58,237,0.4)"
-        />
-        {/* Moving dot */}
+        <line x1="0" y1="6" x2="52" y2="6" stroke="rgba(124,58,237,0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
+        <polygon points="50,3 60,6 50,9" fill="rgba(124,58,237,0.4)" />
         <circle r="3" fill="#7c3aed" opacity="0.9">
           <animateMotion dur="1.6s" repeatCount="indefinite" path="M 0 6 L 52 6" />
+        </circle>
+      </svg>
+    </div>
+  )
+}
+
+function VerticalArrow() {
+  return (
+    <div className="flex md:hidden items-center justify-center py-2">
+      <svg width="12" height="40" viewBox="0 0 12 40" className="overflow-visible">
+        <line x1="6" y1="0" x2="6" y2="30" stroke="rgba(124,58,237,0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
+        <polygon points="3,28 6,36 9,28" fill="rgba(124,58,237,0.4)" />
+        <circle r="3" fill="#7c3aed" opacity="0.9">
+          <animateMotion dur="1.2s" repeatCount="indefinite" path="M 6 0 L 6 30" />
         </circle>
       </svg>
     </div>
@@ -94,11 +97,12 @@ export function StepsTimeline() {
             </motion.div>
 
             {/* Arrow left → center */}
-            <AnimatedArrow />
+            <HorizontalArrow />
+            <VerticalArrow />
 
             {/* Center — Botfy AI Core */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -116,14 +120,14 @@ export function StepsTimeline() {
                 }} />
               </div>
 
-              {/* Pulsing rings */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              {/* Pulsing rings — desktop only */}
+              <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none">
                 <div className="absolute w-28 h-28 rounded-full border border-white/20 animate-pulse-ring" />
                 <div className="absolute w-28 h-28 rounded-full border border-white/10 animate-pulse-ring" style={{ animationDelay: '1s' }} />
               </div>
 
               {/* Brand icon */}
-              <div className="relative z-10 w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3 border border-white/30">
+              <div className="relative z-10 w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-3 border border-white/30">
                 <img src="/botfy-icon.svg" alt="Botfy" className="w-9 h-9" loading="lazy" />
               </div>
 
@@ -132,7 +136,8 @@ export function StepsTimeline() {
             </motion.div>
 
             {/* Arrow center → right */}
-            <AnimatedArrow />
+            <HorizontalArrow />
+            <VerticalArrow />
 
             {/* Output Panel */}
             <motion.div

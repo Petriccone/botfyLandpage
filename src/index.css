@@ -265,17 +265,14 @@ body {
     filter: blur(40px);
     opacity: 0.04;
   }
+  /* Only disable truly expensive animations — keep lightweight transform/opacity ones */
   .animate-pulse-ring,
   .animate-ping,
-  .animate-dot-pulse,
-  .animate-step-pulse,
-  .animate-icon-bob,
-  .animate-glow-breathe,
   .animate-float {
     animation: none !important;
   }
   .animate-glow-breathe {
-    box-shadow: none !important;
+    box-shadow: 0 0 10px rgba(124,58,237,0.12);
   }
   .animate-scroll-logos {
     animation-duration: 40s !important;
