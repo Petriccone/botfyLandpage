@@ -8,7 +8,6 @@ export interface Translations {
     aboutUs: string
     login: string
     startFreeTrial: string
-    bookDemo: string
     product: string
     solutions: string
   }
@@ -130,7 +129,6 @@ export interface Translations {
     heroHeadline: string
     heroSubline: string
     tryFreeCta: string
-    heroBookDemo: string
     heroStats: { value: string; label: string }[]
     lovedBy: string
     moreConversations: { title: string; desc: string; cta: string }
@@ -151,7 +149,6 @@ export interface Translations {
     ctaHeadline: string
     ctaSub: string
     tryFree: string
-    bookDemo: string
   }
   logoSection: {
     title: string
@@ -234,9 +231,6 @@ export interface Translations {
       whatsappPlaceholder: string
       messagePlaceholder: string
       send: string
-      bookDemoTitle: string
-      bookDemoDesc: string
-      bookDemoBtn: string
       orEmail: string
     }
   }
@@ -250,7 +244,6 @@ const en: Translations = {
     aboutUs: 'About Us',
     login: 'Log in',
     startFreeTrial: 'Start Free',
-    bookDemo: 'Book a Demo',
     product: 'Product',
     solutions: 'Solutions',
   },
@@ -421,7 +414,6 @@ const en: Translations = {
     heroHeadline: 'All the ways you sell — combined in one AI platform',
     heroSubline: 'Create AI agents trained on your business that sell 24/7 on WhatsApp, Instagram, and more.',
     tryFreeCta: 'Start for free',
-    heroBookDemo: 'Watch demo',
     heroStats: [
       { value: '50+', label: 'countries' },
       { value: '1,000+', label: 'companies' },
@@ -466,7 +458,6 @@ const en: Translations = {
     ctaHeadline: 'Start using Botfy for free',
     ctaSub: 'Start building your AI sales pipeline today. No credit card required.',
     tryFree: 'Start free',
-    bookDemo: 'Book a demo',
   },
   logoSection: {
     title: 'Trusted by teams that grow',
@@ -599,9 +590,6 @@ const en: Translations = {
       whatsappPlaceholder: 'WhatsApp number',
       messagePlaceholder: 'How can we help you?',
       send: 'Send message',
-      bookDemoTitle: 'Prefer a live demo?',
-      bookDemoDesc: 'Schedule a 30-minute call with our team. We\'ll walk you through the platform and answer all your questions.',
-      bookDemoBtn: 'Book a demo call',
       orEmail: 'Or email us directly at',
     },
   },
@@ -615,7 +603,6 @@ const pt: Translations = {
     aboutUs: 'Sobre Nós',
     login: 'Entrar',
     startFreeTrial: 'Começar Grátis',
-    bookDemo: 'Agendar Demo',
     product: 'Produto',
     solutions: 'Soluções',
   },
@@ -786,7 +773,6 @@ const pt: Translations = {
     heroHeadline: 'Tudo o que você precisa para vender — em uma plataforma de IA',
     heroSubline: 'Crie agentes de IA treinados com o seu negócio que vendem 24/7 pelo WhatsApp, Instagram e mais.',
     tryFreeCta: 'Começar grátis',
-    heroBookDemo: 'Ver demonstração',
     heroStats: [
       { value: '50+', label: 'países' },
       { value: '1.000+', label: 'empresas' },
@@ -831,7 +817,6 @@ const pt: Translations = {
     ctaHeadline: 'Comece a usar a Botfy gratuitamente',
     ctaSub: 'Comece a construir seu pipeline de vendas com IA hoje. Sem cartão de crédito.',
     tryFree: 'Começar grátis',
-    bookDemo: 'Agendar demo',
   },
   logoSection: {
     title: 'Confiado por equipes que crescem',
@@ -964,9 +949,6 @@ const pt: Translations = {
       whatsappPlaceholder: 'Número de WhatsApp',
       messagePlaceholder: 'Como podemos ajudar?',
       send: 'Enviar mensagem',
-      bookDemoTitle: 'Prefere uma demonstração ao vivo?',
-      bookDemoDesc: 'Agende uma chamada de 30 minutos com nosso time. Vamos apresentar a plataforma e responder todas as suas dúvidas.',
-      bookDemoBtn: 'Agendar uma demo',
       orEmail: 'Ou nos envie um e-mail diretamente',
     },
   },
@@ -980,7 +962,6 @@ const es: Translations = {
     aboutUs: 'Sobre Nosotros',
     login: 'Iniciar sesión',
     startFreeTrial: 'Empezar Gratis',
-    bookDemo: 'Reservar Demo',
     product: 'Producto',
     solutions: 'Soluciones',
   },
@@ -1151,7 +1132,6 @@ const es: Translations = {
     heroHeadline: 'Todo lo que necesitas para vender — en una plataforma de IA',
     heroSubline: 'Crea agentes de IA entrenados en tu negocio que venden 24/7 por WhatsApp, Instagram y más.',
     tryFreeCta: 'Empezar gratis',
-    heroBookDemo: 'Ver demostración',
     heroStats: [
       { value: '50+', label: 'países' },
       { value: '1.000+', label: 'empresas' },
@@ -1196,7 +1176,6 @@ const es: Translations = {
     ctaHeadline: 'Empieza a usar Botfy gratis',
     ctaSub: 'Empieza a construir tu pipeline de ventas con IA hoy. Sin tarjeta de crédito.',
     tryFree: 'Empezar gratis',
-    bookDemo: 'Reservar demo',
   },
   logoSection: {
     title: 'Confiado por equipos que crecen',
@@ -1329,9 +1308,6 @@ const es: Translations = {
       whatsappPlaceholder: 'Número de WhatsApp',
       messagePlaceholder: '¿Cómo podemos ayudarte?',
       send: 'Enviar mensaje',
-      bookDemoTitle: '¿Prefieres una demo en vivo?',
-      bookDemoDesc: 'Agenda una llamada de 30 minutos con nuestro equipo. Te mostraremos la plataforma y responderemos todas tus preguntas.',
-      bookDemoBtn: 'Agendar una demo',
       orEmail: 'O envíanos un correo directamente a',
     },
   },
