@@ -54,7 +54,7 @@ export function ChannelsSection() {
         </motion.p>
 
         {/* Channel cards */}
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-md mx-auto sm:max-w-none sm:flex sm:flex-wrap sm:justify-center">
           {channels.map((ch, i) => (
             <motion.div
               key={i}
@@ -62,7 +62,7 @@ export function ChannelsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.4, ease: 'easeOut' }}
-              className="relative group flex flex-col items-center gap-3 px-7 py-6 rounded-2xl border border-gray-100 cursor-default transition-[transform,border-color] duration-300 hover:-translate-y-1.5"
+              className="relative group flex flex-col items-center gap-2 sm:gap-3 px-3 py-4 sm:px-7 sm:py-6 rounded-2xl border border-gray-100 cursor-default transition-[transform,border-color] duration-300 hover:-translate-y-1.5"
               style={{ background: ch.bg }}
             >
               {/* Glow on hover */}
@@ -87,13 +87,13 @@ export function ChannelsSection() {
 
               {/* Icon */}
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center animate-icon-bob"
+                className="w-11 h-11 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center animate-icon-bob"
                 style={{ background: `${ch.color}18`, animationDuration: `${4 + i * 0.5}s` }}
               >
-                <ch.icon size={24} style={{ color: ch.color }} />
+                <ch.icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: ch.color }} />
               </div>
 
-              <span className="relative z-10 text-[13px] font-semibold text-text-primary">{ch.name}</span>
+              <span className="relative z-10 text-[11px] sm:text-[13px] font-semibold text-text-primary">{ch.name}</span>
             </motion.div>
           ))}
         </div>
