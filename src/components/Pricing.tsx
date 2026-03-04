@@ -6,7 +6,7 @@ const STRIPE_LINKS: (string | null)[] = [
   null, // Free — redirect to register
   'https://buy.stripe.com/fZu4gB3WGaEF8exdYSfQI00', // Starter
   'https://buy.stripe.com/aFabJ32SCdQR7atg70fQI01', // Growth
-  null, // Scale
+  'https://buy.stripe.com/placeholder-scale', // Scale
   null, // Enterprise — contact sales
 ]
 
@@ -40,7 +40,7 @@ export function Pricing() {
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
           {t.pricing.plans.map((plan, i) => {
             const isPopular = i === 2
-            const isEnterprise = i === 4
+            const isEnterprise = plan.price === 'Custom' || plan.price === 'Sob consulta' || plan.price === 'A consultar'
             return (
               <motion.div
                 key={i}
@@ -102,8 +102,6 @@ export function Pricing() {
                     className={`no-underline mt-auto inline-flex items-center justify-center w-full h-10 rounded-xl font-bold text-[12px] transition-[background-color] duration-200 ${
                       isPopular
                         ? 'bg-white text-accent-purple hover:bg-gray-50'
-                        : isEnterprise
-                        ? 'bg-gray-900 text-white hover:bg-gray-800'
                         : 'bg-accent-purple text-white hover:bg-accent-purple/90'
                     }`}
                   >

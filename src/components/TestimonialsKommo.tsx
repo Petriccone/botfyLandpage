@@ -4,7 +4,6 @@ import { useLanguage } from '../hooks/useLanguage'
 
 export function TestimonialsKommo() {
   const { t } = useLanguage()
-  const k = t.kommo
 
   return (
     <section className="py-24 md:py-32 bg-white border-t border-gray-100">
@@ -15,10 +14,10 @@ export function TestimonialsKommo() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-display font-bold tracking-tight text-text-primary text-center mb-14"
         >
-          {k.testimonialsTitle}
+          {t.newTestimonials.title}
         </motion.h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {k.testimonials.map((item, i) => (
+          {t.newTestimonials.items.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}

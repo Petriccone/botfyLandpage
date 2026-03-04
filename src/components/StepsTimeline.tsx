@@ -1,40 +1,21 @@
 import { motion } from 'framer-motion'
+import { UserPlus, Share2, Rocket } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 
-function HorizontalArrow() {
-  return (
-    <div className="hidden md:flex items-center justify-center flex-shrink-0 w-16">
-      <svg width="64" height="12" viewBox="0 0 64 12" className="overflow-visible">
-        <line x1="0" y1="6" x2="52" y2="6" stroke="rgba(124,58,237,0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
-        <polygon points="50,3 60,6 50,9" fill="rgba(124,58,237,0.4)" />
-        <circle r="3" fill="#7c3aed" opacity="0.9">
-          <animateMotion dur="1.6s" repeatCount="indefinite" path="M 0 6 L 52 6" />
-        </circle>
-      </svg>
-    </div>
-  )
-}
-
-function VerticalArrow() {
-  return (
-    <div className="flex md:hidden items-center justify-center py-2">
-      <svg width="12" height="40" viewBox="0 0 12 40" className="overflow-visible">
-        <line x1="6" y1="0" x2="6" y2="30" stroke="rgba(124,58,237,0.25)" strokeWidth="1.5" strokeDasharray="4 4" />
-        <polygon points="3,28 6,36 9,28" fill="rgba(124,58,237,0.4)" />
-        <circle cx="6" cy="15" r="3" fill="#7c3aed" opacity="0.6" />
-      </svg>
-    </div>
-  )
-}
+const stepVisuals = [
+  { icon: UserPlus, color: '#7c3aed', bg: 'rgba(124,58,237,0.08)' },
+  { icon: Share2, color: '#3b82f6', bg: 'rgba(59,130,246,0.08)' },
+  { icon: Rocket, color: '#10b981', bg: 'rgba(16,185,129,0.08)' },
+]
 
 export function StepsTimeline() {
   const { t } = useLanguage()
-  const h = t.howItWorks
+  const h = t.newHowItWorks
 
   return (
     <section id="how-it-works" className="py-24 md:py-32 bg-white relative overflow-hidden">
 
-      {/* Background: subtle radial glow */}
+      {/* Background glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.05) 0%, transparent 70%)' }}
       />
@@ -43,6 +24,19 @@ export function StepsTimeline() {
 
         {/* Header */}
         <div className="mb-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/[0.07] border border-brand-primary/20 text-accent-purple text-[12px] font-semibold tracking-wide mb-6"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-purple opacity-50" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-purple" />
+            </span>
+            {h.noCode}
+          </motion.div>
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,135 +56,141 @@ export function StepsTimeline() {
           </motion.p>
         </div>
 
-        {/* AI Pipeline Diagram */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-24 max-w-5xl mx-auto"
-        >
-          <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-0">
-
-            {/* Input Panel */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="flex-1 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm hover:border-gray-200 transition-colors"
-            >
-              <p className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-accent-purple mb-5">{h.inputLabel}</p>
-              <ul className="space-y-3">
-                {h.inputs.map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-text-secondary">
+        {/* 3 Steps — full-width cards with connectors */}
+        <div className="max-w-5xl mx-auto">
+          {/* Desktop: horizontal */}
+          <div className="hidden md:flex items-stretch gap-0">
+            {h.steps.map((step, i) => {
+              const visual = stepVisuals[i]
+              const Icon = visual.icon
+              return (
+                <div key={i} className="contents">
+                  {/* Step card */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.15, duration: 0.5 }}
+                    className="flex-1 relative bg-white rounded-2xl border border-gray-100 p-7 text-center group hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+                    style={{ transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease' }}
+                    onMouseEnter={e => {
+                      const el = e.currentTarget
+                      el.style.borderColor = `${visual.color}30`
+                      el.style.boxShadow = `0 8px 30px ${visual.color}12, 0 0 0 1px ${visual.color}10`
+                    }}
+                    onMouseLeave={e => {
+                      const el = e.currentTarget
+                      el.style.borderColor = ''
+                      el.style.boxShadow = ''
+                    }}
+                  >
+                    {/* Hover glow */}
                     <div
-                      className="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0 animate-dot-pulse"
-                      style={{ animationDelay: `${i * 0.4}s` }}
+                      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{ background: `radial-gradient(400px circle at 50% 0%, ${visual.bg}, transparent 60%)` }}
                     />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
 
-            {/* Arrow left → center */}
-            <HorizontalArrow />
-            <VerticalArrow />
+                    <div className="relative z-10">
+                      {/* Step number + icon */}
+                      <div className="flex items-center justify-center gap-3 mb-5">
+                        <div className="relative">
+                          <div
+                            className="absolute inset-0 rounded-full animate-step-pulse"
+                            style={{ backgroundColor: `${visual.color}15`, animationDelay: `${i * 0.8}s` }}
+                          />
+                          <div
+                            className="relative w-14 h-14 rounded-full border-2 flex items-center justify-center text-lg font-bold transition-all duration-300"
+                            style={{ borderColor: `${visual.color}40`, color: visual.color }}
+                          >
+                            {i + 1}
+                          </div>
+                        </div>
+                        <div
+                          className="w-11 h-11 rounded-xl flex items-center justify-center animate-icon-bob"
+                          style={{ background: visual.bg, animationDelay: `${i * 0.5}s`, animationDuration: `${3.5 + i * 0.3}s` }}
+                        >
+                          <Icon size={20} style={{ color: visual.color }} />
+                        </div>
+                      </div>
 
-            {/* Center — Botfy AI Core */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="relative flex-shrink-0 flex flex-col items-center justify-center p-8 rounded-3xl text-center animate-glow-breathe"
-              style={{
-                background: 'linear-gradient(135deg, var(--color-brand-deep), var(--color-brand-primary), var(--color-brand-mid))',
-                minWidth: 210,
-              }}
-            >
-              {/* Dot grid overlay */}
-              <div className="absolute inset-0 rounded-3xl overflow-hidden opacity-10 pointer-events-none">
-                <div className="w-full h-full" style={{
-                  backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)',
-                  backgroundSize: '18px 18px'
-                }} />
-              </div>
+                      <h3 className="font-bold text-text-primary mb-2 text-[16px]">{step.title}</h3>
+                      <p className="text-[13px] text-text-secondary font-light leading-relaxed">{step.desc}</p>
+                    </div>
+                  </motion.div>
 
-              {/* Pulsing rings — desktop only */}
-              <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none">
-                <div className="absolute w-28 h-28 rounded-full border border-white/20 animate-pulse-ring" />
-                <div className="absolute w-28 h-28 rounded-full border border-white/10 animate-pulse-ring" style={{ animationDelay: '1s' }} />
-              </div>
-
-              {/* Brand icon */}
-              <div className="relative z-10 w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-3 border border-white/30">
-                <img src="/botfy-icon.svg" alt="Botfy" className="w-9 h-9" loading="lazy" />
-              </div>
-
-              <p className="relative z-10 text-white font-display font-bold text-lg leading-tight mb-1">Botfy IA</p>
-              <p className="relative z-10 text-white/60 text-[10px] font-mono tracking-[0.2em] uppercase">Neural Engine</p>
-            </motion.div>
-
-            {/* Arrow center → right */}
-            <HorizontalArrow />
-            <VerticalArrow />
-
-            {/* Output Panel */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="flex-1 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm hover:border-gray-200 transition-colors"
-            >
-              <p className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-accent-purple mb-5">{h.outputLabel}</p>
-              <ul className="space-y-3">
-                {h.outputs.map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-text-secondary">
-                    <div
-                      className="w-1.5 h-1.5 rounded-full bg-accent-purple/50 flex-shrink-0 animate-dot-pulse"
-                      style={{ animationDelay: `${i * 0.4 + 0.5}s` }}
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* 3 Steps */}
-        <div className="grid md:grid-cols-3 gap-px bg-gray-100 rounded-2xl overflow-hidden max-w-4xl mx-auto">
-          {h.steps.map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12 }}
-              className="bg-white px-8 py-8 text-center group hover:bg-brand-primary/[0.04] transition-colors"
-            >
-              <div className="relative w-12 h-12 mx-auto mb-5">
-                <div
-                  className="absolute inset-0 rounded-full bg-accent-purple/10 animate-step-pulse"
-                  style={{ animationDelay: `${i * 0.8}s` }}
-                />
-                <div className="relative w-12 h-12 rounded-full border-2 border-accent-purple/25 bg-white flex items-center justify-center text-sm font-bold text-accent-purple group-hover:border-accent-purple/50 transition-colors">
-                  {i + 1}
+                  {/* Animated connector */}
+                  {i < h.steps.length - 1 && (
+                    <div className="flex items-center justify-center flex-shrink-0 w-14 pt-8">
+                      <svg width="56" height="12" viewBox="0 0 56 12" className="overflow-visible">
+                        <line x1="0" y1="6" x2="44" y2="6" stroke={`${visual.color}40`} strokeWidth="1.5" strokeDasharray="4 4" />
+                        <polygon points="42,3 52,6 42,9" fill={`${visual.color}60`} />
+                        <circle r="3" fill={visual.color} opacity="0.9">
+                          <animateMotion dur="1.6s" repeatCount="indefinite" path="M 0 6 L 44 6" />
+                        </circle>
+                      </svg>
+                    </div>
+                  )}
                 </div>
-              </div>
-              <h3 className="font-bold text-text-primary mb-2 text-[15px]">{step.title}</h3>
-              <p className="text-sm text-text-secondary font-light leading-relaxed">{step.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+              )
+            })}
+          </div>
 
-        <div className="mt-10 text-center">
-          <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-text-muted opacity-50">
-            {h.noCode}
-          </p>
+          {/* Mobile: vertical with connectors */}
+          <div className="md:hidden space-y-0">
+            {h.steps.map((step, i) => {
+              const visual = stepVisuals[i]
+              const Icon = visual.icon
+              return (
+                <div key={i}>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.12 }}
+                    className="flex items-start gap-5 py-5"
+                  >
+                    <div className="flex flex-col items-center gap-2 flex-shrink-0">
+                      <div className="relative">
+                        <div
+                          className="absolute inset-0 rounded-full animate-step-pulse"
+                          style={{ backgroundColor: `${visual.color}15`, animationDelay: `${i * 0.8}s` }}
+                        />
+                        <div
+                          className="relative w-12 h-12 rounded-full border-2 bg-white flex items-center justify-center text-sm font-bold"
+                          style={{ borderColor: `${visual.color}40`, color: visual.color }}
+                        >
+                          {i + 1}
+                        </div>
+                      </div>
+                      <div
+                        className="w-9 h-9 rounded-lg flex items-center justify-center"
+                        style={{ background: visual.bg }}
+                      >
+                        <Icon size={16} style={{ color: visual.color }} />
+                      </div>
+                    </div>
+                    <div className="pt-2">
+                      <h3 className="font-bold text-text-primary mb-1 text-[15px]">{step.title}</h3>
+                      <p className="text-sm text-text-secondary font-light leading-relaxed">{step.desc}</p>
+                    </div>
+                  </motion.div>
+
+                  {/* Vertical connector */}
+                  {i < h.steps.length - 1 && (
+                    <div className="flex justify-start pl-[22px]">
+                      <svg width="12" height="24" viewBox="0 0 12 24" className="overflow-visible">
+                        <line x1="6" y1="0" x2="6" y2="20" stroke={`${visual.color}30`} strokeWidth="1.5" strokeDasharray="3 3" />
+                        <circle cx="6" cy="10" r="2" fill={visual.color} opacity="0.5">
+                          <animate attributeName="cy" from="2" to="18" dur="1.4s" repeatCount="indefinite" />
+                          <animate attributeName="opacity" values="0;0.8;0" dur="1.4s" repeatCount="indefinite" />
+                        </circle>
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>

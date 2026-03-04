@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Play, CheckCircle, MessageCircle } from 'lucide-react'
+import { Play, MessageCircle } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 
 export function HeroKommo() {
@@ -68,22 +68,15 @@ export function HeroKommo() {
             </a>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div
+          {/* Social proof */}
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3"
+            className="text-sm text-text-muted font-light"
           >
-            {k.heroStats.map((stat, i) => (
-              <div key={i} className="flex items-center gap-2 text-sm">
-                <CheckCircle size={13} className="text-accent-purple flex-shrink-0" />
-                <span className="text-text-secondary">
-                  <strong className="text-text-primary font-semibold">{stat.value}</strong> {stat.label}
-                </span>
-              </div>
-            ))}
-          </motion.div>
+            {t.logoSection.title}
+          </motion.p>
         </div>
 
         {/* Product Mockup */}

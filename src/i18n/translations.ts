@@ -182,6 +182,53 @@ export interface Translations {
     subtitle: string
     items: { q: string; a: string }[]
   }
+  problem: {
+    title: string
+    body1: string
+    body2: string
+    body3: string
+  }
+  whatIsBotfy: {
+    title: string
+    body1: string
+    body2: string
+  }
+  capabilities: {
+    title: string
+    subtitle: string
+    items: { title: string; desc: string }[]
+  }
+  newHowItWorks: {
+    title: string
+    subtitle: string
+    steps: { title: string; desc: string }[]
+    noCode: string
+  }
+  useCases: {
+    title: string
+    subtitle: string
+    cases: { emoji: string; industry: string; desc: string }[]
+  }
+  comparison: {
+    title: string
+    subtitle: string
+    headers: string[]
+    rows: { label: string; cells: string[] }[]
+  }
+  newTestimonials: {
+    title: string
+    items: { quote: string; name: string; role: string }[]
+  }
+  newCta: {
+    title: string
+    body: string
+    ctaPrimary: string
+    ctaSecondary: string
+  }
+  meta: {
+    title: string
+    description: string
+  }
   footer: {
     desc: string
     product: string
@@ -243,9 +290,9 @@ const en: Translations = {
     pricing: 'Pricing',
     aboutUs: 'About Us',
     login: 'Log in',
-    startFreeTrial: 'Start Free',
+    startFreeTrial: 'Start for free',
     product: 'Product',
-    solutions: 'Solutions',
+    solutions: 'Use Cases',
   },
   hero: {
     badge: 'Secure AI Agents Infrastructure',
@@ -255,7 +302,7 @@ const en: Translations = {
     subtitle: 'Automate conversations, qualify leads and close sales 24/7 — without hiring, without complexity.',
     subtitle2: 'Deploy intelligent AI agents in minutes and turn every message into revenue.',
     cta: 'Start Free',
-    ctaSecondary: 'See How It Works',
+    ctaSecondary: 'Watch demo (2 min)',
     trustBullets: ['No setup fees.', 'Self-service platform.', 'Go live in minutes.'],
   },
   painPoints: {
@@ -408,11 +455,11 @@ const en: Translations = {
   },
   kommo: {
     badge: 'AI Agent for WhatsApp & Messaging',
-    heroLine1: 'Sell more.',
-    heroLine2: 'Serve better.',
-    heroLine3: 'On autopilot.',
+    heroLine1: 'Digital employees',
+    heroLine2: 'for your',
+    heroLine3: 'business.',
     heroHeadline: 'All the ways you sell — combined in one AI platform',
-    heroSubline: 'Create AI agents trained on your business that sell 24/7 on WhatsApp, Instagram, and more.',
+    heroSubline: 'AI agents trained on your products, your voice, and your rules — selling, supporting, and scheduling 24/7 on WhatsApp.',
     tryFreeCta: 'Start for free',
     heroStats: [
       { value: '50+', label: 'countries' },
@@ -460,7 +507,7 @@ const en: Translations = {
     tryFree: 'Start free',
   },
   logoSection: {
-    title: 'Trusted by teams that grow',
+    title: 'Trusted by clinics, shops, and service businesses...',
   },
   solutionsTabs: {
     title: 'A solution for every stage of the journey',
@@ -541,8 +588,88 @@ const en: Translations = {
       { q: 'Can I test the agent before going live?', a: 'Yes. Every plan includes a built-in sandbox environment where you can simulate real conversations with your AI agent. Test different scenarios, edge cases, and escalation paths before publishing to customers. You can also share a private preview link with your team for collaborative review and feedback before launch.' },
     ],
   },
+  problem: {
+    title: 'Your business is growing. Your team is not.',
+    body1: 'You are losing leads because nobody answered at 11 pm. Your best salesperson is stuck copy-pasting the same follow-up for the 50th time. Hiring is slow, training is slower, and every new channel means more chaos.',
+    body2: 'Traditional chatbots make it worse — robotic scripts that frustrate customers and damage your brand. Generic AI tools sound smart in demos but hallucinate in production.',
+    body3: 'You don\'t need another bot. You need digital employees.',
+  },
+  whatIsBotfy: {
+    title: 'Botfy creates digital employees for your business.',
+    body1: 'A digital employee is an AI agent trained on your products, your tone, and your rules. It answers customers on WhatsApp, books appointments, sends invoices, and follows up — exactly like a great team member who never sleeps.',
+    body2: 'No code. No prompt engineering. Just upload your docs, connect your channels, and go live in 15 minutes.',
+  },
+  capabilities: {
+    title: 'What your digital employees can do',
+    subtitle: 'Everything a great team member does — on autopilot, 24/7.',
+    items: [
+      { title: 'Customer support', desc: 'Answer FAQs, resolve complaints, and escalate to humans only when needed.' },
+      { title: 'Lead qualification', desc: 'Ask the right questions, score leads, and route hot prospects to your sales team.' },
+      { title: 'Appointment scheduling', desc: 'Check availability, book slots, send confirmations and reminders automatically.' },
+      { title: 'Payments & invoicing', desc: 'Send payment links, generate invoices, and confirm transactions inside the chat.' },
+      { title: 'Product recommendations', desc: 'Suggest the right product based on conversation context and purchase history.' },
+      { title: 'Multi-language support', desc: 'Speak 50+ languages natively. Auto-detect and reply in the customer\'s language.' },
+    ],
+  },
+  newHowItWorks: {
+    title: 'Set up your team in 15 minutes. No code.',
+    subtitle: 'Three steps to your first digital employee.',
+    steps: [
+      { title: 'Create your agents', desc: 'Upload your documents, FAQs, and product catalog. The AI learns your business instantly.' },
+      { title: 'Connect your channels', desc: 'WhatsApp, Instagram, Telegram, Web Chat — plug in every channel your customers use.' },
+      { title: 'Go live', desc: 'Activate and watch your digital employees handle conversations, qualify leads, and close sales.' },
+    ],
+    noCode: 'No developers. No agencies. No technical setup.',
+  },
+  useCases: {
+    title: 'Digital employees in action',
+    subtitle: 'See how they work across industries.',
+    cases: [
+      { emoji: '🏥', industry: 'Health & dental clinics', desc: 'Patients book appointments via WhatsApp 24/7. The AI confirms, reminds, and reschedules — reducing no-shows by up to 40%.' },
+      { emoji: '🛋️', industry: 'Furniture & retail', desc: 'Customers browse products, get recommendations, and receive payment links — all inside a single WhatsApp conversation.' },
+      { emoji: '💇', industry: 'Beauty & wellness', desc: 'Salons fill their calendars automatically. The AI handles booking, rescheduling, and follow-up messages after each visit.' },
+      { emoji: '🏠', industry: 'Real estate', desc: 'Agents qualify buyers instantly, share property details with photos, and schedule visits — without missing a single inquiry.' },
+      { emoji: '🍽️', industry: 'Restaurants & food', desc: 'Take reservations, share menus, handle dietary requests, and confirm bookings — all through WhatsApp, 24/7.' },
+      { emoji: '🏋️', industry: 'Fitness & gyms', desc: 'Members book classes, check schedules, and renew memberships automatically. The AI handles cancellations and waitlists too.' },
+    ],
+  },
+  comparison: {
+    title: 'Not all AI is created equal',
+    subtitle: 'See how Botfy compares to alternatives.',
+    headers: ['Traditional chatbot', 'Generic AI', 'Botfy'],
+    rows: [
+      { label: 'Trained on your business', cells: ['no', 'partial', 'yes'] },
+      { label: 'WhatsApp native', cells: ['no', 'no', 'yes'] },
+      { label: 'Books appointments', cells: ['no', 'no', 'yes'] },
+      { label: 'Sends payment links', cells: ['no', 'no', 'yes'] },
+      { label: 'Multi-language (50+)', cells: ['no', 'yes', 'yes'] },
+      { label: 'No-code setup', cells: ['partial', 'no', 'yes'] },
+      { label: 'CRM integration', cells: ['partial', 'partial', 'yes'] },
+      { label: 'Escalation to humans', cells: ['partial', 'no', 'yes'] },
+      { label: 'Brand voice & tone', cells: ['no', 'partial', 'yes'] },
+      { label: 'Live in under 15 min', cells: ['no', 'no', 'yes'] },
+    ],
+  },
+  newTestimonials: {
+    title: 'Trusted by real businesses',
+    items: [
+      { quote: 'We reduced no-shows by 35% in the first month. The AI handles all our WhatsApp scheduling now.', name: 'Dr. Marina Souza', role: 'Dental clinic owner' },
+      { quote: 'Our furniture store gets 200+ WhatsApp messages a day. Botfy handles 80% of them — and actually closes sales.', name: 'Carlos Mendes', role: 'E-commerce manager' },
+      { quote: 'My salon is fully booked thanks to the AI. Clients love how fast they get a response.', name: 'Ana Beatriz', role: 'Salon owner' },
+    ],
+  },
+  newCta: {
+    title: 'How many digital employees does your business need?',
+    body: 'Start with one. Scale to a whole team. Free plan available — no credit card required.',
+    ctaPrimary: 'Start for free',
+    ctaSecondary: 'Talk to a human (we\'re nice too)',
+  },
+  meta: {
+    title: 'Digital Employees for Your Business | Botfy',
+    description: 'Create AI-powered digital employees that handle sales, support, scheduling, and payments on WhatsApp — like a real team that works 24/7.',
+  },
   footer: {
-    desc: 'AI agents that sell and support — on autopilot. Built for businesses that want to grow without limits.',
+    desc: 'Botfy — Digital employees for your business.',
     product: 'Product',
     companyTitle: 'Company',
     features: 'AI Agents',
@@ -602,9 +729,9 @@ const pt: Translations = {
     pricing: 'Preços',
     aboutUs: 'Sobre Nós',
     login: 'Entrar',
-    startFreeTrial: 'Começar Grátis',
+    startFreeTrial: 'Começar grátis',
     product: 'Produto',
-    solutions: 'Soluções',
+    solutions: 'Casos de Uso',
   },
   hero: {
     badge: 'Infraestrutura Segura de Agentes IA',
@@ -614,7 +741,7 @@ const pt: Translations = {
     subtitle: 'Automatize conversas, qualifique leads e feche vendas 24/7 — sem contratar, sem complexidade.',
     subtitle2: 'Implante agentes de IA em minutos e transforme cada mensagem em receita.',
     cta: 'Começar Grátis',
-    ctaSecondary: 'Ver Como Funciona',
+    ctaSecondary: 'Ver demo (2 min)',
     trustBullets: ['Sem taxas de configuração.', 'Plataforma self-service.', 'No ar em minutos.'],
   },
   painPoints: {
@@ -767,11 +894,11 @@ const pt: Translations = {
   },
   kommo: {
     badge: 'Agente de IA para WhatsApp & Mensageiros',
-    heroLine1: 'Venda mais.',
-    heroLine2: 'Atenda melhor.',
-    heroLine3: 'No piloto automático.',
+    heroLine1: 'Funcionários digitais',
+    heroLine2: 'para o seu',
+    heroLine3: 'negócio.',
     heroHeadline: 'Tudo o que você precisa para vender — em uma plataforma de IA',
-    heroSubline: 'Crie agentes de IA treinados com o seu negócio que vendem 24/7 pelo WhatsApp, Instagram e mais.',
+    heroSubline: 'Agentes de IA treinados nos seus produtos, na sua voz e nas suas regras — vendendo, atendendo e agendando 24/7 no WhatsApp.',
     tryFreeCta: 'Começar grátis',
     heroStats: [
       { value: '50+', label: 'países' },
@@ -819,7 +946,7 @@ const pt: Translations = {
     tryFree: 'Começar grátis',
   },
   logoSection: {
-    title: 'Confiado por equipes que crescem',
+    title: 'Confiado por clínicas, lojas e negócios de serviços...',
   },
   solutionsTabs: {
     title: 'Uma solução para cada etapa da jornada',
@@ -900,8 +1027,88 @@ const pt: Translations = {
       { q: 'Posso testar o agente antes de ir ao ar?', a: 'Sim. Todo plano inclui um ambiente de sandbox integrado onde você pode simular conversas reais com seu agente de IA. Teste diferentes cenários, casos extremos e fluxos de escalação antes de publicar para os clientes. Você também pode compartilhar um link de pré-visualização privado com sua equipe para revisão e feedback colaborativo antes do lançamento.' },
     ],
   },
+  problem: {
+    title: 'Seu negócio está crescendo. Sua equipe não.',
+    body1: 'Você está perdendo leads porque ninguém respondeu às 23h. Seu melhor vendedor está preso copiando e colando o mesmo follow-up pela 50ª vez. Contratar é lento, treinar é mais lento ainda, e cada canal novo significa mais caos.',
+    body2: 'Chatbots tradicionais pioram tudo — scripts robóticos que frustram clientes e prejudicam sua marca. Ferramentas genéricas de IA parecem inteligentes em demos, mas alucinam em produção.',
+    body3: 'Você não precisa de outro bot. Você precisa de funcionários digitais.',
+  },
+  whatIsBotfy: {
+    title: 'A Botfy cria funcionários digitais para o seu negócio.',
+    body1: 'Um funcionário digital é um agente de IA treinado nos seus produtos, no seu tom e nas suas regras. Ele responde clientes no WhatsApp, agenda consultas, envia faturas e faz follow-up — exatamente como um ótimo membro da equipe que nunca dorme.',
+    body2: 'Sem código. Sem engenharia de prompts. Basta enviar seus documentos, conectar seus canais e ir ao vivo em 15 minutos.',
+  },
+  capabilities: {
+    title: 'O que seus funcionários digitais podem fazer',
+    subtitle: 'Tudo que um ótimo membro da equipe faz — no piloto automático, 24/7.',
+    items: [
+      { title: 'Suporte ao cliente', desc: 'Responde FAQs, resolve reclamações e escala para humanos apenas quando necessário.' },
+      { title: 'Qualificação de leads', desc: 'Faz as perguntas certas, pontua leads e direciona prospects quentes para sua equipe de vendas.' },
+      { title: 'Agendamento', desc: 'Verifica disponibilidade, reserva horários, envia confirmações e lembretes automaticamente.' },
+      { title: 'Pagamentos e faturas', desc: 'Envia links de pagamento, gera faturas e confirma transações dentro do chat.' },
+      { title: 'Recomendações de produtos', desc: 'Sugere o produto certo com base no contexto da conversa e histórico de compras.' },
+      { title: 'Suporte multi-idioma', desc: 'Fala 50+ idiomas nativamente. Detecta e responde automaticamente no idioma do cliente.' },
+    ],
+  },
+  newHowItWorks: {
+    title: 'Monte sua equipe em 15 minutos. Sem código.',
+    subtitle: 'Três passos para seu primeiro funcionário digital.',
+    steps: [
+      { title: 'Crie seus agentes', desc: 'Envie seus documentos, FAQs e catálogo de produtos. A IA aprende seu negócio instantaneamente.' },
+      { title: 'Conecte seus canais', desc: 'WhatsApp, Instagram, Telegram, Web Chat — conecte cada canal que seus clientes usam.' },
+      { title: 'Vá ao vivo', desc: 'Ative e veja seus funcionários digitais lidando com conversas, qualificando leads e fechando vendas.' },
+    ],
+    noCode: 'Sem desenvolvedores. Sem agências. Sem configuração técnica.',
+  },
+  useCases: {
+    title: 'Funcionários digitais em ação',
+    subtitle: 'Veja como funcionam em diferentes setores.',
+    cases: [
+      { emoji: '🏥', industry: 'Clínicas médicas e odontológicas', desc: 'Pacientes agendam consultas pelo WhatsApp 24/7. A IA confirma, lembra e reagenda — reduzindo faltas em até 40%.' },
+      { emoji: '🛋️', industry: 'Móveis e varejo', desc: 'Clientes navegam produtos, recebem recomendações e links de pagamento — tudo em uma única conversa no WhatsApp.' },
+      { emoji: '💇', industry: 'Beleza e bem-estar', desc: 'Salões lotam suas agendas automaticamente. A IA cuida de agendamento, reagendamento e mensagens de follow-up após cada visita.' },
+      { emoji: '🏠', industry: 'Imobiliário', desc: 'Corretores qualificam compradores instantaneamente, compartilham detalhes com fotos e agendam visitas — sem perder nenhuma consulta.' },
+      { emoji: '🍽️', industry: 'Restaurantes e alimentação', desc: 'Receba reservas, compartilhe cardápios, lide com restrições alimentares e confirme agendamentos — tudo pelo WhatsApp, 24/7.' },
+      { emoji: '🏋️', industry: 'Fitness e academias', desc: 'Alunos reservam aulas, conferem horários e renovam planos automaticamente. A IA cuida de cancelamentos e listas de espera.' },
+    ],
+  },
+  comparison: {
+    title: 'Nem toda IA é igual',
+    subtitle: 'Veja como a Botfy se compara às alternativas.',
+    headers: ['Chatbot tradicional', 'IA genérica', 'Botfy'],
+    rows: [
+      { label: 'Treinado no seu negócio', cells: ['no', 'partial', 'yes'] },
+      { label: 'WhatsApp nativo', cells: ['no', 'no', 'yes'] },
+      { label: 'Agenda consultas', cells: ['no', 'no', 'yes'] },
+      { label: 'Envia links de pagamento', cells: ['no', 'no', 'yes'] },
+      { label: 'Multi-idioma (50+)', cells: ['no', 'yes', 'yes'] },
+      { label: 'Configuração sem código', cells: ['partial', 'no', 'yes'] },
+      { label: 'Integração com CRM', cells: ['partial', 'partial', 'yes'] },
+      { label: 'Escalação para humanos', cells: ['partial', 'no', 'yes'] },
+      { label: 'Voz e tom da marca', cells: ['no', 'partial', 'yes'] },
+      { label: 'No ar em menos de 15 min', cells: ['no', 'no', 'yes'] },
+    ],
+  },
+  newTestimonials: {
+    title: 'Confiado por negócios reais',
+    items: [
+      { quote: 'Reduzimos as faltas em 35% no primeiro mês. A IA cuida de todo o agendamento pelo WhatsApp agora.', name: 'Dra. Marina Souza', role: 'Proprietária de clínica odontológica' },
+      { quote: 'Nossa loja de móveis recebe 200+ mensagens por dia no WhatsApp. A Botfy lida com 80% delas — e realmente fecha vendas.', name: 'Carlos Mendes', role: 'Gerente de e-commerce' },
+      { quote: 'Meu salão está com agenda lotada graças à IA. As clientes adoram a rapidez das respostas.', name: 'Ana Beatriz', role: 'Proprietária de salão' },
+    ],
+  },
+  newCta: {
+    title: 'Quantos funcionários digitais seu negócio precisa?',
+    body: 'Comece com um. Escale para uma equipe inteira. Plano grátis disponível — sem cartão de crédito.',
+    ctaPrimary: 'Começar grátis',
+    ctaSecondary: 'Falar com um humano (somos legais também)',
+  },
+  meta: {
+    title: 'Funcionários Digitais para o Seu Negócio | Botfy',
+    description: 'Crie funcionários digitais com IA que cuidam de vendas, suporte, agendamento e pagamentos no WhatsApp — como uma equipe real que trabalha 24/7.',
+  },
   footer: {
-    desc: 'Agentes de IA que vendem e atendem — no piloto automático. Feito para negócios que querem crescer sem limites.',
+    desc: 'Botfy — Funcionários digitais para o seu negócio.',
     product: 'Produto',
     companyTitle: 'Empresa',
     features: 'Agentes IA',
@@ -961,9 +1168,9 @@ const es: Translations = {
     pricing: 'Precios',
     aboutUs: 'Sobre Nosotros',
     login: 'Iniciar sesión',
-    startFreeTrial: 'Empezar Gratis',
+    startFreeTrial: 'Empezar gratis',
     product: 'Producto',
-    solutions: 'Soluciones',
+    solutions: 'Casos de Uso',
   },
   hero: {
     badge: 'Infraestructura Segura de Agentes IA',
@@ -973,7 +1180,7 @@ const es: Translations = {
     subtitle: 'Automatiza conversaciones, califica leads y cierra ventas 24/7 — sin contratar, sin complejidad.',
     subtitle2: 'Despliega agentes de IA en minutos y convierte cada mensaje en ingresos.',
     cta: 'Empezar Gratis',
-    ctaSecondary: 'Ver Cómo Funciona',
+    ctaSecondary: 'Ver demo (2 min)',
     trustBullets: ['Sin costes de configuración.', 'Plataforma self-service.', 'En vivo en minutos.'],
   },
   painPoints: {
@@ -1126,11 +1333,11 @@ const es: Translations = {
   },
   kommo: {
     badge: 'Agente IA para WhatsApp y Mensajería',
-    heroLine1: 'Vende más.',
-    heroLine2: 'Atiende mejor.',
-    heroLine3: 'En piloto automático.',
+    heroLine1: 'Empleados digitales',
+    heroLine2: 'para tu',
+    heroLine3: 'negocio.',
     heroHeadline: 'Todo lo que necesitas para vender — en una plataforma de IA',
-    heroSubline: 'Crea agentes de IA entrenados en tu negocio que venden 24/7 por WhatsApp, Instagram y más.',
+    heroSubline: 'Agentes de IA entrenados en tus productos, tu voz y tus reglas — vendiendo, atendiendo y agendando 24/7 en WhatsApp.',
     tryFreeCta: 'Empezar gratis',
     heroStats: [
       { value: '50+', label: 'países' },
@@ -1178,7 +1385,7 @@ const es: Translations = {
     tryFree: 'Empezar gratis',
   },
   logoSection: {
-    title: 'Confiado por equipos que crecen',
+    title: 'Confiado por clínicas, tiendas y negocios de servicios...',
   },
   solutionsTabs: {
     title: 'Una solución para cada etapa del recorrido',
@@ -1259,8 +1466,88 @@ const es: Translations = {
       { q: '¿Puedo probar el agente antes de publicarlo?', a: 'Sí. Todos los planes incluyen un entorno sandbox integrado donde puedes simular conversaciones reales con tu agente de IA. Prueba diferentes escenarios, casos extremos y flujos de escalamiento antes de publicar para los clientes. También puedes compartir un enlace de vista previa privado con tu equipo para revisión y feedback colaborativo antes del lanzamiento.' },
     ],
   },
+  problem: {
+    title: 'Tu negocio está creciendo. Tu equipo no.',
+    body1: 'Estás perdiendo leads porque nadie respondió a las 11 pm. Tu mejor vendedor está atrapado copiando y pegando el mismo follow-up por la 50ª vez. Contratar es lento, capacitar es más lento, y cada canal nuevo significa más caos.',
+    body2: 'Los chatbots tradicionales lo empeoran — scripts robóticos que frustran a los clientes y dañan tu marca. Las herramientas genéricas de IA suenan inteligentes en demos pero alucinan en producción.',
+    body3: 'No necesitas otro bot. Necesitas empleados digitales.',
+  },
+  whatIsBotfy: {
+    title: 'Botfy crea empleados digitales para tu negocio.',
+    body1: 'Un empleado digital es un agente de IA entrenado en tus productos, tu tono y tus reglas. Responde clientes por WhatsApp, agenda citas, envía facturas y hace follow-up — exactamente como un gran miembro del equipo que nunca duerme.',
+    body2: 'Sin código. Sin ingeniería de prompts. Solo sube tus documentos, conecta tus canales y activa en 15 minutos.',
+  },
+  capabilities: {
+    title: 'Qué pueden hacer tus empleados digitales',
+    subtitle: 'Todo lo que hace un gran miembro del equipo — en piloto automático, 24/7.',
+    items: [
+      { title: 'Soporte al cliente', desc: 'Responde FAQs, resuelve quejas y escala a humanos solo cuando es necesario.' },
+      { title: 'Calificación de leads', desc: 'Hace las preguntas correctas, puntúa leads y dirige prospectos calientes a tu equipo de ventas.' },
+      { title: 'Agendamiento de citas', desc: 'Verifica disponibilidad, reserva horarios, envía confirmaciones y recordatorios automáticamente.' },
+      { title: 'Pagos y facturación', desc: 'Envía links de pago, genera facturas y confirma transacciones dentro del chat.' },
+      { title: 'Recomendaciones de productos', desc: 'Sugiere el producto correcto basándose en el contexto de la conversación y el historial de compras.' },
+      { title: 'Soporte multi-idioma', desc: 'Habla 50+ idiomas nativamente. Detecta y responde automáticamente en el idioma del cliente.' },
+    ],
+  },
+  newHowItWorks: {
+    title: 'Monta tu equipo en 15 minutos. Sin código.',
+    subtitle: 'Tres pasos para tu primer empleado digital.',
+    steps: [
+      { title: 'Crea tus agentes', desc: 'Sube tus documentos, FAQs y catálogo de productos. La IA aprende tu negocio al instante.' },
+      { title: 'Conecta tus canales', desc: 'WhatsApp, Instagram, Telegram, Web Chat — conecta cada canal que usan tus clientes.' },
+      { title: 'Activa', desc: 'Activa y observa cómo tus empleados digitales manejan conversaciones, califican leads y cierran ventas.' },
+    ],
+    noCode: 'Sin desarrolladores. Sin agencias. Sin configuración técnica.',
+  },
+  useCases: {
+    title: 'Empleados digitales en acción',
+    subtitle: 'Mira cómo funcionan en diferentes industrias.',
+    cases: [
+      { emoji: '🏥', industry: 'Clínicas médicas y dentales', desc: 'Los pacientes agendan citas por WhatsApp 24/7. La IA confirma, recuerda y reprograma — reduciendo inasistencias hasta un 40%.' },
+      { emoji: '🛋️', industry: 'Muebles y retail', desc: 'Los clientes exploran productos, reciben recomendaciones y links de pago — todo en una sola conversación de WhatsApp.' },
+      { emoji: '💇', industry: 'Belleza y bienestar', desc: 'Los salones llenan sus agendas automáticamente. La IA maneja reservas, reprogramaciones y mensajes de follow-up después de cada visita.' },
+      { emoji: '🏠', industry: 'Inmobiliaria', desc: 'Los agentes califican compradores al instante, comparten detalles con fotos y agendan visitas — sin perder ninguna consulta.' },
+      { emoji: '🍽️', industry: 'Restaurantes y comida', desc: 'Recibe reservas, comparte menús, maneja restricciones alimentarias y confirma reservaciones — todo por WhatsApp, 24/7.' },
+      { emoji: '🏋️', industry: 'Fitness y gimnasios', desc: 'Los miembros reservan clases, consultan horarios y renuevan membresías automáticamente. La IA maneja cancelaciones y listas de espera.' },
+    ],
+  },
+  comparison: {
+    title: 'No toda IA es igual',
+    subtitle: 'Mira cómo Botfy se compara con las alternativas.',
+    headers: ['Chatbot tradicional', 'IA genérica', 'Botfy'],
+    rows: [
+      { label: 'Entrenado en tu negocio', cells: ['no', 'partial', 'yes'] },
+      { label: 'WhatsApp nativo', cells: ['no', 'no', 'yes'] },
+      { label: 'Agenda citas', cells: ['no', 'no', 'yes'] },
+      { label: 'Envía links de pago', cells: ['no', 'no', 'yes'] },
+      { label: 'Multi-idioma (50+)', cells: ['no', 'yes', 'yes'] },
+      { label: 'Configuración sin código', cells: ['partial', 'no', 'yes'] },
+      { label: 'Integración con CRM', cells: ['partial', 'partial', 'yes'] },
+      { label: 'Escalamiento a humanos', cells: ['partial', 'no', 'yes'] },
+      { label: 'Voz y tono de marca', cells: ['no', 'partial', 'yes'] },
+      { label: 'Activo en menos de 15 min', cells: ['no', 'no', 'yes'] },
+    ],
+  },
+  newTestimonials: {
+    title: 'Confiado por negocios reales',
+    items: [
+      { quote: 'Redujimos las inasistencias en un 35% en el primer mes. La IA maneja todo nuestro agendamiento por WhatsApp ahora.', name: 'Dra. Marina Souza', role: 'Propietaria de clínica dental' },
+      { quote: 'Nuestra tienda de muebles recibe 200+ mensajes de WhatsApp al día. Botfy maneja el 80% de ellos — y realmente cierra ventas.', name: 'Carlos Mendes', role: 'Gerente de e-commerce' },
+      { quote: 'Mi salón está completamente reservado gracias a la IA. Las clientas aman la rapidez de las respuestas.', name: 'Ana Beatriz', role: 'Propietaria de salón' },
+    ],
+  },
+  newCta: {
+    title: '¿Cuántos empleados digitales necesita tu negocio?',
+    body: 'Empieza con uno. Escala a un equipo completo. Plan gratis disponible — sin tarjeta de crédito.',
+    ctaPrimary: 'Empezar gratis',
+    ctaSecondary: 'Habla con un humano (somos amables también)',
+  },
+  meta: {
+    title: 'Empleados Digitales para Tu Negocio | Botfy',
+    description: 'Crea empleados digitales con IA que manejan ventas, soporte, agendamiento y pagos en WhatsApp — como un equipo real que trabaja 24/7.',
+  },
   footer: {
-    desc: 'Agentes de IA que venden y atienden — en piloto automático. Hecho para empresas que quieren crecer sin límites.',
+    desc: 'Botfy — Empleados digitales para tu negocio.',
     product: 'Producto',
     companyTitle: 'Empresa',
     features: 'Agentes IA',

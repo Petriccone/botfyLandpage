@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Menu, X, ChevronDown, Bot, LayoutDashboard, Inbox, BookOpen, ShoppingBag, Building2, HeartPulse, GraduationCap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 import type { Language } from '../i18n/translations'
 
@@ -14,12 +14,8 @@ export function Navbar() {
   const { language, setLanguage, t } = useLanguage()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [productOpen, setProductOpen] = useState(false)
-  const [solutionsOpen, setSolutionsOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
-  const productRef = useRef<HTMLDivElement>(null)
-  const solutionsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     let ticking = false
@@ -36,19 +32,8 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (productRef.current && !productRef.current.contains(e.target as Node)) setProductOpen(false)
-      if (solutionsRef.current && !solutionsRef.current.contains(e.target as Node)) setSolutionsOpen(false)
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
-
   const handleHashClick = (e: React.MouseEvent, id: string) => {
     setMobileOpen(false)
-    setProductOpen(false)
-    setSolutionsOpen(false)
     if (location.pathname === '/') {
       e.preventDefault()
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -57,20 +42,6 @@ export function Navbar() {
       navigate(`/#${id}`)
     }
   }
-
-  const productItems = [
-    { icon: Bot, label: { en: 'AI Agents', pt: 'Agentes IA', es: 'Agentes IA' }, id: 'how-it-works' },
-    { icon: LayoutDashboard, label: { en: 'Dashboard', pt: 'Dashboard', es: 'Dashboard' }, id: 'how-it-works' },
-    { icon: Inbox, label: { en: 'Omnichannel Inbox', pt: 'Inbox Omnichannel', es: 'Inbox Omnicanal' }, id: 'how-it-works' },
-    { icon: BookOpen, label: { en: 'AI Training', pt: 'Treinamento IA', es: 'Entrenamiento IA' }, id: 'how-it-works' },
-  ]
-
-  const solutionItems = [
-    { icon: ShoppingBag, label: { en: 'Retail & E-commerce', pt: 'Varejo & E-commerce', es: 'Retail & E-commerce' } },
-    { icon: Building2, label: { en: 'Real Estate', pt: 'Imóveis', es: 'Inmobiliaria' } },
-    { icon: HeartPulse, label: { en: 'Health & Wellness', pt: 'Saúde & Bem-estar', es: 'Salud & Bienestar' } },
-    { icon: GraduationCap, label: { en: 'Education', pt: 'Educação', es: 'Educación' } },
-  ]
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-[padding,background-color,border-color,box-shadow] duration-300 ${scrolled ? 'bg-white/[0.97] md:bg-white/95 md:backdrop-blur-xl border-b border-gray-100 py-3 shadow-sm' : 'bg-white/95 md:bg-white/80 md:backdrop-blur-md py-4'}`}>
@@ -90,57 +61,21 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-1">
+          <Link
+            to="/#capabilities"
+            onClick={(e) => handleHashClick(e, 'capabilities')}
+            className="px-4 py-2 text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-gray-50 no-underline"
+          >
+            {t.nav.product}
+          </Link>
 
-          {/* Product Dropdown */}
-          <div ref={productRef} className="relative">
-            <button
-              onClick={() => { setProductOpen(!productOpen); setSolutionsOpen(false) }}
-              className="cursor-pointer flex items-center gap-1 px-4 py-2 text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-gray-50"
-            >
-              {t.nav.product}
-              <ChevronDown size={14} className={`transition-transform duration-200 ${productOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {productOpen && (
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 z-50">
-                {productItems.map((item) => (
-                  <Link
-                    key={item.label.en}
-                    to={`/#${item.id}`}
-                    onClick={(e) => handleHashClick(e, item.id)}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] text-text-secondary hover:text-text-primary hover:bg-gray-50 transition-colors no-underline"
-                  >
-                    <item.icon size={15} className="text-accent-purple flex-shrink-0" />
-                    {item.label[language]}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Solutions Dropdown */}
-          <div ref={solutionsRef} className="relative">
-            <button
-              onClick={() => { setSolutionsOpen(!solutionsOpen); setProductOpen(false) }}
-              className="cursor-pointer flex items-center gap-1 px-4 py-2 text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-gray-50"
-            >
-              {t.nav.solutions}
-              <ChevronDown size={14} className={`transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {solutionsOpen && (
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 z-50">
-                {solutionItems.map((item) => (
-                  <button
-                    key={item.label.en}
-                    onClick={() => setSolutionsOpen(false)}
-                    className="cursor-pointer w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] text-text-secondary hover:text-text-primary hover:bg-gray-50 transition-colors text-left"
-                  >
-                    <item.icon size={15} className="text-accent-purple flex-shrink-0" />
-                    {item.label[language]}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+          <Link
+            to="/#use-cases"
+            onClick={(e) => handleHashClick(e, 'use-cases')}
+            className="px-4 py-2 text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-gray-50 no-underline"
+          >
+            {t.nav.solutions}
+          </Link>
 
           <Link
             to="/#pricing"
@@ -203,11 +138,18 @@ export function Navbar() {
         <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-100 p-6 flex flex-col gap-5 lg:hidden shadow-lg max-h-[calc(100dvh-64px)] overflow-y-auto">
           <div className="flex flex-col gap-1">
             <Link
-              to="/#how-it-works"
-              onClick={(e) => handleHashClick(e, 'how-it-works')}
+              to="/#capabilities"
+              onClick={(e) => handleHashClick(e, 'capabilities')}
               className="px-4 py-3 text-base font-medium text-text-secondary no-underline rounded-xl hover:bg-gray-50"
             >
-              {t.nav.howItWorks}
+              {t.nav.product}
+            </Link>
+            <Link
+              to="/#use-cases"
+              onClick={(e) => handleHashClick(e, 'use-cases')}
+              className="px-4 py-3 text-base font-medium text-text-secondary no-underline rounded-xl hover:bg-gray-50"
+            >
+              {t.nav.solutions}
             </Link>
             <Link
               to="/#pricing"

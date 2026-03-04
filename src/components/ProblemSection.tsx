@@ -1,0 +1,92 @@
+import { motion } from 'framer-motion'
+import { Clock, UserX, MessageSquareOff, DollarSign, AlertTriangle, Bot } from 'lucide-react'
+import { useLanguage } from '../hooks/useLanguage'
+
+const painIcons = [Clock, UserX, MessageSquareOff, DollarSign, AlertTriangle, Bot]
+const painColors = [
+  { color: '#ef4444', bg: 'rgba(239,68,68,0.08)' },
+  { color: '#f97316', bg: 'rgba(249,115,22,0.08)' },
+  { color: '#eab308', bg: 'rgba(234,179,8,0.08)' },
+  { color: '#ef4444', bg: 'rgba(239,68,68,0.08)' },
+  { color: '#f97316', bg: 'rgba(249,115,22,0.08)' },
+  { color: '#6b7280', bg: 'rgba(107,114,128,0.08)' },
+]
+
+const painKeys: ('body1' | 'body2')[] = ['body1', 'body2']
+
+export function ProblemSection() {
+  const { t } = useLanguage()
+  const p = t.problem
+
+  // Split body1 into individual pain points for the visual grid
+  const pains = [
+    p.body1.split('. ').filter(s => s.length > 10).slice(0, 3),
+    p.body2.split('. ').filter(s => s.length > 10).slice(0, 3),
+  ].flat().slice(0, 6)
+
+  return (
+    <section id="problem" className="py-24 md:py-32 bg-surface relative overflow-hidden">
+
+      {/* Decorative red-ish glow — signals "danger zone" */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse at center, rgba(239,68,68,0.04) 0%, transparent 60%)' }}
+      />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-display font-bold tracking-tight text-text-primary mb-4"
+          >
+            {p.title}
+          </motion.h2>
+        </div>
+
+        {/* Pain points grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-14">
+          {pains.map((pain, i) => {
+            const Icon = painIcons[i % painIcons.length]
+            const accent = painColors[i % painColors.length]
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20, y: 10 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
+                className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-gray-100 hover:border-red-100 hover:shadow-md transition-all duration-300 group"
+              >
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
+                  style={{ background: accent.bg }}
+                >
+                  <Icon size={18} style={{ color: accent.color }} />
+                </div>
+                <p className="text-[13px] text-text-secondary leading-relaxed font-light pt-1.5">
+                  {pain.replace(/\.$/, '')}.
+                </p>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        {/* Punchline — full width, gradient text, dramatic */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="text-center"
+        >
+          <div className="inline-block rounded-2xl border border-brand-primary/20 bg-white px-8 py-6 shadow-lg shadow-brand-primary/5">
+            <p className="text-xl md:text-2xl font-display font-bold">
+              <span className="gradient-text">{p.body3}</span>
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
