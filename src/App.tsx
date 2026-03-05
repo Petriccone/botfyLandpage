@@ -9,6 +9,7 @@ import { Footer } from './components/Footer'
 import { Home } from './pages/Home'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
+import { BuilderPage } from './components/BuilderPage'
 
 function ScrollToHash() {
   const { pathname, hash } = useLocation()
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/builder/*" element={<BuilderPage />} />
           </Routes>
           <Footer />
         </div>
