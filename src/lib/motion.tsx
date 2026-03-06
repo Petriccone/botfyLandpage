@@ -1,7 +1,8 @@
 /**
- * Motion proxy — on mobile, renders plain HTML elements with zero
- * framer-motion overhead (no Intersection Observers, no JS animations).
- * On desktop, passes through to the real framer-motion.
+ * Motion proxy — on mobile, keeps framer-motion animations but removes
+ * whileInView/viewport (IntersectionObservers) which cause scroll jank.
+ * Elements that used whileInView get converted to animate (runs once on mount).
+ * On desktop, passes through to real framer-motion unchanged.
  */
 import React from 'react'
 import { motion as fMotion } from 'framer-motion'
@@ -11,33 +12,24 @@ const isMobile =
   (window.innerWidth < 768 ||
     /Android|iPhone|iPad|iPod/i.test(navigator.userAgent))
 
-// Props that are framer-motion specific and should be stripped on mobile
-const MOTION_PROPS = new Set([
-  'initial',
-  'animate',
-  'exit',
+// Only strip props that create IntersectionObservers
+const SCROLL_PROPS = new Set([
   'whileInView',
-  'whileHover',
-  'whileTap',
-  'whileDrag',
-  'whileFocus',
   'viewport',
-  'transition',
-  'variants',
-  'layout',
-  'layoutId',
   'onViewportEnter',
   'onViewportLeave',
-  'onAnimationStart',
-  'onAnimationComplete',
 ])
 
-function stripMotionProps(props: Record<string, unknown>) {
+function convertProps(props: Record<string, unknown>) {
   const clean: Record<string, unknown> = {}
   for (const key in props) {
-    if (!MOTION_PROPS.has(key)) {
+    if (!SCROLL_PROPS.has(key)) {
       clean[key] = props[key]
     }
+  }
+  // If element used whileInView but has no animate, use whileInView value as animate
+  if (props.whileInView && !props.animate) {
+    clean.animate = props.whileInView
   }
   return clean
 }
@@ -47,8 +39,9 @@ const componentCache = new Map<string, React.FC<any>>()
 function getMobileComponent(tag: string): React.FC<any> {
   const existing = componentCache.get(tag)
   if (existing) return existing
+  const real = (fMotion as any)[tag]
   const comp: React.FC<any> = React.forwardRef((props: any, ref: any) => {
-    return React.createElement(tag, { ...stripMotionProps(props), ref })
+    return React.createElement(real, { ...convertProps(props), ref })
   }) as any
   ;(comp as any).displayName = `m.${tag}`
   componentCache.set(tag, comp)
