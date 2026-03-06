@@ -82,7 +82,7 @@ export function CTASection() {
                 className="flex flex-col sm:flex-row items-center justify-center gap-4"
               >
                 <a
-                  href="/register"
+                  href="https://app.botfy.io/register"
                   className="no-underline w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full text-white font-bold text-[15px] transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-brand-primary/30 group"
                   style={{ background: 'linear-gradient(135deg, var(--color-brand-deep), var(--color-brand-primary))' }}
                 >
