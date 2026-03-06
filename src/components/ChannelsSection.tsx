@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from '../lib/motion'
 import { MessageCircle, Send, Globe } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 

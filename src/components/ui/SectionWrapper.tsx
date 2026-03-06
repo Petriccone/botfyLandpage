@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from '../../lib/motion'
 
 interface SectionWrapperProps {
   children: ReactNode

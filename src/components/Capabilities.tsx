@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from '../lib/motion'
 import { Headphones, Target, CalendarCheck, CreditCard, Image, Users } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 

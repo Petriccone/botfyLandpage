@@ -1,5 +1,5 @@
 import { Quote } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion } from '../lib/motion'
 import { useLanguage } from '../hooks/useLanguage'
 
 export function TestimonialsKommo() {

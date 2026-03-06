@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from '../lib/motion'
 import { Plus, Minus } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from '../lib/motion'
 import { Code, Clock, Volume2, Database, Shield, TrendingUp, User, Headphones } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 

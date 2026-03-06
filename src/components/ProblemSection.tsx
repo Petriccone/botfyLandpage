@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from '../lib/motion'
 import { Clock, UserX, MessageSquareOff, DollarSign, AlertTriangle, Bot } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 

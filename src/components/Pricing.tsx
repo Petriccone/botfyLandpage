@@ -1,5 +1,5 @@
 import { CheckCircle } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion } from '../lib/motion'
 import { useLanguage } from '../hooks/useLanguage'
 
 const STRIPE_LINKS: (string | null)[] = [

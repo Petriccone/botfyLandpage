@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from '../lib/motion'
 import { Play, MessageCircle } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
 import { HeroBackground3D } from './3d/hero/HeroBackground3D'

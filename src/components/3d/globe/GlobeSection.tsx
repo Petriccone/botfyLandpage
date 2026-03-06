@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from '../../../lib/motion'
 import { Globe as GlobeIcon, Users, Zap } from 'lucide-react'
 import { useLanguage } from '../../../hooks/useLanguage'
 import { Globe3D } from './Globe3D'
