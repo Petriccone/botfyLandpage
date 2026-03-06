@@ -17,15 +17,15 @@ export function ProblemSection() {
   const p = t.problem
 
   return (
-    <section id="problem" className="py-24 md:py-32 bg-surface relative overflow-hidden">
+    <section id="problem" className="py-16 md:py-32 bg-surface relative overflow-hidden">
 
       {/* Decorative red-ish glow — signals "danger zone" */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full pointer-events-none"
+      <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at center, rgba(239,68,68,0.04) 0%, transparent 60%)' }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-10 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export function ProblemSection() {
         </div>
 
         {/* Pain points grid — 3 + 3 */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-5xl mx-auto mb-10 md:mb-14">
           {p.cards.map((card, i) => {
             const Icon = painIcons[i]
             const accent = painColors[i]
@@ -48,7 +48,7 @@ export function ProblemSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.5 }}
-                className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-100 hover:border-red-100 hover:shadow-md transition-all duration-300 group"
+                className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-gray-100 hover:border-red-100 hover:shadow-md transition-all duration-300 group"
               >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"

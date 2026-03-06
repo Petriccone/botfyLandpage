@@ -19,8 +19,8 @@ function LogoCard({ logo }: { logo: typeof logos[0] }) {
 
   return (
     <div
-      className="flex-shrink-0 flex flex-col items-center justify-center gap-2 px-6 py-4 rounded-xl border border-gray-100 bg-white/80"
-      style={{ minWidth: 130 }}
+      className="flex-shrink-0 flex flex-col items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-4 rounded-xl border border-gray-100 bg-white/80"
+      style={{ minWidth: 110 }}
     >
       {!imgError ? (
         <img

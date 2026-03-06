@@ -14,15 +14,15 @@ export function WhatIsBotfy() {
   const w = t.whatIsBotfy
 
   return (
-    <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-white relative overflow-hidden">
 
       {/* Aurora glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full pointer-events-none"
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.05) 0%, transparent 70%)' }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-10 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -99,14 +99,13 @@ export function WhatIsBotfy() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="relative flex-shrink-0 flex flex-col items-center justify-center p-8 rounded-3xl text-center animate-glow-breathe"
+              className="relative flex-shrink-0 w-full md:w-auto md:min-w-[210px] flex flex-col items-center justify-center p-6 md:p-8 rounded-3xl text-center animate-glow-breathe"
               style={{
                 background: 'linear-gradient(135deg, var(--color-brand-deep), var(--color-brand-primary), var(--color-brand-mid))',
-                minWidth: 210,
               }}
             >
               {/* Dot grid overlay */}
-              <div className="absolute inset-0 rounded-3xl overflow-hidden opacity-10 pointer-events-none">
+              <div className="hidden md:block absolute inset-0 rounded-3xl overflow-hidden opacity-10 pointer-events-none">
                 <div className="w-full h-full" style={{
                   backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)',
                   backgroundSize: '18px 18px'

@@ -8,11 +8,11 @@ export function HeroKommo() {
   const k = t.kommo
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 md:pt-28 pb-12 md:pb-16 overflow-hidden bg-white">
       {/* 3D Background (falls back to CSS gradient on mobile) */}
       <HeroBackground3D />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 w-full">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 w-full">
         <div className="text-center mb-12">
 
           {/* Badge */}
@@ -44,7 +44,7 @@ export function HeroKommo() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed font-light"
+            className="text-base md:text-xl text-text-secondary max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed font-light"
           >
             {k.heroSubline}
           </motion.p>

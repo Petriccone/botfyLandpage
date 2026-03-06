@@ -16,15 +16,15 @@ export function Capabilities() {
   const c = t.capabilities
 
   return (
-    <section id="capabilities" className="py-24 md:py-32 bg-surface relative overflow-hidden">
+    <section id="capabilities" className="py-16 md:py-32 bg-surface relative overflow-hidden">
 
       {/* Background glow */}
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
+      <div className="hidden md:block absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.05) 0%, transparent 70%)' }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-10 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ export function Capabilities() {
           </motion.p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
           {c.items.map((item, i) => {
             const visual = items[i]
             const Icon = visual.icon

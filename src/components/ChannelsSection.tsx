@@ -12,14 +12,14 @@ export function ChannelsSection() {
   const { t } = useLanguage()
 
   return (
-    <section className="py-20 bg-white border-t border-gray-100 relative overflow-hidden">
+    <section className="py-14 md:py-20 bg-white border-t border-gray-100 relative overflow-hidden">
 
       {/* Subtle background gradient */}
-      <div className="absolute inset-0 pointer-events-none"
+      <div className="hidden md:block absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.04) 0%, transparent 60%)' }}
       />
 
-      <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
 
         {/* Live status badge */}
         <motion.div
@@ -48,7 +48,7 @@ export function ChannelsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-text-secondary text-lg font-light mb-14"
+          className="text-text-secondary text-base sm:text-lg font-light mb-10 md:mb-14"
         >
           {t.channels.subtitle}
         </motion.p>

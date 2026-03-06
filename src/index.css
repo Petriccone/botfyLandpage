@@ -282,6 +282,10 @@ body {
     filter: blur(40px);
     opacity: 0.04;
   }
+  .bento-card {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
   /* Disable all infinite animations on mobile for smooth 60fps */
   .animate-pulse-ring,
   .animate-ping,

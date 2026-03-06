@@ -9,9 +9,9 @@ export function WhyBotfyGrid() {
   const { title, subtitle, cards } = t.whyGrid
 
   return (
-    <section className="py-24 md:py-32 bg-surface border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section className="py-16 md:py-32 bg-surface border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export function WhyBotfyGrid() {
           </motion.p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {cards.map((card, i) => {
             const Icon = icons[i % icons.length]
             return (

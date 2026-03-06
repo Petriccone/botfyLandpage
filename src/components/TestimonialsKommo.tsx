@@ -6,8 +6,8 @@ export function TestimonialsKommo() {
   const { t } = useLanguage()
 
   return (
-    <section className="py-24 md:py-32 bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 md:py-32 bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export function TestimonialsKommo() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="flex flex-col p-7 rounded-2xl bg-white border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-[border-color,box-shadow] duration-300"
+              className="flex flex-col p-5 sm:p-7 rounded-2xl bg-white border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-[border-color,box-shadow] duration-300"
             >
               <Quote className="text-accent-purple/40 mb-4" size={28} />
               <p className="text-text-primary font-light mb-6 leading-relaxed">"{item.quote}"</p>

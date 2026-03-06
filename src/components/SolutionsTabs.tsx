@@ -26,10 +26,10 @@ export function SolutionsTabs() {
   }, [tabs])
 
   return (
-    <section id="solution" className="py-24 md:py-32 bg-surface border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="solution" className="py-16 md:py-32 bg-surface border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 md:mb-14">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export function SolutionsTabs() {
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center mb-10 -mx-6 px-6">
+        <div className="flex justify-center mb-8 md:mb-10 -mx-4 sm:-mx-6 px-4 sm:px-6">
           <div className="inline-flex bg-white border border-gray-200 rounded-2xl p-1.5 gap-1 max-w-full overflow-x-auto scrollbar-hide">
             {tabs.map((tab, i) => (
               <button

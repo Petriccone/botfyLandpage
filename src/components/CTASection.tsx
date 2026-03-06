@@ -8,9 +8,9 @@ export function CTASection() {
   const k = t.kommo
 
   return (
-    <section className="py-24 md:py-32 bg-white relative overflow-hidden border-t border-gray-100">
+    <section className="py-16 md:py-32 bg-white relative overflow-hidden border-t border-gray-100">
       {/* Background decoration */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="hidden md:block absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-brand-primary/[0.06] rounded-full blur-3xl" />
       </div>
 
@@ -27,14 +27,14 @@ export function CTASection() {
             style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(59,130,246,0.1), rgba(16,185,129,0.1))' }}
           />
 
-          <div className="relative m-[1px] bg-white rounded-[23px] p-12 md:p-16 overflow-hidden">
+          <div className="relative m-[1px] bg-white rounded-[23px] p-6 md:p-12 lg:p-16 overflow-hidden">
             {/* Inner glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] rounded-full pointer-events-none"
+            <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] rounded-full pointer-events-none"
               style={{ background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.06) 0%, transparent 70%)' }}
             />
 
             {/* Dot grid overlay */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+            <div className="hidden md:block absolute inset-0 opacity-[0.03] pointer-events-none">
               <div className="w-full h-full" style={{
                 backgroundImage: 'radial-gradient(circle, rgba(124,58,237,0.8) 1px, transparent 1px)',
                 backgroundSize: '24px 24px'
