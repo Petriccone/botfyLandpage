@@ -149,6 +149,8 @@ export interface Translations {
     ctaHeadline: string
     ctaSub: string
     tryFree: string
+    floatingIncoming: { channel: string; message: string }
+    floatingReply: { label: string; message: string; time: string }
   }
   logoSection: {
     title: string
@@ -187,6 +189,7 @@ export interface Translations {
     body1: string
     body2: string
     body3: string
+    cards: string[]
   }
   whatIsBotfy: {
     title: string
@@ -197,6 +200,12 @@ export interface Translations {
     title: string
     subtitle: string
     items: { title: string; desc: string }[]
+  }
+  globe: {
+    badge: string
+    title: string
+    subtitle: string
+    stats: { value: string; label: string }[]
   }
   newHowItWorks: {
     title: string
@@ -426,7 +435,7 @@ const en: Translations = {
       {
         name: 'Scale',
         desc: 'For high-volume teams',
-        price: '€499',
+        price: '€399',
         period: '/mo',
         features: ['10 AI Agents', '50,000 Messages/mo', 'All channels', 'Dedicated support', 'Custom integrations', 'White-label'],
         cta: 'Get Started',
@@ -459,7 +468,7 @@ const en: Translations = {
     heroLine2: 'for your',
     heroLine3: 'business.',
     heroHeadline: 'All the ways you sell — combined in one AI platform',
-    heroSubline: 'AI agents trained on your products, your voice, and your rules — selling, supporting, and scheduling 24/7 on WhatsApp.',
+    heroSubline: 'AI agents trained on your products and your rules — selling, supporting, and scheduling 24/7 on WhatsApp.',
     tryFreeCta: 'Start for free',
     heroStats: [
       { value: '50+', label: 'countries' },
@@ -505,6 +514,8 @@ const en: Translations = {
     ctaHeadline: 'Start using Botfy for free',
     ctaSub: 'Start building your AI sales pipeline today. No credit card required.',
     tryFree: 'Start free',
+    floatingIncoming: { channel: 'WhatsApp · now', message: 'Hi! I\'m interested in the product 😊' },
+    floatingReply: { label: 'Botfy AI · replied', message: 'Hi! I\'ll help you right away 🤖', time: '0.8s response' },
   },
   logoSection: {
     title: 'Trusted by clinics, shops, and service businesses...',
@@ -593,6 +604,14 @@ const en: Translations = {
     body1: 'You are losing leads because nobody answered at 11 pm. Your best salesperson is stuck copy-pasting the same follow-up for the 50th time. Hiring is slow, training is slower, and every new channel means more chaos.',
     body2: 'Traditional chatbots make it worse — robotic scripts that frustrate customers and damage your brand. Generic AI tools sound smart in demos but hallucinate in production.',
     body3: 'You don\'t need another bot. You need digital employees.',
+    cards: [
+      'Losing leads because nobody answered at 11 pm.',
+      'Your best salesperson is stuck copy-pasting the same follow-up.',
+      'Hiring is slow, training is slower, and every new channel means more chaos.',
+      'Traditional chatbots frustrate customers with robotic scripts.',
+      'Generic AI tools sound smart in demos but hallucinate in production.',
+      'You\'re scaling channels but not the team to handle them.',
+    ],
   },
   whatIsBotfy: {
     title: 'Botfy creates digital employees for your business.',
@@ -609,6 +628,16 @@ const en: Translations = {
       { title: 'Payments & invoicing', desc: 'Send payment links, generate invoices, and confirm transactions inside the chat.' },
       { title: 'Product recommendations', desc: 'Suggest the right product based on conversation context and purchase history.' },
       { title: 'Multi-language support', desc: 'Speak 50+ languages natively. Auto-detect and reply in the customer\'s language.' },
+    ],
+  },
+  globe: {
+    badge: 'Global Reach',
+    title: 'Serving businesses worldwide',
+    subtitle: 'From São Paulo to Tokyo, digital employees that speak every language and never sleep.',
+    stats: [
+      { value: '50+', label: 'Countries served' },
+      { value: '1,000+', label: 'Companies trust Botfy' },
+      { value: '<1min', label: 'Average response time' },
     ],
   },
   newHowItWorks: {
@@ -865,7 +894,7 @@ const pt: Translations = {
       {
         name: 'Scale',
         desc: 'Para alto volume',
-        price: '€499',
+        price: '€399',
         period: '/mês',
         features: ['10 Agentes IA', '50.000 Mensagens/mês', 'Todos os canais', 'Suporte dedicado', 'Integrações personalizadas', 'White-label'],
         cta: 'Começar',
@@ -898,7 +927,7 @@ const pt: Translations = {
     heroLine2: 'para o seu',
     heroLine3: 'negócio.',
     heroHeadline: 'Tudo o que você precisa para vender — em uma plataforma de IA',
-    heroSubline: 'Agentes de IA treinados nos seus produtos, na sua voz e nas suas regras — vendendo, atendendo e agendando 24/7 no WhatsApp.',
+    heroSubline: 'Agentes de IA treinados nos seus produtos e nas suas regras — vendendo, atendendo e agendando 24/7 no WhatsApp.',
     tryFreeCta: 'Começar grátis',
     heroStats: [
       { value: '50+', label: 'países' },
@@ -944,6 +973,8 @@ const pt: Translations = {
     ctaHeadline: 'Comece a usar a Botfy gratuitamente',
     ctaSub: 'Comece a construir seu pipeline de vendas com IA hoje. Sem cartão de crédito.',
     tryFree: 'Começar grátis',
+    floatingIncoming: { channel: 'WhatsApp · agora', message: 'Olá! Tenho interesse no produto 😊' },
+    floatingReply: { label: 'Botfy IA · respondeu', message: 'Olá! Já vou te ajudar 🤖', time: '0.8s de resposta' },
   },
   logoSection: {
     title: 'Confiado por clínicas, lojas e negócios de serviços...',
@@ -1032,6 +1063,14 @@ const pt: Translations = {
     body1: 'Você está perdendo leads porque ninguém respondeu às 23h. Seu melhor vendedor está preso copiando e colando o mesmo follow-up pela 50ª vez. Contratar é lento, treinar é mais lento ainda, e cada canal novo significa mais caos.',
     body2: 'Chatbots tradicionais pioram tudo — scripts robóticos que frustram clientes e prejudicam sua marca. Ferramentas genéricas de IA parecem inteligentes em demos, mas alucinam em produção.',
     body3: 'Você não precisa de outro bot. Você precisa de funcionários digitais.',
+    cards: [
+      'Perdendo leads porque ninguém respondeu às 23h.',
+      'Seu melhor vendedor está preso copiando e colando o mesmo follow-up.',
+      'Contratar é lento, treinar é mais lento ainda, e cada canal novo significa mais caos.',
+      'Chatbots tradicionais frustram clientes com scripts robóticos.',
+      'Ferramentas genéricas de IA parecem inteligentes em demos, mas alucinam em produção.',
+      'Você escala canais, mas não a equipe para gerenciá-los.',
+    ],
   },
   whatIsBotfy: {
     title: 'A Botfy cria funcionários digitais para o seu negócio.',
@@ -1048,6 +1087,16 @@ const pt: Translations = {
       { title: 'Pagamentos e faturas', desc: 'Envia links de pagamento, gera faturas e confirma transações dentro do chat.' },
       { title: 'Recomendações de produtos', desc: 'Sugere o produto certo com base no contexto da conversa e histórico de compras.' },
       { title: 'Suporte multi-idioma', desc: 'Fala 50+ idiomas nativamente. Detecta e responde automaticamente no idioma do cliente.' },
+    ],
+  },
+  globe: {
+    badge: 'Alcance Global',
+    title: 'Atendendo empresas no mundo todo',
+    subtitle: 'De São Paulo a Tóquio, funcionários digitais que falam todos os idiomas e nunca dormem.',
+    stats: [
+      { value: '50+', label: 'Países atendidos' },
+      { value: '1.000+', label: 'Empresas confiam na Botfy' },
+      { value: '<1min', label: 'Tempo médio de resposta' },
     ],
   },
   newHowItWorks: {
@@ -1304,7 +1353,7 @@ const es: Translations = {
       {
         name: 'Scale',
         desc: 'Para alto volumen',
-        price: '€499',
+        price: '€399',
         period: '/mes',
         features: ['10 Agentes IA', '50.000 Mensajes/mes', 'Todos los canales', 'Soporte dedicado', 'Integraciones personalizadas', 'White-label'],
         cta: 'Comenzar',
@@ -1337,7 +1386,7 @@ const es: Translations = {
     heroLine2: 'para tu',
     heroLine3: 'negocio.',
     heroHeadline: 'Todo lo que necesitas para vender — en una plataforma de IA',
-    heroSubline: 'Agentes de IA entrenados en tus productos, tu voz y tus reglas — vendiendo, atendiendo y agendando 24/7 en WhatsApp.',
+    heroSubline: 'Agentes de IA entrenados en tus productos y tus reglas — vendiendo, atendiendo y agendando 24/7 en WhatsApp.',
     tryFreeCta: 'Empezar gratis',
     heroStats: [
       { value: '50+', label: 'países' },
@@ -1383,6 +1432,8 @@ const es: Translations = {
     ctaHeadline: 'Empieza a usar Botfy gratis',
     ctaSub: 'Empieza a construir tu pipeline de ventas con IA hoy. Sin tarjeta de crédito.',
     tryFree: 'Empezar gratis',
+    floatingIncoming: { channel: 'WhatsApp · ahora', message: '¡Hola! Me interesa el producto 😊' },
+    floatingReply: { label: 'Botfy IA · respondió', message: '¡Hola! Te ayudo de inmediato 🤖', time: '0.8s de respuesta' },
   },
   logoSection: {
     title: 'Confiado por clínicas, tiendas y negocios de servicios...',
@@ -1471,6 +1522,14 @@ const es: Translations = {
     body1: 'Estás perdiendo leads porque nadie respondió a las 11 pm. Tu mejor vendedor está atrapado copiando y pegando el mismo follow-up por la 50ª vez. Contratar es lento, capacitar es más lento, y cada canal nuevo significa más caos.',
     body2: 'Los chatbots tradicionales lo empeoran — scripts robóticos que frustran a los clientes y dañan tu marca. Las herramientas genéricas de IA suenan inteligentes en demos pero alucinan en producción.',
     body3: 'No necesitas otro bot. Necesitas empleados digitales.',
+    cards: [
+      'Perdiendo leads porque nadie respondió a las 11 pm.',
+      'Tu mejor vendedor está atrapado copiando y pegando el mismo follow-up.',
+      'Contratar es lento, capacitar es más lento, y cada canal nuevo significa más caos.',
+      'Los chatbots tradicionales frustran clientes con scripts robóticos.',
+      'Las herramientas genéricas de IA suenan inteligentes en demos pero alucinan en producción.',
+      'Escalas canales, pero no el equipo para gestionarlos.',
+    ],
   },
   whatIsBotfy: {
     title: 'Botfy crea empleados digitales para tu negocio.',
@@ -1487,6 +1546,16 @@ const es: Translations = {
       { title: 'Pagos y facturación', desc: 'Envía links de pago, genera facturas y confirma transacciones dentro del chat.' },
       { title: 'Recomendaciones de productos', desc: 'Sugiere el producto correcto basándose en el contexto de la conversación y el historial de compras.' },
       { title: 'Soporte multi-idioma', desc: 'Habla 50+ idiomas nativamente. Detecta y responde automáticamente en el idioma del cliente.' },
+    ],
+  },
+  globe: {
+    badge: 'Alcance Global',
+    title: 'Atendiendo empresas en todo el mundo',
+    subtitle: 'De São Paulo a Tokio, empleados digitales que hablan todos los idiomas y nunca duermen.',
+    stats: [
+      { value: '50+', label: 'Países atendidos' },
+      { value: '1.000+', label: 'Empresas confían en Botfy' },
+      { value: '<1min', label: 'Tiempo promedio de respuesta' },
     ],
   },
   newHowItWorks: {

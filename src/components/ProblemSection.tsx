@@ -4,25 +4,17 @@ import { useLanguage } from '../hooks/useLanguage'
 
 const painIcons = [Clock, UserX, MessageSquareOff, DollarSign, AlertTriangle, Bot]
 const painColors = [
-  { color: '#ef4444', bg: 'rgba(239,68,68,0.08)' },
-  { color: '#f97316', bg: 'rgba(249,115,22,0.08)' },
-  { color: '#eab308', bg: 'rgba(234,179,8,0.08)' },
-  { color: '#ef4444', bg: 'rgba(239,68,68,0.08)' },
-  { color: '#f97316', bg: 'rgba(249,115,22,0.08)' },
-  { color: '#6b7280', bg: 'rgba(107,114,128,0.08)' },
+  { color: '#ef4444', bg: 'rgba(239,68,68,0.10)' },
+  { color: '#f97316', bg: 'rgba(249,115,22,0.10)' },
+  { color: '#eab308', bg: 'rgba(234,179,8,0.10)' },
+  { color: '#e11d48', bg: 'rgba(225,29,72,0.10)' },
+  { color: '#dc2626', bg: 'rgba(220,38,38,0.10)' },
+  { color: '#7c3aed', bg: 'rgba(124,58,237,0.10)' },
 ]
-
-const painKeys: ('body1' | 'body2')[] = ['body1', 'body2']
 
 export function ProblemSection() {
   const { t } = useLanguage()
   const p = t.problem
-
-  // Split body1 into individual pain points for the visual grid
-  const pains = [
-    p.body1.split('. ').filter(s => s.length > 10).slice(0, 3),
-    p.body2.split('. ').filter(s => s.length > 10).slice(0, 3),
-  ].flat().slice(0, 6)
 
   return (
     <section id="problem" className="py-24 md:py-32 bg-surface relative overflow-hidden">
@@ -44,19 +36,19 @@ export function ProblemSection() {
           </motion.h2>
         </div>
 
-        {/* Pain points grid */}
+        {/* Pain points grid — 3 + 3 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-14">
-          {pains.map((pain, i) => {
-            const Icon = painIcons[i % painIcons.length]
-            const accent = painColors[i % painColors.length]
+          {p.cards.map((card, i) => {
+            const Icon = painIcons[i]
+            const accent = painColors[i]
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20, y: 10 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.5 }}
-                className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-gray-100 hover:border-red-100 hover:shadow-md transition-all duration-300 group"
+                className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-100 hover:border-red-100 hover:shadow-md transition-all duration-300 group"
               >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
@@ -64,8 +56,8 @@ export function ProblemSection() {
                 >
                   <Icon size={18} style={{ color: accent.color }} />
                 </div>
-                <p className="text-[13px] text-text-secondary leading-relaxed font-light pt-1.5">
-                  {pain.replace(/\.$/, '')}.
+                <p className="text-[13px] text-text-secondary leading-relaxed font-light">
+                  {card}
                 </p>
               </motion.div>
             )

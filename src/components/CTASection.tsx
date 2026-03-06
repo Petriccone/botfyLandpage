@@ -89,9 +89,6 @@ export function CTASection() {
                   {c.ctaPrimary}
                   <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                 </a>
-                <a href="mailto:contact@botfy.ai" className="no-underline w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-white border border-gray-200 text-text-secondary font-medium text-[14px] hover:border-gray-300 hover:bg-gray-50 hover:text-text-primary transition-all duration-200">
-                  {c.ctaSecondary}
-                </a>
               </motion.div>
             </div>
           </div>

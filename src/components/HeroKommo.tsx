@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Play, MessageCircle } from 'lucide-react'
 import { useLanguage } from '../hooks/useLanguage'
+import { HeroBackground3D } from './3d/hero/HeroBackground3D'
 
 export function HeroKommo() {
   const { t } = useLanguage()
@@ -8,10 +9,8 @@ export function HeroKommo() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16 overflow-hidden bg-white">
-      {/* Subtle background */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-purple-50/70 via-transparent to-transparent rounded-full blur-3xl" />
-      </div>
+      {/* 3D Background (falls back to CSS gradient on mobile) */}
+      <HeroBackground3D />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 w-full">
         <div className="text-center mb-12">
@@ -119,8 +118,8 @@ export function HeroKommo() {
                 <MessageCircle size={13} className="text-white" />
               </div>
               <div>
-                <p className="text-[10px] font-semibold text-text-muted">WhatsApp · agora</p>
-                <p className="text-[12px] text-text-primary mt-0.5 leading-snug">Olá! Tenho interesse no produto 😊</p>
+                <p className="text-[10px] font-semibold text-text-muted">{k.floatingIncoming.channel}</p>
+                <p className="text-[12px] text-text-primary mt-0.5 leading-snug">{k.floatingIncoming.message}</p>
               </div>
             </div>
           </motion.div>
@@ -133,11 +132,11 @@ export function HeroKommo() {
             className="absolute -bottom-6 right-4 sm:-right-8 bg-accent-purple rounded-2xl shadow-xl p-3.5 hidden sm:block"
             style={{ maxWidth: 210 }}
           >
-            <p className="text-white text-[10px] font-semibold mb-1">Botfy IA · respondeu</p>
-            <p className="text-white/85 text-[12px] leading-snug">Olá! Já vou te ajudar 🤖</p>
+            <p className="text-white text-[10px] font-semibold mb-1">{k.floatingReply.label}</p>
+            <p className="text-white/85 text-[12px] leading-snug">{k.floatingReply.message}</p>
             <div className="flex items-center gap-1 mt-2">
               <div className="w-1 h-1 rounded-full bg-white/50" />
-              <p className="text-white/50 text-[9px]">0.8s de resposta</p>
+              <p className="text-white/50 text-[9px]">{k.floatingReply.time}</p>
             </div>
           </motion.div>
         </motion.div>
