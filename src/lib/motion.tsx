@@ -45,15 +45,14 @@ function stripMotionProps(props: Record<string, unknown>) {
 const componentCache = new Map<string, React.FC<any>>()
 
 function getMobileComponent(tag: string): React.FC<any> {
-  let cached = componentCache.get(tag)
-  if (!cached) {
-    cached = React.forwardRef((props: any, ref: any) => {
-      return React.createElement(tag, { ...stripMotionProps(props), ref })
-    }) as any
-    ;(cached as any).displayName = `m.${tag}`
-    componentCache.set(tag, cached)
-  }
-  return cached
+  const existing = componentCache.get(tag)
+  if (existing) return existing
+  const comp: React.FC<any> = React.forwardRef((props: any, ref: any) => {
+    return React.createElement(tag, { ...stripMotionProps(props), ref })
+  }) as any
+  ;(comp as any).displayName = `m.${tag}`
+  componentCache.set(tag, comp)
+  return comp
 }
 
 export const motion: typeof fMotion = isMobile
