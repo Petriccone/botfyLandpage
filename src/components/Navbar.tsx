@@ -109,7 +109,7 @@ export function Navbar() {
           </div>
 
           <a
-            href="https://app.botfy.io/login"
+            href="/login"
             className="no-underline hidden lg:inline-flex"
           >
             <span className="text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer px-3">
@@ -118,7 +118,7 @@ export function Navbar() {
           </a>
 
           <a
-            href="https://app.botfy.io/register"
+            href="/register"
             className="no-underline inline-flex items-center h-9 px-5 rounded-full bg-accent-purple text-white hover:bg-accent-purple/90 text-[12px] font-bold transition-[background-color] duration-200 shadow-md shadow-brand-primary/30"
           >
             {t.nav.startFreeTrial}
@@ -180,7 +180,7 @@ export function Navbar() {
           </div>
 
           <div className="flex flex-col gap-3 pt-2">
-            <a href="https://app.botfy.io/register" className="no-underline flex items-center justify-center w-full h-12 rounded-xl bg-accent-purple text-white text-sm font-bold">
+            <a href="/register" className="no-underline flex items-center justify-center w-full h-12 rounded-xl bg-accent-purple text-white text-sm font-bold">
               {t.nav.startFreeTrial}
             </a>
           </div>
