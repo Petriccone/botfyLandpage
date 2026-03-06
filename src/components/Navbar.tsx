@@ -183,6 +183,9 @@ export function Navbar() {
             <a href="/register" className="no-underline flex items-center justify-center w-full h-12 rounded-xl bg-accent-purple text-white text-sm font-bold">
               {t.nav.startFreeTrial}
             </a>
+            <a href="/login" className="no-underline flex items-center justify-center w-full h-12 rounded-xl border border-gray-200 text-text-primary text-sm font-medium">
+              {t.nav.login}
+            </a>
           </div>
         </div>
       )}
